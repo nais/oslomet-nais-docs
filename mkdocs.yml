@@ -1,6 +1,6 @@
 site_name: NAIS
-repo_url: https://github.com/nais/doc
-site_url: https://doc.nais.io/
+repo_url: https://github.com/nais/oslomet-nais-docs
+site_url: https://nais.io/oslomet-nais-docs
 theme:
   name: material
   language: 'en'
@@ -17,8 +17,6 @@ theme:
 extra:
   search:
     language: 'en'
-extra_javascript:
-  - amplitude_javascript/events.js
 extra_css:
   - material_theme_stylesheet_overrides/uu.css
 plugins:

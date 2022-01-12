@@ -1,54 +1,20 @@
-name: CI
-
+name: Publish docs via GitHub Pages
 on:
   push:
-    paths:
-      - .github/workflows/main.yml
-      - mkdocs.yml
-      - 'docs/**'
-      - pyproject.toml
-      - poetry.lock
+    branches:
+      - main
 
 jobs:
-  build_and_deploy:
+  build:
+    name: Deploy docs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout main
+        uses: actions/checkout@v2
 
-      - name: Setup Python
-        uses: actions/setup-python@v2.1.4
-        with:
-          python-version: 3.9
-          architecture: x64
-
-      - name: Install build tools and build documentation
-        run: |
-          # Install mkdocs
-          pip3 install --upgrade pip
-          pip3 install poetry
-          poetry install \
-            --no-dev \
-            --no-interaction \
-            --ansi \
-            --remove-untracked
-          poetry run mkdocs build --strict
-
-      # Synchronize doctree with Google Cloud Bucket
-      - if: github.ref == 'refs/heads/master'
-        uses: actions-hub/gcloud@318.0.0
+      - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
         env:
-          PROJECT_ID: aura-prod-d7e3
-          APPLICATION_CREDENTIALS: ${{ secrets.GCP_SERVICEACCOUNT_KEY_FOR_DOC_NAIS_IO_BUCKET }}
-        with:
-          args: -m rsync -r -c -d site/ gs://doc.nais.io
-          cli: gsutil
-
-      # Cache buster
-      - if: github.ref == 'refs/heads/master'
-        uses: actions-hub/gcloud@318.0.0
-        env:
-          PROJECT_ID: aura-prod-d7e3
-          APPLICATION_CREDENTIALS: ${{ secrets.GCP_SERVICEACCOUNT_KEY_FOR_DOC_NAIS_IO_BUCKET }}
-        with:
-          args: -m setmeta -r -h 'Cache-Control:public, max-age=180' 'gs://doc.nais.io/*'
-          cli: gsutil
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REQUIREMENTS: requirements.txt

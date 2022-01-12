@@ -1,6 +1,7 @@
 site_name: NAIS
 repo_url: https://github.com/nais/oslomet-nais-docs
 site_url: https://nais.io/oslomet-nais-docs
+edit_uri: edit/main/docs/
 theme:
   name: material
   language: 'en'

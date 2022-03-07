@@ -168,3 +168,7 @@ nav:
       - Aiven Data Processor Agreement: legal/dpa/aiven-dpa.md
     - Arkivloven: legal/arkivloven.md
     - Sikkerhetsloven: legal/sikkerhetsloven.md
+  - Theme Dev:
+    - About: theme-dev/README.md
+    - Cinder docs: theme-dev/cinder-docs.md
+    - Testing sandbox: theme-dev/sandbox.md

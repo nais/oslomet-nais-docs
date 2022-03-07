@@ -16,7 +16,13 @@
             <!-- Main title -->
 
             {% if not config.theme.disable_nav_site_name %}
-              <a class="navbar-brand" href="{{ nav.homepage.url|url }}">{{ config.site_name }}</a>
+                {% if config.theme.logo %}
+                    <a class="navbar-logo" href="{{ nav.homepage.url|url }}">
+                        <img alt="logo" src="{{config.theme.logo|url }}" />
+                    </a>
+                {% else %}
+                    <a class="navbar-brand" href="{{ nav.homepage.url|url }}">{{ config.site_name }}</a>
+                {% endif %}
             {% endif %}
         </div>
 

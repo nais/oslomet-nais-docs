@@ -12,3 +12,11 @@ theme:
     favicon: path/to/icon
 ```
 If no favicon is specified in config file, default icon located under `cinder/img/favicon.ico` will be used instead.
+
+## Logo
+In order to use custom logo on navigation bar use following config entry:
+```
+theme: 
+    logo: path/to/logo
+```
+If no logo is specified in config file, name of the website (specified by the `site_name` attribute) will be shown instead. 

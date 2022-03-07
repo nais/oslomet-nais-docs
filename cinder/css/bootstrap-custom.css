@@ -2948,6 +2948,10 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none;
 }
+@media(min-width:768px) {
+    .navbar>.container .navbar-brand {
+    margin-left: -15px;
+}
 
 .navbar-logo {
     display: inline-block;
@@ -2962,10 +2966,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
     filter: brightness(0.7);
 }
 
-@media(min-width:768px) {
-    .navbar>.container .navbar-brand {
-    margin-left: -15px;
-}
+
 }.navbar-toggle {
     position: relative;
     float: right;
@@ -5022,8 +5023,7 @@ th.visible-print, td.visible-print {
     display: none!important;
 }
 }.navbar {
-    font-size: 13px;
-    font-weight: 300;
+    font-size: 14px;
     border: 0;
 }
 .navbar .navbar-toggle:hover .icon-bar {
@@ -5038,8 +5038,7 @@ th.visible-print, td.visible-print {
     border: 0;
 }
 .navbar .dropdown-menu>li>a, .navbar .dropdown-menu>li>a:focus {
-    font-size: 13px;
-    font-weight: 300;
+    font-size: 14px;
     background-color: transparent;
 }
 .navbar .dropdown-header {
@@ -5165,7 +5164,7 @@ blockquote small {
     font-weight: 300;
 }
 table {
-    font-size: 12px;
+    font-size: 14px;
 }
 input, .form-control {
     padding: 7px;

@@ -8,9 +8,6 @@ theme:
   language: 'en'
   logo: assets/logo.png
   favicon: assets/logo.png
-extra:
-  search:
-    language: 'en'
 plugins:
   - search
 markdown_extensions:

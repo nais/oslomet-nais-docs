@@ -6,7 +6,7 @@ body {
     padding-top: 70px;
 }
 
-p > img {
+p>img {
     max-width: 100%;
     height: auto;
 }
@@ -51,25 +51,27 @@ div.source-links {
 .bs-sidenav {
     margin-top: 30px;
     margin-bottom: 30px;
-    padding-top:    10px;
+    padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 5px;
 }
 
 /* All levels of nav */
-.bs-sidebar .nav > li > a {
+.bs-sidebar .nav>li>a {
     display: block;
     padding: 5px 20px;
     z-index: 1;
 }
-.bs-sidebar .nav > li > a:hover,
-.bs-sidebar .nav > li > a:focus {
+
+.bs-sidebar .nav>li>a:hover,
+.bs-sidebar .nav>li>a:focus {
     text-decoration: none;
     border-right: 1px solid;
 }
-.bs-sidebar .nav > .active > a,
-.bs-sidebar .nav > .active:hover > a,
-.bs-sidebar .nav > .active:focus > a {
+
+.bs-sidebar .nav>.active>a,
+.bs-sidebar .nav>.active:hover>a,
+.bs-sidebar .nav>.active:focus>a {
     font-weight: bold;
     background-color: transparent;
     border-right: 1px solid;
@@ -77,11 +79,13 @@ div.source-links {
 
 /* Nav: second level (shown on .active) */
 .bs-sidebar .nav .nav {
-    display: none; /* Hide by default, but at >768px, show it */
+    display: none;
+    /* Hide by default, but at >768px, show it */
     margin-bottom: 8px;
 }
-.bs-sidebar .nav .nav > li > a {
-    padding-top:    3px;
+
+.bs-sidebar .nav .nav>li>a {
+    padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 30px;
     font-size: 90%;
@@ -89,30 +93,38 @@ div.source-links {
 
 /* Show and affix the side nav when space allows it */
 @media (min-width: 992px) {
-    .bs-sidebar .nav > .active > ul {
+    .bs-sidebar .nav>.active>ul {
         display: block;
     }
+
     /* Widen the fixed sidebar */
     .bs-sidebar.affix,
     .bs-sidebar.affix-bottom {
         width: 213px;
     }
+
     .bs-sidebar.affix {
-        position: fixed; /* Undo the static from mobile first approach */
+        position: fixed;
+        /* Undo the static from mobile first approach */
         top: 80px;
         max-height: calc(100% - 180px);
         overflow-y: auto;
     }
+
     .bs-sidebar.affix-bottom {
-        position: absolute; /* Undo the static from mobile first approach */
+        position: absolute;
+        /* Undo the static from mobile first approach */
     }
+
     .bs-sidebar.affix-bottom .bs-sidenav,
     .bs-sidebar.affix .bs-sidenav {
         margin-top: 0;
         margin-bottom: 0;
     }
 }
+
 @media (min-width: 1200px) {
+
     /* Widen the fixed sidebar again */
     .bs-sidebar.affix-bottom,
     .bs-sidebar.affix {
@@ -164,6 +176,7 @@ div.source-links {
     left: -100%;
     margin-left: 00px;
 }
+
 /* Start Bootstrap Callouts CSS Source by Chris Pratt (https://codepen.io/chrisdpratt/pen/IAymB) MIT License*/
 .bs-callout {
     padding: 20px;
@@ -173,57 +186,76 @@ div.source-links {
     border-radius: 3px;
     background-color: #FCFDFF;
 }
+
 .bs-callout h4 {
     font-style: normal;
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 5px;
 }
+
 .bs-callout p:last-child {
     margin-bottom: 0;
 }
+
 .bs-callout code {
     border-radius: 3px;
 }
+
 .bs-callout+.bs-callout {
     margin-top: -5px;
 }
+
 .bs-callout-default {
-    border-left-color: #FA023C; /*modified from upstream default by Christopher Simpkins*/
+    border-left-color: #FA023C;
+    /*modified from upstream default by Christopher Simpkins*/
 }
+
 .bs-callout-default h4 {
-    color: #FA023C; /*modified from upstream default by Christopher Simpkins*/
+    color: #FA023C;
+    /*modified from upstream default by Christopher Simpkins*/
 }
+
 .bs-callout-primary {
     border-left-color: #428bca;
 }
+
 .bs-callout-primary h4 {
     color: #428bca;
 }
+
 .bs-callout-success {
     border-left-color: #5cb85c;
 }
+
 .bs-callout-success h4 {
     color: #5cb85c;
 }
+
 .bs-callout-danger {
     border-left-color: #d9534f;
 }
+
 .bs-callout-danger h4 {
     color: #d9534f;
 }
+
 .bs-callout-warning {
     border-left-color: #f0ad4e;
 }
+
 .bs-callout-warning h4 {
     color: #f0ad4e;
 }
+
 .bs-callout-info {
     border-left-color: #5bc0de;
 }
+
 .bs-callout-info h4 {
     color: #5bc0de;
 }
+
 /* End Bootstrap Callouts CSS Source by Chris Pratt */
 
 /* Headerlinks */
@@ -232,7 +264,12 @@ div.source-links {
     padding-left: .5em;
 }
 
-h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink {
+h1:hover .headerlink,
+h2:hover .headerlink,
+h3:hover .headerlink,
+h4:hover .headerlink,
+h5:hover .headerlink,
+h6:hover .headerlink {
     display: inline-block;
 }
 
@@ -249,22 +286,27 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 .admonition p:last-child {
     margin-bottom: 0;
 }
+
 .admonition code {
     border-radius: 3px;
 }
+
 .admonition+.admonition {
     margin-top: -5px;
 }
 
-.admonition.note { /* csslint allow: adjoining-classes */
+.admonition.note {
+    /* csslint allow: adjoining-classes */
     border-left-color: #428bca;
 }
 
-.admonition.warning { /* csslint allow: adjoining-classes */
+.admonition.warning {
+    /* csslint allow: adjoining-classes */
     border-left-color: #f0ad4e;
 }
 
-.admonition.danger { /* csslint allow: adjoining-classes */
+.admonition.danger {
+    /* csslint allow: adjoining-classes */
     border-left-color: #d9534f;
 }
 
@@ -276,14 +318,14 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
     margin-bottom: 5px;
 }
 
-.admonition.note > .admonition-title {
+.admonition.note>.admonition-title {
     color: #428bca;
 }
 
-.admonition.warning > .admonition-title {
+.admonition.warning>.admonition-title {
     color: #f0ad4e;
 }
 
-.admonition.danger > .admonition-title {
+.admonition.danger>.admonition-title {
     color: #d9534f;
 }

@@ -2,6 +2,10 @@ site_name: NAIS
 repo_url: https://github.com/nais/oslomet-nais-docs
 site_url: https://nais.io/oslomet-nais-docs
 edit_uri: edit/main/docs/
+
+# moro som fjernes etterhvert 
+copyright: Experimental version of Cinder x WCAG 👌
+
 theme:
   name: null
   custom_dir: 'cinder'

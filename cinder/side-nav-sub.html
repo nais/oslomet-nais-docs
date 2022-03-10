@@ -1,3 +1,5 @@
+<!-- this will create sub menus recruisvely -->
+
 {% if nav_item.children %}
 
     <li>
@@ -7,27 +9,15 @@
             {% for nav_item in nav_item.children %}
             
                 {% include "side-nav-sub.html" %}
-     
-            
+                 
             {% endfor %}
         </ul>
     </li>
-
-
-        
-
-
-    
-
-    
 
 {% else %}
 
     <li> 
         <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
     </li>
-        
-
-    
-
+            
 {% endif %}

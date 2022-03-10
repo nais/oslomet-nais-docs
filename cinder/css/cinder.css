@@ -134,6 +134,8 @@ footer>hr {
     width: 35%;
 }
 
+/* this is for side meny for now */
 ul {
+    padding-left: 1em;
     list-style-type: none;
 }

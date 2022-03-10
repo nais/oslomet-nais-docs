@@ -1,0 +1,33 @@
+{% if nav_item.children %}
+
+    <li>
+        <span>{{ nav_item.title }}</span>
+
+        <ul>
+            {% for nav_item in nav_item.children %}
+            
+                {% include "side-nav-sub.html" %}
+     
+            
+            {% endfor %}
+        </ul>
+    </li>
+
+
+        
+
+
+    
+
+    
+
+{% else %}
+
+    <li> 
+        <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+    </li>
+        
+
+    
+
+{% endif %}

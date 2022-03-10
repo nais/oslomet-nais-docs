@@ -133,3 +133,7 @@ pre {
 footer>hr {
     width: 35%;
 }
+
+ul {
+    list-style-type: none;
+}

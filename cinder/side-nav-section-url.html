@@ -1,0 +1,26 @@
+{#
+    DO NOT PUT ANY HTML ELEMENTS HERE
+    this is suposed to return an url, that html tag is using.
+    Putting anything here will result in broken url as it will be printed
+
+    this returns url til first page in nested sections
+    this allows sections to be clickable as their url is set to their first page
+    sections itself does not contain url 
+
+    for now this only works if the last element in nested sections is a page
+    however it may also be a link
+#}    
+    
+
+
+{% if not nav_item.children[0].is_page %}
+
+    {% set nav_item = nav_item.children[0] %}
+
+    {% include "side-nav-section-url.html" %}
+
+{% else %}
+
+    {{ nav_item.children[0].url|url }}
+
+{% endif %}

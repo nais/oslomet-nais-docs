@@ -135,7 +135,7 @@ footer>hr {
 }
 
 /* this is for side meny for now */
-ul {
+nav ul {
     padding-left: 1em;
     list-style-type: none;
 }

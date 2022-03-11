@@ -2,22 +2,44 @@
 
 {% if nav_item.children %}
 
+    <!-- if nav item is a section that contains more nav items -->
+
     <li>
-        <span>{{ nav_item.title }}</span>
+
+        {% if nav_item.active %}
+
+            <!-- only print nested items for active nav item -->
+
+            <a href='{% include "side-nav-section-url.html" %}'><strong>{{ nav_item.title }}</strong></a>
 
         <ul>
+            
             {% for nav_item in nav_item.children %}
             
                 {% include "side-nav-sub.html" %}
                  
             {% endfor %}
+
         </ul>
+
+        {% else %}
+
+            <!-- print only link to section if it is not active -->
+
+            <a href='{% include "side-nav-section-url.html" %}'>{{ nav_item.title }}</a>
+
+        {% endif %}
+        
     </li>
 
 {% else %}
 
-    <li> 
+    <!-- if nav item is last node -->
+
+    <li>
+
         <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+
     </li>
             
 {% endif %}

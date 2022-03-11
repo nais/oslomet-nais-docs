@@ -1,21 +1,15 @@
 <!-- create side meny -->
 
 <nav class="bs-sidebar affix well" role="navigation">
-    {% for nav_item in nav %}
+    
+    <ul>        
+        {% for nav_item in nav %}
 
-        {% if nav_item.children %}
-          
-            <ul>
-                {% include "side-nav-sub.html" %}
-            </ul>
-        
-        {% else %}
+            {% include "side-nav-sub.html" %}
 
-            <span>{{ nav_item.title }}</span>
-
-        {% endif %}
-
-    {% endfor %}
+        {% endfor %}
+    </ul>
+    
 </nav>
 
 

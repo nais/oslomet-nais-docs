@@ -9,7 +9,7 @@ copyright: Experimental version of Cinder x WCAG 👌
 theme:
   name: null
   custom_dir: 'cinder'
-  language: 'en'
+  locale: 'en'
   logo: assets/logo.png
   favicon: assets/logo.png
 plugins:

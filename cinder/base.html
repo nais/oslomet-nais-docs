@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-{% if config.theme.language %}
-<html lang="{{ config.theme.language|url }}">
-{% else %}
-<html lang="en">
+{% if config.theme.locale %}
+<html lang="{{ config.theme.locale }}" >
 {% endif %}
 
 <head>

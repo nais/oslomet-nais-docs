@@ -1,32 +1,26 @@
-<!-- this will create sub menus recruisvely -->
-
 {% if nav_item.children %}
 
-    <!-- if nav item is a section that contains more nav items -->
+    {# handle nav items that are sections (only sections can have children) #}
 
     <li>
 
         {% if nav_item.active %}
 
-            <!-- only print nested items for active nav item -->
+            <a href='{% include "side-nav-section-url.html" %}'>▼ {{ nav_item.title }}</a>
 
-            <a href='{% include "side-nav-section-url.html" %}'><strong>{{ nav_item.title }}</strong></a>
+            <ul>
 
-        <ul>
+                {% for nav_item in nav_item.children %}
             
-            {% for nav_item in nav_item.children %}
-            
-                {% include "side-nav-sub.html" %}
+                    {% include "side-nav-sub.html" %}
                  
-            {% endfor %}
+                {% endfor %}
 
-        </ul>
+            </ul>
 
         {% else %}
 
-            <!-- print only link to section if it is not active -->
-
-            <a href='{% include "side-nav-section-url.html" %}'>{{ nav_item.title }}</a>
+            <a href='{% include "side-nav-section-url.html" %}'>▶ {{ nav_item.title }}</a>
 
         {% endif %}
         
@@ -34,11 +28,19 @@
 
 {% else %}
 
-    <!-- if nav item is last node -->
+    {# handle nav items that are either page or link #}
 
     <li>
 
-        <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+        {% if nav_item.active %}
+
+            <a href="{{ nav_item.url|url }}"><strong>{{ nav_item.title }}</strong></a>
+
+        {% else %}
+
+            <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+
+        {% endif %}
 
     </li>
             

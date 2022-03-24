@@ -4,7 +4,7 @@
 
 body {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.7;
     background-color: #FFF;
     color: #343838;
@@ -134,8 +134,10 @@ footer>hr {
     width: 35%;
 }
 
-/* this is for side meny for now */
+/* this is for side meny for now 
 nav ul {
     padding-left: 1em;
     list-style-type: none;
 }
+
+*/

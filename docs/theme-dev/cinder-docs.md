@@ -13,13 +13,28 @@ theme:
 ```
 If no favicon is specified in config file, default icon located under `cinder/img/favicon.ico` will be used instead. It is also possible to substitute this file to achieve the same goal. 
 
-## Logo
+## Nav title section
+Nav title section is the section that shows logo and title of the page on header. There are few customization options regarding this seciton we have implemented.
+
+### Logo
 In order to use custom logo on navigation bar use following mkdocs config file entry:
+
 ```
 theme: 
-    logo: path/to/logo
+logo: path/to/logo
 ```
-If no logo is specified in config file, name of the website (specified by the `site_name` attribute) will be shown instead. 
+If no logo is specified in config file, only [site title](#site-title) will be shown.
+
+### Site title
+This is text that will show up next to the logo. It is possible (and advised) to use custom title for this element. This is because this element should be descriptive and tell the user what the pages are about. Therefore it is possible to customize this text by `site_title` attribute in mkdocs config file.
+
+Specifing custom title:
+```
+site_title: Documentation for my precious project.
+```
+
+If no site_title is specified in config file, site_name attribute will be used instead. 
+
 
 ## HTML lang attribute 
 It is possbile to specify the html lang attribute (that defnies the content language) in mkdocs config file. This is done by following entry:
@@ -46,7 +61,7 @@ Products
         Orange
 ```
 
-Implementation of section urls works by finding recursively first nav item that is not a section. This ensures that script does not break if page is contained inside more nested sections. 
+Implementation of section urls works by recursively finding first nav item that is not a section. This ensures that script does not break if a page is contained inside more nested sections. 
  
 
 

@@ -73,23 +73,26 @@
     {% block extrahead %} {% endblock %}
 </head>
 
-<body{% if page and page.is_homepage %} {% endif %}>
+<body {% if page and page.is_homepage %} {% endif %}>
 
     {% include "nav.html" %}
 
     <div class="container-fluid">
         <div class="row">
             {% block content %}
-                {% if page.meta.disable_toc %}
-                    <div class="col-md-3" role="navigation">{% include "side-nav.html" %}</div>
-                    <div class="col-md-9" role="main">{% include "content.html" %}</div>
-                {% else %}
-                    <div class="col-md-3" role="navigation">{% include "side-nav.html" %}</div>
-                    <div class="col-md-6" role="main">{% include "content.html" %}</div>
-                    <div class="col-md-3" >{% include "toc.html" %}</div>
-                {% endif %}
+            {% if page.meta.disable_toc %}
+                <aside class="col-md-3" role="navigation">{% include "side-nav.html" %}</aside>
+                <main class="col-md-9" role="main">{% include "content.html" %}</main>
+            {% else %}
+                <aside class="col-md-3" role="navigation">{% include "side-nav.html" %}</aside>
+                <main class="col-md-6" role="main">{% include "content.html" %}</main>
+                <div class="col-md-3" >{% include "toc.html" %}</div>
+            {% endif %}
             {% endblock %}
+
         </div>
+        
+
     </div>
 
     {% if not config.theme.disable_footer %}

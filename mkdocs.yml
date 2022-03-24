@@ -1,10 +1,11 @@
 site_name: NAIS
+site_title: NAIS platform documentation
 repo_url: https://github.com/nais/oslomet-nais-docs
 site_url: https://nais.io/oslomet-nais-docs
 edit_uri: edit/main/docs/
 
 # moro som fjernes etterhvert 
-copyright: Experimental version of Cinder x WCAG 👌
+copyright: Experimental version of Cinder x WCAG. Work in progress 👷‍♀️👷‍♂️🚧
 
 theme:
   name: null

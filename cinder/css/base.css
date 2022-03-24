@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    /*padding-top: 70px;*/
+    padding-top: 90px; /* this is handicap for fixed top bar*/
 }
 
 p>img {

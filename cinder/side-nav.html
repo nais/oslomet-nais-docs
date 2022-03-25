@@ -1,9 +1,11 @@
 {# this script creates the side menu #}
 
 {% block site_nav %}
-<nav class="bs-sidebar affix well" role="navigation">
+<nav class="flex-shrink-0" role="navigation">
+
+    <span class="fs-4">Navigation</span>
     
-    <ul>        
+    <ul class="list-unstyled mt-3">        
         {% for nav_item in nav %}
 
             {% include "side-nav-sub.html" %}

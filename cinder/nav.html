@@ -1,20 +1,7 @@
 <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
     <nav class="container-fluid">
-        <!-- Collapsed navigation -->
-
-        {%- if nav|length>1 or (page and (page.next_page or page.previous_page)) or config.repo_url %}
-        
-        <!-- Expander button -->
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-        {% endif %}
 
         <!-- Main title & logo -->
-
         {% if not config.theme.disable_nav_site_name %}
 
             {% if config.theme.logo %}
@@ -30,6 +17,15 @@
 
         {% endif %}
 
+        <!-- Expander button -->
+        {%- if nav|length>1 or (page and (page.next_page or page.previous_page)) or config.repo_url %}
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        {% endif %}
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse" id="navbarSupportedContent">

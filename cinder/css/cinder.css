@@ -130,14 +130,8 @@ pre {
     height: 45px;
 }
 
-footer>hr {
-    width: 35%;
+/* focus styling for now */
+a:focus {
+    border: solid 2px #80475E;
 }
 
-/* this is for side meny for now 
-nav ul {
-    padding-left: 1em;
-    list-style-type: none;
-}
-
-*/

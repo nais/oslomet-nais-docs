@@ -2,13 +2,13 @@
 
     {# handle nav items that are sections (only sections can have children) #}
 
-    <li>
+    <li class="mt-1">
 
         {% if nav_item.active %}
 
-            <a href='{% include "side-nav-section-url.html" %}'>▼ {{ nav_item.title }}</a>
+            <span class="fas fa-chevron-down"></span><span class=""> {{ nav_item.title }}</span>
 
-            <ul>
+            <ul class="list-unstyled ps-3">
 
                 {% for nav_item in nav_item.children %}
             
@@ -20,7 +20,7 @@
 
         {% else %}
 
-            <a href='{% include "side-nav-section-url.html" %}'>▶ {{ nav_item.title }}</a>
+            <a class="link-dark" style="text-decoration: none;" href='{% include "side-nav-section-url.html" %}'><span class="fas fa-chevron-right"></span> {{ nav_item.title }}</a>
 
         {% endif %}
         
@@ -30,15 +30,15 @@
 
     {# handle nav items that are either page or link #}
 
-    <li>
+    <li class="mt-1">
 
         {% if nav_item.active %}
 
-            <a href="{{ nav_item.url|url }}"><strong>{{ nav_item.title }}</strong></a>
+            <span><strong>{{ nav_item.title }}</strong></span>
 
         {% else %}
 
-            <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            <a class="link-dark" style="text-decoration: none;" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
 
         {% endif %}
 

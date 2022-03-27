@@ -1,13 +1,32 @@
-<div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ol class="nav bs-sidenav">
+<nav class="" role="complementary">
+    <span class="fs-4">On this page:</span>
+    <ol class="">
         {%- for toc_item in page.toc %}
-        <li class="first-level {% if toc_item.active %}active{% endif %}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+        <li class=""><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
             {%- for toc_item in toc_item.children %}
-            <li class="second-level"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+            <li class=""><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
                 {% for toc_item in toc_item.children %}
-                <li class="third-level"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+                <li class=""><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
                 {%- endfor %}
             {%- endfor %}
         {%- endfor %}
     </ol>
-</div>
+
+    {# next and previous page buttons #}
+    {%- block next_prev %}
+        {%- if page and (page.next_page or page.previous_page) and not config.theme.disable_nav_previous_next %}
+
+        {# previous page link/button #}
+        <a rel="prev" class="{% if not page.previous_page %} disabled {% endif %}" {% if page.previous_page %} href="{{ page.previous_page.url|url }}" {% endif %}>
+            <span class="fas fa-arrow-left"></span> Previous page
+        </a>
+
+        {# next page link/button #}
+        <a rel="next" class="{% if not page.next_page %} disabled {% endif %}" {% if page.next_page %} href="{{ page.next_page.url|url }}" {% endif %}>
+            Next page <span class="fas fa-arrow-right"></span>
+        </a>
+
+        {%- endif %}
+    {%- endblock %}
+
+</nav>

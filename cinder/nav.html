@@ -50,7 +50,7 @@
                 {%- endblock %}
 
                 <!--
-                Code for previous, next page buttons.
+                Code for previous, next page buttons. This is "legacy for now if we decide to go for next and previous buttons on navbar"
                 {%- block next_prev %}
                     {%- if page and (page.next_page or page.previous_page) and not config.theme.disable_nav_previous_next %}
                         <li {% if not page.previous_page %}class="nav-item disabled" {% endif %}>

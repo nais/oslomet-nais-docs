@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-{% if config.theme.locale %}
-<html lang="{{ config.theme.locale }}" >
-{% endif %}
+{% if config.theme.locale %} <html lang="{{ config.theme.locale }}"> {% endif %}
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if config.site_description %}<meta name="description" content="{{ config.site_description }}">{% endif %}
-    {% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
-    {% if page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+    {% if config.site_description %} <meta name="description" content="{{ config.site_description }}"> {% endif %}
+    {% if config.site_author %} <meta name="author" content="{{ config.site_author }}"> {% endif %}
+    {% if page.canonical_url %} <link rel="canonical" href="{{ page.canonical_url }}"> {% endif %}
     
     {% if config.theme.favicon %}
         <link rel="icon" type="image/x-icon" href="{{ config.theme.favicon|url }}">
@@ -84,35 +82,33 @@
                 <aside class="col-md-3" role="navigation">{% include "side-nav.html" %}</aside>
                 <main class="col-md-9" role="main">{% include "content.html" %}</main>
             {% else %}
-                <aside class="col-md-3" role="navigation">{% include "side-nav.html" %}</aside>
-                <main class="col-md-9" role="main">{% include "content.html" %}</main>
-                <!-- <div class="col-md-3" >{% include "toc.html" %}</div> -->
+                <aside class="col-md-3 col-lg-2 order-md-1" role="navigation">{% include "side-nav.html" %}</aside>
+                <aside class="col-md-2 col-lg-2 order-md-3">{% include "toc.html" %}</aside>
+                <main class="col-md-7 col-lg-8 order-md-2" role="main">{% include "content.html" %}</main>
             {% endif %}
             {% endblock %}
-
         </div>
-        
-
     </div>
 
     {% if not config.theme.disable_footer %}
-      <footer class="col-md-12 text-center">
-          {% block footer %}
-          {% if not config.theme.disable_footer_except_revision %}
-            <hr>
-            <p>{% if config.copyright %}
+    <footer class="col-md-12 text-center">
+        {% block footer %}
+        {% if not config.theme.disable_footer_except_revision %}
+        <hr>
+        <p>
+            {% if config.copyright %}
             <small>{{ config.copyright }}</small><br>
             {% endif %}
             <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
-            </p>
-          {% endif %}
+        </p>
+        {% endif %}
 
-          {% if page and page.meta.revision_date %}
-          {% if config.theme.disable_footer_except_revision %}<hr>{% else %}<br>{% endif %}
+        {% if page and page.meta.revision_date %}
+            {% if config.theme.disable_footer_except_revision %}<hr>{% else %}<br>{% endif %}
             <small>Revised on: {{ page.meta.revision_date }}</small>
-          {% endif %}
-          {% endblock %}
-      </footer>
+        {% endif %}
+        {% endblock %}
+    </footer>
     {% endif %}
 
     {%- block scripts %}
@@ -139,7 +135,7 @@
     {% endif %}
     <script src="{{ 'js/base.js'|url }}"></script>
     {%- for path in config['extra_javascript'] %}
-    <script src="{{ path|url }}"></script>
+        <script src="{{ path|url }}"></script>
     {%- endfor %}
     {%- endblock %}
 
@@ -148,9 +144,10 @@
     </body>
 
 </html>
+
 {% if page and page.is_homepage %}
-<!--
-MkDocs version : {{ mkdocs_version }}
-Build Date UTC : {{ build_date_utc }}
--->
+    <!--
+    MkDocs version : {{ mkdocs_version }}
+    Build Date UTC : {{ build_date_utc }}
+    -->
 {% endif %}

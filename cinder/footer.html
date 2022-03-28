@@ -1,0 +1,23 @@
+<footer class="py-3 my-4 border-top">
+    {% block footer %}
+
+        {% if not config.theme.disable_footer_except_revision %}
+        <p class="text-center">
+            {% if config.copyright %}
+                <small>{{ config.copyright }}</small>
+            {% endif %}
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and <a href="https://sourcefoundry.org/cinder/">Modified Cinder theme</a></small>
+        </p>
+        {% endif %}
+
+        {% if page and page.meta.revision_date %}
+        <p class="text-center">
+            <small>Revised on: {{ page.meta.revision_date }}</small>
+        </p>
+        {% endif %}
+
+    {% endblock %}
+</footer>
+

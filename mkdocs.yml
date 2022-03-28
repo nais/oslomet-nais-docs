@@ -5,14 +5,14 @@ site_url: https://nais.io/oslomet-nais-docs
 edit_uri: edit/main/docs/
 
 # moro som fjernes etterhvert 
-copyright: Experimental version of Cinder x WCAG. Work in progress 👷‍♀️👷‍♂️🚧
+copyright: Experimental version of "Ember?" 👀. Work in progress 👷‍♀️👷‍♂️🚧
 
 theme:
   name: null
   custom_dir: 'cinder'
   locale: 'en'
-  logo: assets/logo.png
-  favicon: assets/logo.png
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
 plugins:
   - search
 markdown_extensions:

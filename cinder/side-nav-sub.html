@@ -20,7 +20,7 @@
 
         {% else %}
 
-            <a class="link-dark" style="text-decoration: none;" href='{% include "side-nav-section-url.html" %}'><span class="fas fa-chevron-right"></span> {{ nav_item.title }}</a>
+            <a class="link-dark text-decoration-none" href='{% include "side-nav-section-url.html" %}'><span class="fas fa-chevron-right"></span> {{ nav_item.title }}</a>
 
         {% endif %}
         
@@ -38,7 +38,7 @@
 
         {% else %}
 
-            <a class="link-dark" style="text-decoration: none;" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            <a class="link-dark text-decoration-none" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
 
         {% endif %}
 

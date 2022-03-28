@@ -79,12 +79,12 @@
         <div class="row">
             {% block content %}
             {% if page.meta.disable_toc %}
-                <aside class="col-md-3" role="navigation">{% include "side-nav.html" %}</aside>
-                <main class="col-md-9" role="main">{% include "content.html" %}</main>
+                <aside class="col-md-3 col-xl-2">{% include "side-nav.html" %}</aside>
+                <main class="col-md-9 col-xl-7" role="main">{% include "content.html" %}</main>
             {% else %}
-                <aside class="col-md-3 col-lg-2 order-md-1" role="navigation">{% include "side-nav.html" %}</aside>
-                <aside class="col-md-2 col-lg-2 order-md-3">{% include "toc.html" %}</aside>
-                <main class="col-md-7 col-lg-8 order-md-2" role="main">{% include "content.html" %}</main>
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1">{% include "side-nav.html" %}</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3">{% include "toc.html" %}</aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" role="main">{% include "content.html" %}</main>
             {% endif %}
             {% endblock %}
         </div>

@@ -313,3 +313,9 @@ h6:hover .headerlink {
 .admonition.danger>.admonition-title {
     color: #d9534f;
 }
+
+
+/* Styling for search modal */
+
+#mkdocs-search-results article{
+}

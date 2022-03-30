@@ -34,18 +34,7 @@
                 {%- block search_button %}
                     {%- if 'search' in config['plugins'] and not config.theme.disable_nav_search %}
                     
-                    <!--  
-                        En mulighet her er, å ta modal og sette den her.
-                        Problemet er at man må fjerne modal-classene, og re-konstruere. 
-                        På en måte gjøre resultatene som en dropdown
-                     -->
-
-                     <!-- Dette skal brukes dersom eksempelet ⬆️ ikke fungerer
-                        med dette går vi over til å bruke en søkeknapp og deretter hoppe på en modal -->
-
-                    <!-- Dette kan endres til en clickable searchbar, med img, insp må taes fra material -->
                         <li class="nav-item">
-                            <!-- <input class="form-control me-2" placeholder="Search" type="search" aria-label="Search"> -->
                             <a class="btn nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="submit">
                                 <span class="fas fa-search"></span> Search
                             </a>

@@ -1,19 +1,19 @@
-<nav class="mb-4" role="complementary">
+<nav class="mb-5" role="complementary">
     <span class="fs-4">On this page:</span>
     <ul class="list-unstyled mt-3">
         {%- for toc_item in page.toc %}
         <li class="mt-1">
-            <a class="link-dark" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+            <a class="link-dark text-decoration-none" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
             {% if toc_item.children %}
             <ul class="list-unstyled ps-3">
                 {%- for toc_item in toc_item.children %}
                 <li class="mt-1">
-                    <a class="link-dark" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+                    <a class="link-dark text-decoration-none" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
                     {% if toc_item.children %}
                     <ul class="list-unstyled ps-3">
                         {% for toc_item in toc_item.children %}
                         <li class="mt-1">
-                            <a class="link-dark" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+                            <a class="link-dark text-decoration-none" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
                         </li>
                         {%- endfor %}
                     </ul>

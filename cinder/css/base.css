@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    padding-top: 90px; /* this is handicap for fixed top bar*/
+    /* padding-top: 90px; this is handicap for fixed top bar */
 }
 
 p>img {
@@ -14,6 +14,7 @@ p>img {
 div.source-links {
     float: right;
 }
+
 
 /*
  * Side navigation
@@ -312,6 +313,11 @@ h6:hover .headerlink {
 
 .admonition.danger>.admonition-title {
     color: #d9534f;
+}
+
+/* info box styling, used for local version information. This should be deleted in final version */
+.tp-info-box {
+    background-color: #FFED00;
 }
 
 

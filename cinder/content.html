@@ -1,3 +1,12 @@
+{%- if page and page.edit_url %}
+<div class="mb-2">
+    <a href="{{ page.edit_url }}">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+{% endif %}
+
 {% if page.meta.source %}
 <div class="source-links">
     {% for filename in page.meta.source %}

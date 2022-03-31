@@ -1,4 +1,4 @@
-<header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+<header class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
     <nav class="container-fluid">
 
         <!-- Main title & logo -->
@@ -7,11 +7,11 @@
             {% if config.theme.logo %}
                 <a class="navbar-brand" href="{{ nav.homepage.url|url }}">
                     <img alt="logo" height="36" src="{{ config.theme.logo|url }}" class="align-items-center"/>
-                    {% if config.site_title %} {{ config.site_title }} {% else %} {{ config.site_name }} {% endif %}
+                    {% if config.theme.site_title %} {{ config.theme.site_title }} {% else %} {{ config.site_name }} {% endif %}
                 </a>
             {% else %}
                 <a class="navbar-brand" href="{{ nav.homepage.url|url }}">
-                    {% if config.site_title %} {{ config.site_title }} {% else %} {{ config.site_name }} {% endif %}
+                    {% if config.theme.site_title %} {{ config.theme.site_title }} {% else %} {{ config.site_name }} {% endif %}
                 </a>
             {% endif %}
 
@@ -35,60 +35,28 @@
                     {%- if 'search' in config['plugins'] and not config.theme.disable_nav_search %}
                     
                         <li class="nav-item">
-                            <a class="btn nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="submit">
+                            <button class="btn nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
                                 <span class="fas fa-search"></span> Search
-                            </a>
+                            </button>
                         </li>
 
                     {%- endif %}
                 {%- endblock %}
-
-                <!--
-                Code for previous, next page buttons. This is "legacy for now if we decide to go for next and previous buttons on navbar"
-                {%- block next_prev %}
-                    {%- if page and (page.next_page or page.previous_page) and not config.theme.disable_nav_previous_next %}
-                        <li {% if not page.previous_page %}class="nav-item disabled" {% endif %}>
-                            <a rel="prev" class="btn nav-link" {% if page.previous_page %} href="{{ page.previous_page.url|url }}" {% endif %}>
-                                <span class="fas fa-arrow-left"></span> Previous page
-                            </a>
-                        </li>
-                        <li {% if not page.next_page %}class="nav-item disabled" {% endif %}>
-                            <a rel="next" class="btn nav-link" {% if page.next_page %} href="{{ page.next_page.url|url }}" {% endif %}>
-                                Next page <span class="fas fa-arrow-right"></span>
-                            </a>
-                        </li>
-                    {%- endif %}
-                {%- endblock %}
-                -->
 
                 <!-- links to repos -->
                 {%- block repo %}
-                    {%- if page and page.edit_url %}
-                        <li class="nav-item">
-                            <a href="{{ page.edit_url }}" class="btn nav-link">
-                                {%- if config.repo_name == 'GitHub' -%}
-                                    <span class="fab fa-github"></span> Edit this page on {{ config.repo_name }}
-                                {%- elif config.repo_name == 'Bitbucket' -%}
-                                    <span class="fab fa-bitbucket"></span> Edit this page on {{ config.repo_name }}
-                                {%- elif config.repo_name == 'GitLab' -%}
-                                    <span class="fab fa-gitlab"></span> Edit this page on {{ config.repo_name }}
-                                {%- else -%}
-                                    Edit this page on {{ config.repo_name }}
-                                {%- endif -%}
-                            </a>
-                        </li>
-                    {%- elif config.repo_url %}
+                    {%- if config.repo_url %}
                         <li class="nav-item">
                             <a href="{{ config.repo_url }}" class="btn nav-link">
-                                {%- if config.repo_name == 'GitHub' -%}
-                                    <span class="fab fa-github"></span> {{ config.repo_name }}
-                                {%- elif config.repo_name == 'Bitbucket' -%}
+                                {% if 'github' in config.repo_url %}
+                                    <span class="fab fa-github"></span> {{ config.repo_name }}                                    
+                                {% elif 'bitbucket' in config.repo_url %}
                                     <span class="fab fa-bitbucket"></span> {{ config.repo_name }}
-                                {%- elif config.repo_name == 'GitLab' -%}
+                                {% elif 'gitlab' in config.repo_url %}
                                     <span class="fab fa-gitlab"></span> {{ config.repo_name }}
-                                {%- else -%}
+                                {% else %}
                                     {{ config.repo_name }}
-                                {%- endif -%}
+                                {% endif %}
                             </a>
                         </li>
                     {%- endif %}

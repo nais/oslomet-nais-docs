@@ -1,5 +1,5 @@
 site_name: NAIS
-site_title: NAIS platform documentation
+repo_name: NAIS on Github
 repo_url: https://github.com/nais/oslomet-nais-docs
 site_url: https://nais.io/oslomet-nais-docs
 edit_uri: edit/main/docs/
@@ -11,6 +11,7 @@ theme:
   name: null
   custom_dir: 'cinder'
   locale: 'en'
+  site_title: NAIS platform documentation
   logo: assets/logo.svg
   favicon: assets/logo.svg
 plugins:

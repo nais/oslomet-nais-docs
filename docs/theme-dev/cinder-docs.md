@@ -30,10 +30,24 @@ This is text that will show up next to the logo. It is possible (and advised) to
 
 Specifing custom title:
 ```
+theme:
 site_title: Documentation for my precious project.
 ```
 
-If no site_title is specified in config file, site_name attribute will be used instead. 
+If no site_title is specified in config file, site_name attribute will be used instead.
+
+## Repo links 
+Repo links has been changed, now link to repo is separate from edit links. Before, edit links has been overwritten by link to repo if they were specified. Now it is possible to have both, link to repo and edit link
+
+### Repo link
+Links to repo will show up on navigation bar. Appropriate icon is choosen based on keyword in repo url. This means that if `repo_url` in `mkdocs.yml` contains `'github'`, then github icon will be shown beside. Currently only `'github'`, `'bitbucket'` and `'gitlab'` keywords are supported. If `repo_url` does not contain any of these keywords, then no icon will be shown.
+
+Link text is determined by `repo_name` attribute in `mkdocs.yml`. If this attribute is not specified, then default keyword will be shown i.e 'GitHub'.
+
+### Edit link
+Edit link will be shown on top of content and it is controlled by `edit_uri` in `mkdocs.yml` (More about how it works, refer to mkDocs documentation). This link text is agnostic to repo provider, which means that it will stay the same regardles if edit link is refering to Github, Gitlab etc.  
+
+
 
 
 ## HTML lang attribute 
@@ -44,24 +58,6 @@ theme:
 ```
 !!! note
     This functionality is implemented according to mkdocs guide. More info about mkdocs locales refer to its [documentation](https://www.mkdocs.org/dev-guide/themes/#supporting-theme-localizationtranslation)
-
-## Navigation
-New type of navigation has been implemented for this theme/this documentation. I like to call it "partial menu" however i do not know the correct term for this kind of navigation. The way it works is simply by just rendering content of currently active sections. That way other sections that are not relevant are not expanded by default. This creates tradeof between compactness and openness as amount of entries are limited. This somewhat simulates the expand/hide sections functionality, but without css and js. 
-
-### Section urls:
-Navigation items such as sections now lead to their first child. By default sections does not have any url assiosiated with them as they simply are not an "endpoint". At the same time in order to be able to choose given section (so they become active), they have to lead somewhere. Therefore they now contain an link that leads to their first nav item that can be displayed.
-
-example:
-```
-//Here "Products" item will lead to "Apple" item
-Products
-    Fruits
-        Apple
-        Banana
-        Orange
-```
-
-Implementation of section urls works by recursively finding first nav item that is not a section. This ensures that script does not break if a page is contained inside more nested sections. 
  
 
 

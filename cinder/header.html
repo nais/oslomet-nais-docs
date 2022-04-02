@@ -5,26 +5,24 @@
         {% if not config.theme.disable_nav_site_name %}
 
             {% if config.theme.logo %}
-                <a class="navbar-brand" href="{{ nav.homepage.url|url }}">
-                    <img alt="logo" height="36" src="{{ config.theme.logo|url }}" class="align-items-center"/>
-                    {% if config.theme.site_title %} {{ config.theme.site_title }} {% else %} {{ config.site_name }} {% endif %}
-                </a>
+            <a class="navbar-brand" href="{{ nav.homepage.url|url }}">
+                <img alt="logo" height="36" src="{{ config.theme.logo|url }}" class="align-items-center"/>
+                {% if config.theme.site_title %} {{ config.theme.site_title }} {% else %} {{ config.site_name }} {% endif %}
+            </a>
             {% else %}
-                <a class="navbar-brand" href="{{ nav.homepage.url|url }}">
-                    {% if config.theme.site_title %} {{ config.theme.site_title }} {% else %} {{ config.site_name }} {% endif %}
-                </a>
+            <a class="navbar-brand" href="{{ nav.homepage.url|url }}">
+                {% if config.theme.site_title %} {{ config.theme.site_title }} {% else %} {{ config.site_name }} {% endif %}
+            </a>
             {% endif %}
 
         {% endif %}
 
         <!-- Expander button -->
-        {%- if nav|length>1 or (page and (page.next_page or page.previous_page)) or config.repo_url %}
-        
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
+        {% if nav|length>1 or (page and (page.next_page or page.previous_page)) or config.repo_url %}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         {% endif %}
 
         <!-- Expanded navigation -->
@@ -33,18 +31,16 @@
             <ul class="navbar-nav flex-grow-1 justify-content-end">
                 {%- block search_button %}
                     {%- if 'search' in config['plugins'] and not config.theme.disable_nav_search %}
-                    
-                        <li class="nav-item">
-                            <button class="btn nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
-                                <span class="fas fa-search"></span> Search
-                            </button>
-                        </li>
+                    <li class="nav-item">
+                        <button class="btn nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li>
+                    {% endif %}
+                {% endblock %}
 
-                    {%- endif %}
-                {%- endblock %}
-
-                <!-- links to repos -->
-                {%- block repo %}
+                <!-- Repo link -->
+                {% block repo %}
                     {%- if config.repo_url %}
                         <li class="nav-item">
                             <a href="{{ config.repo_url }}" class="btn nav-link">
@@ -59,8 +55,8 @@
                                 {% endif %}
                             </a>
                         </li>
-                    {%- endif %}
-                {%- endblock %}
+                    {% endif %}
+                {% endblock %}
             </ul>
         </div>
     </nav>

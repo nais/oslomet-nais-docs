@@ -63,11 +63,14 @@ h4 {
     font-style: italic;
 }
 
+/*
+this is style for h5 that makes it "special" i think is better without this styling 
 h5 {
     font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-variant: small-caps;
-}
+} 
+*/
 
 pre,
 code {
@@ -91,26 +94,6 @@ pre {
     color: #B1B7B9;
 }
 
-.navbar-default {
-    background-color: #343838;
-    border-bottom: 8px #EBF2F2 solid;
-}
-
-.bs-sidenav {
-    background-image: url("../img/grid11.png");
-    background-repeat: repeat;
-    font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-}
-
-.well {
-    background-color: #FCFDFF;
-}
-
-.btn-default {
-    background-color: #FCFDFF;
-}
-
 .table-striped>tbody>tr:nth-child(2n+1)>td,
 .table-striped>tbody>tr:nth-child(2n+1)>th {
     background-color: #FCFDFF;
@@ -130,8 +113,8 @@ pre {
     height: 45px;
 }
 
-/* focus styling for now */
-a:focus {
-    border: solid 2px #80475E;
+#mkdocs-search-results article{
+    /* styling for search results */
 }
+
 

@@ -32,10 +32,10 @@
                 {%- block search_button %}
                     {%- if 'search' in config['plugins'] and not config.theme.disable_nav_search %}
                     <li class="nav-item">
-                        <button class="btn nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                        <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
                             <span class="fas fa-search"></span> Search
                         </button>
-                    </li>
+                    </li> 
                     {% endif %}
                 {% endblock %}
 

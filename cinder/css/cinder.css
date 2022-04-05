@@ -107,14 +107,18 @@ pre {
 
 #mkdocs-search-query {
     font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
     color: #343838;
     height: 45px;
 }
 
 #mkdocs-search-results article{
-    /* styling for search results */
-}
 
+    border-bottom: 1px solid #dee2e6 !important;
+    position: relative;
+    padding: 0.5rem;
+    overflow: hidden;
+    
+}
 

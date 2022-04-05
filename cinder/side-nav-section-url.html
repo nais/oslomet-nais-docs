@@ -1,7 +1,5 @@
 {#
-    this script finds and returns url of the first page or link in given section.
-    Note that it is not know in how many nested sections first page or link lays.
-    Therefore this script does recursively look for page or link
+    This script prints url of the first page or link in given section/sections.
 #}    
 
 {% if nav_item.children[0].is_section %}
@@ -18,7 +16,7 @@
 {% else %}
 
     {# 
-        here url is returned, 
+        here url is printed, 
         NOTE: other elements put in this file will corrupt the url, 
         as they will be printed as part of the url. 
     #}

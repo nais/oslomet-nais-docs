@@ -1,9 +1,9 @@
 {# this script creates the side menu #}
 
 {% block site_nav %}
-<nav class="mb-5 sticky-top sidebar-sticky" role="navigation">
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
 
-    <span class="fs-4">Navigation:</span>
+    <span id="nav-label" class="fs-4">Navigation:</span>
     
     <ul class="list-unstyled mt-3 border-end">
         {% for nav_item in nav %}

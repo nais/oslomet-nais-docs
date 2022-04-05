@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% if config.theme.locale %} <html lang="{{ config.theme.locale }}"> {% endif %}
+<html lang="{{ config.theme.locale }}">
 
 <head>
     <meta charset="utf-8">
@@ -10,9 +10,9 @@
     {% if page.canonical_url %} <link rel="canonical" href="{{ page.canonical_url }}"> {% endif %}
     
     {% if config.theme.favicon %}
-        <link rel="icon" type="image/x-icon" href="{{ config.theme.favicon|url }}">
+    <link rel="icon" type="image/x-icon" href="{{ config.theme.favicon|url }}">
     {% else %}
-        <link rel="icon" type="image/x-icon" href="{{ 'img/favicon.ico'|url }}">
+    <link rel="icon" type="image/x-icon" href="{{ 'img/favicon.ico'|url }}">
     {% endif %}
 
     {% block htmltitle %}
@@ -70,16 +70,15 @@
     {% block extrahead %} {% endblock %}
 </head>
 
-<body {% if page and page.is_homepage %} {% endif %}>
-
+<body>
+ 
+    {% if '127.0.0.1' in page.canonical_url %}
     <!--
         NOTE: this is a helper that will create info only when page is hosted locally. 
         This should help to distinguish remote and local version 
     -->
-    {% if '127.0.0.1' in page.canonical_url %}
     <div class="text-center tp-info-box"> This is local version of the page. ✋ </div>
     {% endif %}
-
 
     {% include "header.html" %}
 
@@ -110,7 +109,7 @@
 
     {% if config.theme.highlightjs is defined and config.theme.highlightjs is sameas false %}  
     
-        <!-- default is to include highlightjs -->
+        {# default is to include highlightjs #}
     
     {% else %}
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
@@ -119,16 +118,20 @@
                 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/{{lang}}.min.js"></script>
             {%- endfor %}
         {% endif %}
+
     <script>hljs.initHighlightingOnLoad();</script>
     {% endif %}
 
     <script>var base_url = {{ base_url | tojson }}</script>
+
     {% if config.shortcuts %}
-        <script>var shortcuts = {{ config.shortcuts | tojson }}</script>
+    <script>var shortcuts = {{ config.shortcuts | tojson }}</script>
     {% endif %}
+
     <script src="{{ 'js/base.js'|url }}"></script>
+
     {%- for path in config['extra_javascript'] %}
-        <script src="{{ path|url }}"></script>
+    <script src="{{ path|url }}"></script>
     {%- endfor %}
     {%- endblock %}
 

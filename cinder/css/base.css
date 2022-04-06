@@ -12,6 +12,7 @@ div.source-links {
     float: right;
 }
 
+
 /* Start Bootstrap Add-ons (extra style rules) */
 
 /* This class is extension for sticky top sidebars */
@@ -24,8 +25,18 @@ div.source-links {
 
 /* info box styling, used for local version information. This should be deleted in final version */
 .tp-info-box {
-    background-color: #FFED00;
+    color: white;
+    background-color: #FF8C00;
 }
+
+.link-hover-underline {
+    text-decoration: none;
+}
+
+.link-hover-underline:hover {
+    text-decoration: underline;
+}
+
 
 /* End Bootstrap Add-ons  */
 

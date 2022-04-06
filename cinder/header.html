@@ -29,8 +29,32 @@
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
             
             <ul class="navbar-nav flex-grow-1 justify-content-end">
-                {%- block search_button %}
-                    {%- if 'search' in config['plugins'] and not config.theme.disable_nav_search %}
+                {% block next_prev %}
+                {% if page and not config.theme.disable_nav_previous_next %}
+
+                {# previous page link/button #}
+                {% if page.previous_page %}
+                <li class="nav-item">
+                    <a href="{{ page.previous_page.url|url }}" rel="prev" role="button" class="btn btn-primary me-1">
+                        <span class="fas fa-arrow-left"></span> Previous page
+                    </a>
+                </li>
+                {% endif %}
+
+                {# next page link/button #}
+                {% if page.next_page %}
+                <li class="nav-item">
+                    <a href="{{ page.next_page.url|url }}" rel="next" role="button" class="btn btn-primary me-1">
+                        Next page <span class="fas fa-arrow-right"></span>
+                    </a>
+                </li>
+                {% endif %}
+
+                {% endif %}
+                {% endblock %}
+
+                {% block search_button %}
+                    {% if 'search' in config['plugins'] and not config.theme.disable_nav_search %}
                     <li class="nav-item">
                         <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
                             <span class="fas fa-search"></span> Search
@@ -41,7 +65,7 @@
 
                 {# Repo link #}
                 {% block repo %}
-                    {%- if config.repo_url %}
+                    {% if config.repo_url %}
                         <li class="nav-item">
                             <a href="{{ config.repo_url }}" class="btn nav-link">
                                 {% if 'github' in config.repo_url %}

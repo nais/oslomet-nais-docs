@@ -6,7 +6,7 @@
 
         {% if nav_item.active %}
 
-            <span><span class="fas fa-chevron-down"></span> {{ nav_item.title }}</span>
+            <a class="link-dark link-hover-underline" href='{% include "side-nav-section-url.html" %}' aria-current="location"><span class="fas fa-chevron-down"></span> {{ nav_item.title }}</a>
 
             <ul class="list-unstyled ps-3">
 
@@ -20,7 +20,7 @@
 
         {% else %}
 
-            <a class="link-dark text-decoration-none" href='{% include "side-nav-section-url.html" %}'><span class="fas fa-chevron-right"></span> {{ nav_item.title }}</a>
+            <a class="link-dark link-hover-underline" href='{% include "side-nav-section-url.html" %}'><span class="fas fa-chevron-right"></span> {{ nav_item.title }}</a>
 
         {% endif %}
         
@@ -34,11 +34,11 @@
 
         {% if nav_item.active %}
 
-            <span><strong>{{ nav_item.title }}</strong></span>
+            <a class="link-dark link-hover-underline" href="{{ nav_item.url|url }}" aria-current="page"><strong>{{ nav_item.title }}</strong></a>
 
         {% else %}
 
-            <a class="link-dark text-decoration-none" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+            <a class="link-dark link-hover-underline" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
 
         {% endif %}
 

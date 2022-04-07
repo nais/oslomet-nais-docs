@@ -16,3 +16,13 @@ This is where we intend to test features that are not used by the orginal docs.
 | Potatoes     | 1.89      | 4334       |
 | Peach        | 4.99      | *1*        |
 | Strawberries | **1.89**  | 32345      |
+
+
+use of `required` attribute in this case is invalid:
+
+```
+<html>
+    <div class="m-2" required>
+    </div>
+</html>
+```

@@ -8,6 +8,9 @@ The theme you are currently seeing is modified version of [Cinder theme](https:/
 !!! warning
     Changes to this theme was not tested extensively, therefore there is possiblity that functionalites described here will not behave as expected.
 
+## About plugin support
+Cinder theme does not support all plugins and so will this modified theme. Adding support for plugins is not scope of this project. Therefore one must be satisified with limited list of supported plugins.
+
 ## Favicon
 In order to use custom favicon use following `mkdocs.yml` file entry:
 ```
@@ -48,7 +51,7 @@ Links to repo will show up on navigation bar. Appropriate icon is choosen based 
 Link text is determined by `repo_name` attribute in `mkdocs.yml`. If this attribute is not specified, then default keyword will be shown i.e 'GitHub'.
 
 ### Edit link
-Edit link will be shown on top of content and it is controlled by `edit_uri` in `mkdocs.yml` (More about how it works, refer to mkDocs documentation). This link text is agnostic to repo provider, which means that it will stay the same regardles if edit link is refering to Github, Gitlab etc.  
+Edit link will be shown on top of content and it is controlled by `edit_uri` in `mkdocs.yml` ([MkDocs edit_uri](https://www.mkdocs.org/user-guide/configuration/#edit_uri)). This link text is agnostic to repo provider, which means that it will stay the same regardless if edit link is refering to Github, Gitlab etc.  
 
 ## HTML lang attribute 
 It is possbile to specify the html lang attribute (that defnies the content language) in `mkdocs.yml` file. This is done by following entry:
@@ -61,6 +64,10 @@ theme:
 
 ## Position Sticky
 Header and aside sections uses `position: sticky;` css rule to keep them attached in place. This rule however is not fully supported on all browser, therefore they will most likely scroll with the page content (this has not been tested). Such solution is best compromise between functionality and clean code.
+
+## hljs color theme
+"hljs" is syntax highlighter for code snippets and it is used by this theme. There are dozen of different color schemes created for hljs that one can choose. How to do it in Cinder theme, refer to its official documentation ([Cinder theme - Syntax Highlighting Color Scheme](https://sourcefoundry.org/cinder/#syntax-highlighting-color-scheme)). The default color scheme for this theme is a modified "StackOverflow Light" theme for hljs. The colors has been adjusted so the constrast ratio is above 7.0.
+This is in order to meet WCAG requirements related to contrast. Therefore one should note that choosing different color scheme may not compile with wcag regulations. 
 
  
 

@@ -1,99 +1,110 @@
-/*
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
 
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+code.hljs {
+  padding: 3px 5px
+}
 
+/*!
+  Theme: StackOverflow Light
+  Description: Light theme as used on stackoverflow.com
+  Author: stackoverflow.com
+  Maintainer: @Hirse
+  Website: https://github.com/StackExchange/Stacks
+  License: MIT
+  Updated: 2021-05-15 
+
+  Modified by: karol //2022-04-07
+
+  Updated for @stackoverflow/stacks v0.64.0
+  Code Blocks: /blob/v0.64.0/lib/css/components/_stacks-code-blocks.less
+  Colors: /blob/v0.64.0/lib/css/exports/_stacks-constants-colors.less
 */
 
 .hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #FCFDFF;
+  color: #2f3337;
+  background: #f6f6f6
 }
 
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic;
+.hljs-subst {
+  color: #2f3337
 }
 
+.hljs-comment {
+  color: #49545F
+}
+
+.hljs-attr,
+.hljs-doctag,
 .hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold;
-}
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
-}
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
+.hljs-meta .hljs-keyword,
 .hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
+.hljs-selector-tag {
+  color: #015490
 }
 
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
 .hljs-attribute {
-  color: #000080;
-  font-weight: normal;
+  color: #803378
 }
 
+.hljs-name,
+.hljs-number,
+.hljs-quote,
+.hljs-selector-id,
+.hljs-template-tag,
+.hljs-type {
+  color: #913600
+}
+
+.hljs-selector-class {
+  color: #015490
+}
+
+.hljs-link,
 .hljs-regexp,
-.hljs-link {
-  color: #009926;
+.hljs-selector-attr,
+.hljs-string,
+.hljs-symbol,
+.hljs-template-variable,
+.hljs-variable {
+  color: #405b0b
 }
 
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
+.hljs-meta,
+.hljs-selector-pseudo {
+  color: #015490
 }
 
 .hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
+.hljs-literal,
+.hljs-title {
+  color: #913600
 }
 
-.hljs-meta {
-  color: #999;
-  font-weight: bold;
+.hljs-bullet,
+.hljs-code {
+  color: #4C545A
+}
+
+.hljs-meta .hljs-string {
+  color: #405b0b
 }
 
 .hljs-deletion {
-  background: #fdd;
+  color: #A02121
 }
 
 .hljs-addition {
-  background: #dfd;
+  color: #245E37
 }
 
 .hljs-emphasis {
-  font-style: italic;
+  font-style: italic
 }
 
 .hljs-strong {
-  font-weight: bold;
+  font-weight: 700
 }

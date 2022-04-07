@@ -73,9 +73,10 @@ h5 {
 } 
 */
 
-pre,
+/* default code snippet style */
 code {
-    background-color: #FCFDFF;
+  background-color: #f6f6f6;
+  color: #9f005a;
 }
 
 pre>code {
@@ -85,6 +86,17 @@ pre>code {
 pre {
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+/* this removes the default bootstrap color for link which does have bad contrast */
+a {
+    color: blue;
+}
+
+/* override for bootstrap hover style which is not sufficient  */
+a:hover {
+    color: blue;
+    text-decoration: underline 2px;
 }
 
 .lead {

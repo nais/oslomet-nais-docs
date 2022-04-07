@@ -86,11 +86,11 @@
         <div class="row">
             {% block content %}
             {% if page.meta.disable_toc %}
-                <aside class="col-md-3 col-xl-2" aria-label="main navigation">{% include "side-nav.html" %}</aside>
+                <aside class="col-md-3 col-xl-2" aria-label="primary">{% include "side-nav.html" %}</aside>
                 <main class="col-md-9 col-xl-7" aria-label="main content">{% include "content.html" %}</main>
             {% else %}
-                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="main navigation">{% include "side-nav.html" %}</aside>
-                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="table of contents">{% include "toc.html" %}</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">{% include "side-nav.html" %}</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary">{% include "toc.html" %}</aside>
                 <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">{% include "content.html" %}</main>
             {% endif %}
             {% endblock %}

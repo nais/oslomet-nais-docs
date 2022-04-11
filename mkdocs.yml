@@ -5,7 +5,7 @@ site_url: https://nais.io/oslomet-nais-docs
 edit_uri: edit/main/docs/
 
 # moro som fjernes etterhvert 
-copyright: Experimental version of "Amber?" 👀. Work in progress 👷‍♀️👷‍♂️🚧
+copyright: Experimental version. Work in progress 👷‍♀️👷‍♂️🚧
 
 theme:
   name: null
@@ -173,5 +173,6 @@ nav:
     - Sikkerhetsloven: legal/sikkerhetsloven.md
   - Theme Dev:
     - About: theme-dev/README.md
-    - Cinder docs: theme-dev/cinder-docs.md
+    - User guide: theme-dev/user-guide.md
+    - Developer guide: theme-dev/dev-guide.md
     - Testing sandbox: theme-dev/sandbox.md

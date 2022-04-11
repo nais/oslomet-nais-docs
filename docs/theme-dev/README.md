@@ -1,15 +1,21 @@
 ---
-description: About theme development documentation
+description: About theme development project
 ---
 
 # Docs's theme development
-Prototype of WCAG compliant Mkdocs theme is currently being developed for this docs (NAIS). This is because there is no WCAG compliant themes that can be used while documentation has to meet these guidlines.
+There is need for documentation that is WCAG compilant, but currently no theme for MkDocs fullfil this requrest. Therefore the goal of this project is to create such. 
 
-## What is this?
-This is documentation section for theme development for this docs. It is not connected by any means to the orginal nais platform docs.
+Prototype of WCAG compliant Mkdocs theme is currently being developed for this docs (NAIS). It is based on MkDocs theme that has been modified. The base theme is Cinder theme. [Cinder theme for MkDocs](https://sourcefoundry.org/cinder/) 
 
-## Why does it exists?
-We need documentation for theme modification we currently are working on. In addition this section of the docs will provide us a testing area, where we can test whatever we need to test.
+## Documentation for this project
+Relevant documenatation for this project exist under section "theme-dev" (this/current section). Beside this page, it does consist of some additional pages such as:
 
-## Future
+- *User guide* - contains relevant information for users of this project's prototype. 
+- *Developer guide* - contains relevant information regardless developing this projects's prototype. 
+- *Sandbox* - is testing area for this project. 
+
+!!! note
+    this documentation has nothing to do with the orginal nais documentation. Scope of this documentation is only the modification of the theme.
+
+### Future of this documentation
 For now this docs will nicely live here together with the nais documentation. It is mainly because we don't know what we will do with it in the future. At the same time we need documentation and it is convinient to have it here. It is written in markdown and contained in one folder which will make it easy to move it to other places.

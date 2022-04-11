@@ -1,6 +1,8 @@
 ---
+source: bug.bugs
 description: Theme development testing sandbox 
 ---
+
 
 # Testing Sandbox
 This is where we intend to test features that are not used by the orginal docs.
@@ -17,12 +19,29 @@ This is where we intend to test features that are not used by the orginal docs.
 | Peach        | 4.99      | *1*        |
 | Strawberries | **1.89**  | 32345      |
 
+## syntax highlight
 
-use of `required` attribute in this case is invalid:
+Example of `Pencil` and `Pen` functions
+```
+public int Pencil(int size) {
+    return size*0.7;
+}
 
+public int Pen(int size) {
+    return size*0.5;
+}
 ```
-<html>
-    <div class="m-2" required>
-    </div>
-</html>
-```
+## admonitions
+
+!!! info
+    this is not important
+
+!!! note
+    this is something not so important 
+
+!!! warning
+    you should care what i wrote here
+
+!!! danger
+    try not to read this message
+

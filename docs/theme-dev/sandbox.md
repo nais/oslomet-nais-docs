@@ -1,8 +1,12 @@
 ---
-source: bug.bugs
 description: Theme development testing sandbox 
+source: 
+    - foo.py 
+    - bar.py 
+    - this.py
+    - that.py
+    - overflow.py
 ---
-
 
 # Testing Sandbox
 This is where we intend to test features that are not used by the orginal docs.

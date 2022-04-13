@@ -70,13 +70,13 @@ Header and aside sections uses `position: sticky;` css rule to keep them attache
 ## hljs (syntax highlighter)
 "hljs" is syntax highlighter for code snippets and it is used by this theme.
 
-### color scheme
+### Color scheme
  There are dozen of different color schemes created for hljs that one can choose. On how to change color, refer to cinder's official documentation ([Cinder theme - Syntax Highlighting Color Scheme](https://sourcefoundry.org/cinder/#syntax-highlighting-color-scheme)). 
 
 However, the default color scheme for this theme is a modified "StackOverflow Light" theme for hljs. The colors has been adjusted so the contrast ratio is above 7.1.
 This is in order to meet WCAG requirements related to contrast. Therefore one should note that choosing different color scheme may not compile with WCAG regulations.
 
-### language detection
+### Language detection
 MkDocs allow to define language for code blocks using the standart makrdown syntax. This is done by writing given language after first 3 backticks, like so:
 ```` 
 ```java
@@ -92,6 +92,9 @@ However this won't work for hljs as language definition is done via class name i
 [Language definition in hljs](https://highlightjs.readthedocs.io/en/latest/readme.html#in-the-browser)
 
  In result hljs will still use auto detection even if language is defined in markdown. Therefore it is advised not to specify language in markdown as there is no use for it.
+
+## Page meta-data
+MkDocs supports meta-data for markdown files. You can read more about it on their official documentation. [page-metadata in MkDocs](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data). Cinder theme uses this feature to add support for printing out page sources. This feature however has been removed in this theme due to its unpopularity. There is lack of information regardles on how this feature should be and therefore it has been removed.
 
 
 

@@ -77,7 +77,7 @@
         NOTE: this is a helper that will create info only when page is hosted locally. 
         This should help to distinguish remote and local version 
     -->
-    <div class="text-center tp-info-box"> This is local version of the page. ✋ </div>
+    <div class="fixed-bottom text-center tp-info-box"> This is local version of the page. ✋ </div>
     {% endif %}
 
     {% include "header.html" %}
@@ -135,8 +135,8 @@
     {%- endfor %}
     {%- endblock %}
 
-    {% if 'search' in config['plugins'] %}{%- include "search-modal.html" %}{% endif %}
-    {%- include "keyboard-modal.html" %}
+    {% if 'search' in config['plugins'] %}{% include "search-modal.html" %}{% endif %}
+    {% include "keyboard-modal.html" %}
     </body>
 
 </html>

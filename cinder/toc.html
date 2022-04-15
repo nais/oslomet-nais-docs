@@ -8,8 +8,8 @@
             </strong>
             
             {% if toc_item.children %}
-            <ul class="ps-3">
-                {%- for toc_item in toc_item.children %}
+            <ul>
+                {% for toc_item in toc_item.children %}
                 <li class="mt-1">
                     <a class="link-dark link-hover-underline" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
                     {% if toc_item.children %}
@@ -22,7 +22,7 @@
                     </ul>
                     {% endif %}
                 </li>
-                {%- endfor %}
+                {% endfor %}
             </ul>
             {% endif %}
         </li>    

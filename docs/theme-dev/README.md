@@ -19,3 +19,9 @@ Relevant documenatation for this project exist under section "theme-dev" (this/c
 
 ### Future of this documentation
 For now this docs will nicely live here together with the nais documentation. It is mainly because we don't know what we will do with it in the future. At the same time we need documentation and it is convinient to have it here. It is written in markdown and contained in one folder which will make it easy to move it to other places.
+
+## Todo next
+This project has a long way to go before one can say it is finished. Below, there is a list of next things to do.
+
+- markdown of main content need to be WCAG compliant
+- mechanisms to make textual content accessible needs to be developed/implemented

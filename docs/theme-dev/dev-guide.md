@@ -30,5 +30,4 @@ You can alter this in any way you want.
 ## Known bugs
 Things that you can try to solve. We didn't
 
-- [x] this is done
-- [ ] this is not done 
+*this list will be updated in future*

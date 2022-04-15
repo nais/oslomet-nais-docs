@@ -93,8 +93,20 @@ However this won't work for hljs as language definition is done via class name i
 
  In result hljs will still use auto detection even if language is defined in markdown. Therefore it is advised not to specify language in markdown as there is no use for it.
 
-## Page meta-data
+## Removed functions
+There are functions that exist in cinder, but has been removed in this theme.
+
+### Page meta-data
 MkDocs supports meta-data for markdown files. You can read more about it on their official documentation. [page-metadata in MkDocs](https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data). Cinder theme uses this feature to add support for printing out page sources. This feature however has been removed in this theme due to its unpopularity. There is lack of information regardles on how this feature should be and therefore it has been removed.
+
+### Scroll-spy & table of content
+Cinder does inherent MkDocs functionality of scroll spy and table of content. This allows to indicate current element in viewport on table of content. 
+However, this functionality has been removed as the nature of this functionality makes it difficult to render correct. (if there is more table of content items in viewport, then it is difficut to determite which one is the "active" one). Therefore to avoid confusion, it has been removed. 
+
+## Keyboard Shortcuts
+As the default MkDocs, cinder theme have support for user defined keyboard shortcuts. Information about these shortcuts can be found on cinder theme documentation [keyboard shortcuts in cinder](https://sourcefoundry.org/cinder/#keyboard-shortcuts). This functionality has not been adapted to comply with WCAG. Therefore it is advised <mark>**not to use this functionality**</mark> if WCAG compliance is a priority.
+
+In final release, this functionality may be removed altogether to avoid confusion.
 
 
 

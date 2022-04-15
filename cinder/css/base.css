@@ -1,6 +1,7 @@
-html {
-    /* handicap for header, used for scroll to section */
-    scroll-padding-top: 6rem;
+:root {
+    /* this add offset to direct links, compensating for sticky/fixed topbar */
+    /* this is also the reason why page scrolls up after closing search modal */
+    scroll-padding-top: 6em;
 }
 
 p>img {
@@ -20,6 +21,7 @@ p>img {
 }
 
 /* info box styling, used for local version information. This should be deleted in final version */
+
 .tp-info-box {
     color: white;
     background-color: #7e003b;
@@ -32,7 +34,6 @@ p>img {
 .link-hover-underline:hover {
     text-decoration: underline;
 }
-
 
 /* End Bootstrap Add-ons  */
 

@@ -1,7 +1,11 @@
 :root {
-    /* this add offset to direct links, compensating for sticky/fixed topbar */
-    /* this is also the reason why page scrolls up after closing search modal */
-    /* scroll-padding-top: 6em; */
+    /* "scroll to" offset for direct links, compensating for sticky/fixed topbar */
+    scroll-padding-top: 6em;
+}
+
+body {
+    /* visible offsett for content as topbar is fixed*/
+    padding-top: 6rem;
 }
 
 p>img {
@@ -12,16 +16,19 @@ p>img {
 
 /* Start Bootstrap Add-ons (extra style rules) */
 
-/* This class is extension for sticky top sidebars */
+/* adds "padding" to sticky object, so it does not move while scrolling */
 .sidebar-sticky {
-    max-height: 80vh;
-    overflow-y: auto;
-    top: 5rem;
+    top: 6rem;
     z-index: 1;
 }
 
-/* info box styling, used for local version information. This should be deleted in final version */
+/* add scrollable overflow to content of sticky object */
+.sidebar-sticky-overflow {
+    max-height: 75vh;
+    overflow: auto;
+}
 
+/* info box styling, used for local version information. This should be deleted in final version */
 .tp-info-box {
     color: white;
     background-color: #7e003b;

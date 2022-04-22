@@ -65,7 +65,9 @@ theme:
     This functionality is implemented according to mkdocs guide. More info about mkdocs locales refer to its documentation. [localization in MkDocs themes](https://www.mkdocs.org/dev-guide/themes/#supporting-theme-localizationtranslation)
 
 ## Position Sticky
-Header and aside sections uses `position: sticky;` css rule to keep them attached in place. This rule however is not fully supported on all browser, therefore they will most likely scroll with the page content (this has not been tested). Such solution is best compromise between functionality and clean code.
+Aside sections uses `position: sticky;` css rule to keep them attached in place. This rule however is not fully supported on all browser, therefore they will most likely scroll with the page content (this has not been tested). Such solution is best compromise between functionality and clean code.
+
+Generally, position sticky rule is tricky. It make it easier to make content stay while scrolling, but it also creates tricky behaviour. Basicly if content A is nested in content B and content A and B is longer than viewport, then in order to scroll through whole content A, you have to scroll through whole content B. This result in situation where the end of content A will be shown at the bottom of content B. We wouldn't say this behaviour is very accessibility friendly, but in this case this is the best solution we have. We cannot use postion fixed as this goes against bootstrap (you have to redo breakpoints). At the same time, we assume that having aside content scroll with the page will be more frustating than position sticky.
 
 ## hljs (syntax highlighter)
 "hljs" is syntax highlighter for code snippets and it is used by this theme.
@@ -104,7 +106,7 @@ Cinder does inherent MkDocs functionality of scroll spy and table of content. Th
 However, this functionality has been removed as the nature of this functionality makes it difficult to render correct. (if there is more table of content items in viewport, then it is difficut to determite which one is the "active" one). Therefore to avoid confusion, it has been removed. 
 
 ## Keyboard Shortcuts
-As the default MkDocs, cinder theme have support for user defined keyboard shortcuts. Information about these shortcuts can be found on cinder theme documentation [keyboard shortcuts in cinder](https://sourcefoundry.org/cinder/#keyboard-shortcuts). This functionality has not been adapted to comply with WCAG. Therefore it is advised <mark>**not to use this functionality**</mark> if WCAG compliance is a priority.
+As the default MkDocs, cinder theme have support for user defined keyboard shortcuts. Information about these shortcuts can be found on cinder theme documentation [keyboard shortcuts in cinder](https://sourcefoundry.org/cinder/#keyboard-shortcuts). This functionality has not been adapted to comply with WCAG. Therefore it is advised **not to use this functionality** if WCAG compliance is a priority.
 
 In final release, this functionality may be removed altogether to avoid confusion.
 

@@ -1,21 +1,21 @@
-<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="toc-label">
+<nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
     <span id="toc-label" class="fs-4">On this page:</span>
-    <ul class="list-unstyled mt-3 mx-1">
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
         {%- for toc_item in page.toc %}
-        <li class="mt-1">
+        <li class="m-1">
             <strong>
                 <a class="link-dark link-hover-underline" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
             </strong>
             
             {% if toc_item.children %}
-            <ul>
+            <ul class="ps-3">
                 {% for toc_item in toc_item.children %}
-                <li class="mt-1">
+                <li class="m-1">
                     <a class="link-dark link-hover-underline" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
                     {% if toc_item.children %}
-                    <ul class=" ps-3">
+                    <ul class="ps-3">
                         {% for toc_item in toc_item.children %}
-                        <li class="mt-1">
+                        <li class="m-1">
                             <a class="link-dark link-hover-underline" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
                         </li>
                         {%- endfor %}
@@ -25,6 +25,7 @@
                 {% endfor %}
             </ul>
             {% endif %}
+            
         </li>    
         {%- endfor %}
     </ul>

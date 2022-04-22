@@ -73,16 +73,16 @@
 <body>
  
     {% if '127.0.0.1' in page.canonical_url %}
-    <!--
-        NOTE: this is a helper that will create info only when page is hosted locally. 
-        This should help to distinguish remote and local version 
-    -->
-    <div class="fixed-bottom text-center tp-info-box"> This is local version of the page. ✋ </div>
+        <!--
+            NOTE: this is a helper that will create info only when page is hosted locally. 
+            This should help to distinguish remote and local version 
+        -->
+        <div class="fixed-bottom text-center tp-info-box"> This is local version of the page. ✋ </div>
     {% endif %}
 
     {% include "header.html" %}
 
-    <div class="container-fluid my-4">
+    <div class="container-fluid">
         <div class="row">
             {% block content %}
             {% if page.meta.disable_toc %}

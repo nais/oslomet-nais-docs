@@ -1,7 +1,7 @@
 :root {
     /* this add offset to direct links, compensating for sticky/fixed topbar */
     /* this is also the reason why page scrolls up after closing search modal */
-    scroll-padding-top: 6em;
+    /* scroll-padding-top: 6em; */
 }
 
 p>img {

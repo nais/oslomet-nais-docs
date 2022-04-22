@@ -49,3 +49,7 @@ public int Pen(int size) {
 !!! danger
     try not to read this message
 
+## [header as a link](https://google.com)
+
+### [this is also a link](https://google.com)
+

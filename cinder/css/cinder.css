@@ -96,7 +96,7 @@ a {
 /* override for bootstrap hover style which is not sufficient  */
 a:hover {
     color: blue;
-    text-decoration: underline 2px;
+    text-decoration: none;
 }
 
 .lead {

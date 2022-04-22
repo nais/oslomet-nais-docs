@@ -18,10 +18,38 @@ $(document).ready(function() {
     var search_term = getSearchTerm(),
         $search_modal = $('#mkdocs_search_modal'),
         $keyboard_modal = $('#mkdocs_keyboard_modal');
+        $search_results = $('#mkdocs-search-results'); //div where results are printed
+        $search_input = $('#mkdocs-search-query');
+        $search_results_info = $('#mkdocs-search-results-info')
 
     if (search_term) {
         $search_modal.modal();
     }
+
+    // event listenter that check for search results
+    // TODO migrate this thing to mutation observer like so:
+    // https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
+
+    $search_results.on("DOMSubtreeModified", function() {
+        let results = $search_results.children()
+
+        if (results.first().is('p')) { //when there is no results
+
+
+            $search_results_info.html("No results found"); //remove info
+
+            //TODO here also add info so peopel can hear about no results
+
+        } else { //when there are results
+
+            let amount = results.length; //get amount
+            $search_results_info.text("Found "+amount+" results"); //print info
+            
+            //TODO here also add info so people can hear about results
+
+        }
+    });
+
 
 
     // make sure search input gets autofocus everytime modal opens.

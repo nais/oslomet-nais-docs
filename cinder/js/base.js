@@ -15,41 +15,52 @@ $(document).ready(function() {
         * Taken from themes/mkdocs/js/base.js
         * ------------------------------------------------------------------------
     */
-    var search_term = getSearchTerm(),
+    const search_term = getSearchTerm(),
         $search_modal = $('#mkdocs_search_modal'),
-        $keyboard_modal = $('#mkdocs_keyboard_modal');
-        $search_results = $('#mkdocs-search-results'); //div where results are printed
-        $search_input = $('#mkdocs-search-query');
-        $search_results_info = $('#mkdocs-search-results-info')
+        $keyboard_modal = $('#mkdocs_keyboard_modal'),
+        $search_results = $('#mkdocs-search-results'),
+        $search_results_info = $('#mkdocs-search-results-info');
+
 
     if (search_term) {
         $search_modal.modal();
     }
 
-    // event listenter that check for search results
-    // TODO migrate this thing to mutation observer like so:
-    // https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
+    //start of "on search result return event listener"
+    //this event listener allows to return status information to the user
 
-    $search_results.on("DOMSubtreeModified", function() {
-        let results = $search_results.children()
-
-        if (results.first().is('p')) { //when there is no results
+    //function that will be executed when results are returned (changes in #mkdocs-serch-results div)
+    const onSearchResultsReturned = function() {
 
 
-            $search_results_info.html("No results found"); //remove info
+        let results = $search_results.children();
 
-            //TODO here also add info so peopel can hear about no results
+        if (results.first().is('p') || results.length === 0) { //when there is no results
+
+            
+            $search_results_info.text("No results found"); //print info for no results 
+            results.first().remove();
 
         } else { //when there are results
 
-            let amount = results.length; //get amount
-            $search_results_info.text("Found "+amount+" results"); //print info
-            
-            //TODO here also add info so people can hear about results
-
+            $search_results_info.text("Found "+results.length+" results"); //print info for results
         }
-    });
 
+    }
+
+    //plain js dom object that observer needs
+    const search_results = document.getElementById('mkdocs-search-results');
+    
+    //config for mutation observer
+    const config = {attributes: false, childList: true, subtree: false };
+
+    //create new mutation observer and set callback function
+    const observer = new MutationObserver(onSearchResultsReturned);
+
+    //start observer 
+    observer.observe(search_results, config);
+
+    //end of "on serach result return event listener"
 
 
     // make sure search input gets autofocus everytime modal opens.

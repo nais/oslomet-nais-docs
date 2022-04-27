@@ -28,18 +28,17 @@ p>img {
     overflow: auto;
 }
 
-/* info box styling, used for local version information. This should be deleted in final version */
-.tp-info-box {
-    color: white;
-    background-color: #7e003b;
-}
-
 .link-hover-underline {
     text-decoration: none;
 }
 
 .link-hover-underline:hover {
     text-decoration: underline;
+}
+
+/* extra color as the default from bootstrap are not sufficient */
+.bg-grey {
+    background-color: #eee
 }
 
 /* End Bootstrap Add-ons  */
@@ -133,8 +132,14 @@ p>img {
 
 /* Headerlinks */
 .headerlink {
-    display: none;
+    color: #6c757d;
+    text-decoration: none;
     padding-left: .5em;
+}
+
+.headerlink:hover {
+
+     
 }
 
 h1:hover .headerlink,
@@ -142,8 +147,10 @@ h2:hover .headerlink,
 h3:hover .headerlink,
 h4:hover .headerlink,
 h5:hover .headerlink,
-h6:hover .headerlink {
-    display: inline-block;
+h6:hover .headerlink
+{
+    color: #565e64;
+    text-decoration: underline;
 }
 
 

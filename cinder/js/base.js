@@ -10,6 +10,18 @@ function getSearchTerm() {
 }
 
 $(document).ready(function() {
+
+    //code for local version notifier, remove in production
+    const $local_version_notice = $('#local-version-notice');
+
+    $('#local-version-notice').text("✋ This is local version nr. "+Date.now());
+
+    $local_version_notice.on("click", function () {
+        this.remove();
+    });
+    //end of local version notifier stuff
+
+
     /*
         * ------------------------------------------------------------------------
         * Taken from themes/mkdocs/js/base.js
@@ -28,6 +40,7 @@ $(document).ready(function() {
 
     //start of "on search result return event listener"
     //this event listener allows to return status information to the user
+    //it uses mutation observer as this is the way to track changes in dom using js
 
     //function that will be executed when results are returned (changes in #mkdocs-serch-results div)
     const onSearchResultsReturned = function() {
@@ -35,11 +48,11 @@ $(document).ready(function() {
 
         let results = $search_results.children();
 
-        if (results.first().is('p') || results.length === 0) { //when there is no results
+        if (results.first().is('p') || results.length === 0) { //when there is no results 
 
             
             $search_results_info.text("No results found"); //print info for no results 
-            results.first().remove();
+            results.first().remove(); //remove the orginal information as now it is duplicated
 
         } else { //when there are results
 
@@ -48,10 +61,10 @@ $(document).ready(function() {
 
     }
 
-    //plain js dom object that observer needs
+    //plain js target dom object that observer needs
     const search_results = document.getElementById('mkdocs-search-results');
     
-    //config for mutation observer
+    //config for mutation observer, this particular one should only react to changes to it's children
     const config = {attributes: false, childList: true, subtree: false };
 
     //create new mutation observer and set callback function

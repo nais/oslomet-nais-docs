@@ -16,17 +16,6 @@
 
         {% endif %}
 
-
-        {% if '127.0.0.1' in page.canonical_url %}
-        <!--
-        NOTE: this is a helper that will create info only when page is hosted locally. 
-        This should help to distinguish remote and local version 
-        -->
-        <div id="local-version-notice" class="text-warning" role="alert">
-            js not work. plz fix
-        </div>
-        {% endif %}
-
         {# Expander button #}
         {% if nav|length>1 or (page and (page.next_page or page.previous_page)) or config.repo_url %}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

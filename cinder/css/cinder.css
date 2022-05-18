@@ -1,6 +1,6 @@
 /*
   Cinder Theme for MkDocs | Copyright 2015 Christopher Simpkins | MIT License
-  Cinder Theme for MkDocs | Copyright 2022 karol, blerton       | MIT License //kan hende man kan simplfy den da men slik blir det for nå
+  Cinder Theme for MkDocs | Copyright 2022 karol Turlej, Blerton Selami | MIT License 
 */
 
 body {
@@ -64,14 +64,12 @@ h4 {
     font-style: italic;
 }
 
-/*
-this is style for h5 that makes it "special" i think is better without this styling 
 h5 {
     font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-variant: small-caps;
 } 
-*/
+
 
 /* default code snippet style */
 code {
@@ -126,6 +124,7 @@ a:hover {
     height: 45px;
 }
 
+/* style for search results */
 #mkdocs-search-results article{
 
     border-bottom: 1px solid #dee2e6 !important;

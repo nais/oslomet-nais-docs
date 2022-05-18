@@ -10,18 +10,6 @@ function getSearchTerm() {
 }
 
 $(document).ready(function() {
-
-    //code for local version notifier, remove in production
-    const $local_version_notice = $('#local-version-notice');
-
-    $('#local-version-notice').text("✋ This is local version nr. "+Date.now());
-
-    $local_version_notice.on("click", function () {
-        this.remove();
-    });
-    //end of local version notifier stuff
-
-
     /*
         * ------------------------------------------------------------------------
         * Taken from themes/mkdocs/js/base.js
@@ -51,7 +39,7 @@ $(document).ready(function() {
         if (results.first().is('p') || results.length === 0) { //when there is no results 
 
             
-            $search_results_info.text("No results found"); //print info for no results 
+            $search_results_info.text("No results found. Try different wording"); //print info for no results 
             results.first().remove(); //remove the orginal information as now it is duplicated
 
         } else { //when there are results

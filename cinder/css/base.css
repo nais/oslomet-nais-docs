@@ -1,5 +1,5 @@
 :root {
-    /* "scroll to" offset for direct links, compensating for sticky/fixed topbar */
+    /* "scroll to" offset for direct links, compensating for fixed topbar */
     scroll-padding-top: 6em;
 }
 
@@ -16,7 +16,7 @@ p>img {
 
 /* Start Bootstrap Add-ons (extra style rules) */
 
-/* adds "padding" to sticky object, so it does not move while scrolling */
+/* adds "padding" to sticky object, as whole content is offset because of topbar */
 .sidebar-sticky {
     top: 6rem;
     z-index: 1;
@@ -28,6 +28,7 @@ p>img {
     overflow: auto;
 }
 
+
 .link-hover-underline {
     text-decoration: none;
 }
@@ -38,7 +39,7 @@ p>img {
 
 /* extra color as the default from bootstrap are not sufficient */
 .bg-grey {
-    background-color: #eee
+    background-color: #d5d5d5
 }
 
 /* End Bootstrap Add-ons  */
@@ -46,7 +47,7 @@ p>img {
 
 /*
     Start Bootstrap Callouts CSS Source by Chris Pratt (https://codepen.io/chrisdpratt/pen/IAymB) MIT License
-    Edit by karol 2022-04-x MIT License
+    Edit by Karol Turlej 2022-04-29 MIT License
 */
 
 .bs-callout {
@@ -135,11 +136,6 @@ p>img {
     color: #6c757d;
     text-decoration: none;
     padding-left: .5em;
-}
-
-.headerlink:hover {
-
-     
 }
 
 h1:hover .headerlink,

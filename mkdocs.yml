@@ -4,9 +4,6 @@ repo_url: https://github.com/nais/oslomet-nais-docs
 site_url: https://nais.io/oslomet-nais-docs
 edit_uri: edit/main/docs/
 
-# moro som fjernes etterhvert 
-copyright: Experimental version. Work in progress 👷‍♀️👷‍♂️🚧
-
 theme:
   name: null
   custom_dir: 'cinder'
@@ -18,7 +15,7 @@ plugins:
   - search
 markdown_extensions:
   - toc:
-      permalink: "#"
+      permalink: §
   - admonition
   - pymdownx.details
   - pymdownx.caret

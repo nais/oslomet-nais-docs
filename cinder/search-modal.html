@@ -8,19 +8,19 @@
             <div class="modal-header">
                 <form autocomplete="off" class="flex-fill">
                     <div class="form-group">
-                        <label class="form-label" for="mkdocs-search-query">Search for:</label>
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
                         <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
-                            title="Type search term here" aria-label="Search for">
+                            title="Type search term here" aria-labelledby="search-input-label">
 
                         <span class="form-text" role="status" id="mkdocs-search-results-info">
-                        {# here info about amount of results is printed #}
+                        {# status of search is printed here by js #}
                         </span>
                     </div>
                 </form>
             </div>
             <div class="modal-body">
-                <div class="" role="status" id="mkdocs-search-results">
-                    {# here results are printed #}
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    {# search results are appended here #}
                 </div>
             </div>
             <div class="modal-footer">

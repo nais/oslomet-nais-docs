@@ -3,26 +3,18 @@
     {# handle nav items that are sections (only sections can have children) #}
 
     <li class="mx-1">
-
         {% if nav_item.active %}
-
             <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='{% include "side-nav-section-url.html" %}' aria-current="location"><strong>{{ nav_item.title }}</strong></a>
-
             <ul class="list-unstyled ps-2 border-start border-bottom py-1">
-
                 {% for nav_item in nav_item.children %}
             
                     {% include "side-nav-sub.html" %}
                  
                 {% endfor %}
-
             </ul>
-
         {% else %}
             <a class="link-dark link-hover-underline d-block p-1 rounded" href='{% include "side-nav-section-url.html" %}'> {{ nav_item.title }}</a>
-
         {% endif %}
-        
     </li>
 
 {% else %}
@@ -30,17 +22,10 @@
     {# handle nav items that are either page or link #}
 
     <li class="mx-1">
-
         {% if nav_item.active %}
-
             <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="{{ nav_item.url|url }}" aria-current="page"><strong>{{ nav_item.title }}</strong></a>
-
         {% else %}
-
             <a class="link-dark link-hover-underline d-block p-1 rounded" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
-
         {% endif %}
-
     </li>
-            
 {% endif %}

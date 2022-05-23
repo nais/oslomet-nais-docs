@@ -3,10 +3,7 @@
     <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
         {% for toc_item in page.toc %}
         <li class="m-1">
-            <strong>
-                <a class="link-dark link-hover-underline d-block" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
-            </strong>
-        
+            <strong><a class="link-dark link-hover-underline d-block" href="{{ toc_item.url }}">{{ toc_item.title }}</a></strong>
             {% if toc_item.children %}
             <ul class="ps-3">
                 {% for toc_item in toc_item.children %}
@@ -25,7 +22,6 @@
                 {% endfor %}
             </ul>
             {% endif %}
-            
         </li>    
         {% endfor %}
     </ul>

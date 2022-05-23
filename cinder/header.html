@@ -26,7 +26,6 @@
 
         {# Expanded toolbar #}
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
-            
             <ul class="navbar-nav flex-grow-1 justify-content-end">
                 {% block search_button %}
                     {% if 'search' in config['plugins'] and not config.theme.disable_nav_search %}
@@ -39,27 +38,27 @@
                 {% endblock %}
 
                 {% block next_prev %}
-                {% if page and not config.theme.disable_nav_previous_next %}
+                    {% if page and not config.theme.disable_nav_previous_next %}
 
-                {# previous page link/button #}
-                {% if page.previous_page %}
-                <li class="nav-item d-grid m-1">
-                    <a href="{{ page.previous_page.url|url }}" rel="prev" role="button" class="btn btn-secondary">
-                        <span class="fas fa-arrow-left"></span> Previous page
-                    </a>
-                </li>
-                {% endif %}
+                    {# previous page link/button #}
+                    {% if page.previous_page %}
+                    <li class="nav-item d-grid m-1">
+                        <a href="{{ page.previous_page.url|url }}" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    {% endif %}
 
-                {# next page link/button #}
-                {% if page.next_page %}
-                <li class="nav-item d-grid m-1">
-                    <a href="{{ page.next_page.url|url }}" rel="next" role="button" class="btn btn-secondary">
-                        Next page <span class="fas fa-arrow-right"></span>
-                    </a>
-                </li>
-                {% endif %}
+                    {# next page link/button #}
+                    {% if page.next_page %}
+                    <li class="nav-item d-grid m-1">
+                        <a href="{{ page.next_page.url|url }}" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    {% endif %}
 
-                {% endif %}
+                    {% endif %}
                 {% endblock %}
 
                 {# Repo link #}

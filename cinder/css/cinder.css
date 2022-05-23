@@ -126,11 +126,9 @@ a:hover {
 
 /* style for search results */
 #mkdocs-search-results article{
-
     border-bottom: 1px solid #dee2e6 !important;
     position: relative;
     padding: 0.5rem;
     overflow: hidden;
-    
 }
 

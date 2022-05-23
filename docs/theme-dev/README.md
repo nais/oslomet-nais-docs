@@ -1,6 +1,6 @@
 # Accessible documentation project
 There is need for WCAG (Web Content Accessibility Guidelines) compilant documentation, but currently there is no well defined solution.
-This documentation has been created using MkDocs, a static page generator. MkDocs uses themes that determines how the pages looks and behave. Therefore themes are also a way to alter how the page will be. However currently there is no theme that focuses on WCAG compilance. Therefore the goal of this project is to create such. 
+At the same time, this documentation has been created using MkDocs, a static page generator. MkDocs uses themes that determines how the pages looks and behave. Therefore themes are also a way to alter how the page will be. However currently there is no theme that focuses on WCAG compilance. Therefore the goal of this project is to create such. 
 
 Prototype of WCAG compliant Mkdocs theme is developed. It is based on exisitng MkDocs theme ([Cinder theme for MkDocs](https://sourcefoundry.org/cinder/)) that has been modified.
 

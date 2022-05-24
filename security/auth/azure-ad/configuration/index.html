@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/security/auth/azure-ad/configuration/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../../../assets/logo.svg">
+    
+
+    
+    <title>Configuration - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../../../..">
+                <img alt="logo" height="36" src="../../../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../concepts/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../access-policy/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../
+
+
+
+' aria-current="location"><strong>Security</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../
+
+' aria-current="location"><strong>Auth</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../">Auth Overview</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Azure AD</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">Intro</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../concepts/">Concepts</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Configuration</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../access-policy/">Access Policy</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../usage/">Usage</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../sidecar/">Sidecar</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../faq-troubleshooting/">FAQ / Troubleshooting</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../operations/">Operations</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../legacy/">Legacy</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../idporten/
+
+'> ID-porten</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../maskinporten/
+
+'> Maskinporten</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../tokenx/">TokenX</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../secrets/
+
+'> Secrets</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../antivirus/">Anti-virus Scanning</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#configuration">Configuration</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#spec">Spec</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#getting-started">Getting started</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#accessing-external-hosts">Accessing external hosts</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#google-cloud-platform-gcp">Google Cloud Platform (GCP)</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#on-premises">On-premises</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#reply-urls">Reply URLs</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#defaults">Defaults</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#overriding-explicitly">Overriding explicitly</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#tenants">Tenants</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#single-page-application">Single-Page Application</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#claims">Claims</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#groups">Groups</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#extra">Extra</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#access-policy">Access Policy</a>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/security/auth/azure-ad/configuration.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">§</a></h1>
+<h2 id="spec">Spec<a class="headerlink" href="#spec" title="Permanent link">§</a></h2>
+<p>See the complete specification in the <a href="../../../../nais-application/application/#azure">NAIS manifest</a>.</p>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">§</a></h2>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">nais.yaml</label><div class="tabbed-content">
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="w">      </span><span class="c1"># optional, enum of {trygdeetaten.no, nav.no}</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># defaults to trygdeetaten.no in dev-* clusters, nav.no in production</span><span class="w"></span>
+<span class="w">      </span><span class="nt">tenant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nav.no</span><span class="w"></span>
+
+<span class="w">      </span><span class="c1"># optional, generated defaults shown</span><span class="w"></span>
+<span class="w">      </span><span class="nt">replyURLs</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://my-app.dev.nav.no/oauth2/callback&quot;</span><span class="w"></span>
+
+<span class="w">      </span><span class="c1"># optional</span><span class="w"></span>
+<span class="w">      </span><span class="nt">claims</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">extra</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NAVident&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;azp_name&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">groups</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;object</span><span class="nv"> </span><span class="s">ID</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Azure</span><span class="nv"> </span><span class="s">AD</span><span class="nv"> </span><span class="s">group&gt;&quot;</span><span class="w"></span>
+
+<span class="w">      </span><span class="c1"># optional; if omitted:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># - false if claims.groups is defined</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># - true otherwise</span><span class="w"></span>
+<span class="w">      </span><span class="nt">allowAllUsers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="w">      </span><span class="c1"># optional, defaults shown</span><span class="w"></span>
+<span class="w">      </span><span class="nt">singlePageApplication</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># optional, only relevant if your application should receive requests from consumers</span><span class="w"></span>
+<span class="w">  </span><span class="nt">accessPolicy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inbound</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-a</span><span class="w"></span>
+<span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">othernamespace</span><span class="w"></span>
+<span class="w">          </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-fss</span><span class="w"></span>
+<span class="w">          </span><span class="nt">permissions</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;custom-role&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="nt">scopes</span><span class="p">:</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;custom-scope&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-b</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># required for on-premises only</span><span class="w"></span>
+<span class="w">  </span><span class="nt">webproxy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="accessing-external-hosts">Accessing external hosts<a class="headerlink" href="#accessing-external-hosts" title="Permanent link">§</a></h2>
+<p>Azure AD is a third-party service outside of our clusters, which is not reachable by default like most third-party services.</p>
+<h3 id="google-cloud-platform-gcp">Google Cloud Platform (GCP)<a class="headerlink" href="#google-cloud-platform-gcp" title="Permanent link">§</a></h3>
+<p>The following <a href="../../../../nais-application/access-policy/#external-services">outbound external hosts</a> are automatically added when enabling this feature:</p>
+<ul>
+<li><code>login.microsoftonline.com</code></li>
+<li><code>graph.microsoft.com</code></li>
+</ul>
+<p>You do not need to specify these explicitly.</p>
+<h3 id="on-premises">On-premises<a class="headerlink" href="#on-premises" title="Permanent link">§</a></h3>
+<p>You must enable and use <a href="../../../../nais-application/application/#webproxy"><code>webproxy</code></a> for external communication.</p>
+<h2 id="reply-urls">Reply URLs<a class="headerlink" href="#reply-urls" title="Permanent link">§</a></h2>
+<blockquote>
+<p>A redirect URI, or reply URL, is the location that the authorization server will send the user to once the app has been successfully authorized, and granted an authorization code or access token. The code or token is contained in the redirect URI or reply token so it's important that you register the correct location as part of the app registration process.</p>
+<p>-- Microsoft's documentation on <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/reply-url">reply URLs</a></p>
+</blockquote>
+<h3 id="defaults">Defaults<a class="headerlink" href="#defaults" title="Permanent link">§</a></h3>
+<p>If you have <em>not</em> specified any reply URLs, we will automatically generate a reply URL for each ingress specified using this formula:</p>
+<div class="codehilite"><pre><span></span><code>spec.ingresses[n] + &quot;/oauth2/callback&quot;
+</code></pre></div>
+<details class="example" open="open">
+<summary>Example</summary>
+<p>In other words, this:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">ingresses</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://my.application.dev.nav.no&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://my.application.dev.nav.no/subpath&quot;</span><span class="w"></span>
+</span><span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+<p>will generate a spec equivalent to this:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">ingresses</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://my.application.dev.nav.no&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://my.application.dev.nav.no/subpath&quot;</span><span class="w"></span>
+</span><span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="hll"><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</span><span class="hll"><span class="w">      </span><span class="nt">replyURLs</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://my.application.dev.nav.no/oauth2/callback&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://my.application.dev.nav.no/subpath/oauth2/callback&quot;</span><span class="w"></span>
+</span></code></pre></div>
+</details>
+<h3 id="overriding-explicitly">Overriding explicitly<a class="headerlink" href="#overriding-explicitly" title="Permanent link">§</a></h3>
+<p>You may set reply URLs manually by specifying <code>spec.azure.application.replyURLs[]</code>:</p>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="hll"><span class="w">      </span><span class="nt">replyURLs</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://my.application.dev.nav.no/oauth2/callback&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://my.application.dev.nav.no/subpath/oauth2/callback&quot;</span><span class="w"></span>
+</span></code></pre></div>
+</details>
+<p>Doing so will <strong>replace</strong> all of the <a href="#defaults">default auto-generated reply URLs</a>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>If you do override the reply URLs, make sure that you specify <strong>all</strong> the URLs that should be registered for the Azure AD client.</p>
+<p><strong>Ensure that these URLs conform to the restrictions and limitations of</strong> <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/reply-url"><strong>reply URLs</strong></a> <strong>as specified by Microsoft.</strong></p>
+</div>
+<h2 id="tenants">Tenants<a class="headerlink" href="#tenants" title="Permanent link">§</a></h2>
+<p>To explicitly target a specific <a href="../concepts/#tenants">tenant</a>, add a <code>spec.azure.application.tenant</code> to your <code>nais.yaml</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span>
+<span class="w">      </span><span class="c1"># enum of {trygdeetaten.no, nav.no}</span><span class="w"></span>
+<span class="w">      </span><span class="nt">tenant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trygdeetaten.no</span><span class="w"> </span>
+</code></pre></div>
+<h2 id="single-page-application">Single-Page Application<a class="headerlink" href="#single-page-application" title="Permanent link">§</a></h2>
+<p>Azure AD supports the <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-overview">OAuth 2.0 Auth Code Flow with PKCE</a> for logins from client-side/browser single-page-applications.</p>
+<p>However, the support for this must be explicitly enabled to avoid issues with CORS:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">singlePageApplication</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+<h2 id="claims">Claims<a class="headerlink" href="#claims" title="Permanent link">§</a></h2>
+<h3 id="groups">Groups<a class="headerlink" href="#groups" title="Permanent link">§</a></h3>
+<p>The <code>groups</code> claim in user tokens is by default omitted due to potential issues with the token's size when used in cookies.</p>
+<p>Sometimes however, it is desirable to check for group membership for a given user's token.
+Start by defining all Azure AD group IDs that should appear in user tokens:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="hll"><span class="w">      </span><span class="nt">allowAllUsers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</span><span class="hll"><span class="w">      </span><span class="nt">claims</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="nt">groups</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;object</span><span class="nv"> </span><span class="s">ID</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">group</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">Azure</span><span class="nv"> </span><span class="s">AD&gt;&quot;</span><span class="w"></span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Ensure that you include the <code>allowAllUsers</code> field and set the value to your desired behaviour.</strong></p>
+<p>If undefined, the default behaviour will <a href="../access-policy/#groups">only allow access to users in the defined groups</a>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Ensure that the object ID for the group is valid, and that the group actually exists in Azure AD.</strong></p>
+<p>Non-existing groups will be skipped.</p>
+</div>
+<p>Now all user tokens acquired for your application will include the <code>groups</code> claim.</p>
+<p>The claim will only contain groups that are <strong>both explicitly assigned to the application <em>and</em> which the user is a direct member of</strong>.</p>
+<details class="example" open="open">
+<summary>Example decoded on-behalf-of token</summary>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;aud&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8a5...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://login.microsoftonline.com/.../v2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957183</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;nbf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957183</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624961081</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;aio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AXQ...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;azp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e37...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;azpacr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;groups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="s2">&quot;2d7...&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="p">],</span><span class="w"></span>
+</span><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Navnesen, Navn&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;oid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15c...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;preferred_username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Navn.Navnesen@nav.no&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;rh&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.AS...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;scp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;defaultaccess&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6OC...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;tid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;623...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uti&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i03...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<p>If you wish to also restrict sign-ins and token exchanges with the on-behalf-of flow to users in these groups, 
+see the <a href="../access-policy/#groups">groups section in access policy</a>. </p>
+<h3 id="extra">Extra<a class="headerlink" href="#extra" title="Permanent link">§</a></h3>
+<p>The Azure AD tenants in NAV have defined some non-standard claims that are available for inclusion in tokens. </p>
+<p>These are opt-in by default, and you may selectively include any (or all) of these as needed.</p>
+<h4 id="navident">NAVident<a class="headerlink" href="#navident" title="Permanent link">§</a></h4>
+<p>The value of the <code>NAVident</code> claim maps to an internal identifier for the employees in NAV. 
+This claim thus only applies in flows where a user is involved i.e., either the sign-in or on-behalf-of flows.</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="hll"><span class="w">      </span><span class="nt">claims</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="nt">extra</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAVident</span><span class="w"></span>
+</span></code></pre></div>
+<details class="example" open="open">
+<summary>Example decoded on-behalf-of token</summary>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;aud&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8a5...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://login.microsoftonline.com/.../v2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957183</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;nbf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957183</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624961081</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;aio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AXQ...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;azp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e37...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;azpacr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;groups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;2d7...&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Navnesen, Navn&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;oid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15c...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;preferred_username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Navn.Navnesen@nav.no&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;rh&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.AS...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;scp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;defaultaccess&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6OC...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;tid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;623...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uti&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i03...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;NAVident&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Z123456&quot;</span><span class="w"></span>
+</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<h4 id="azp_name">azp_name<a class="headerlink" href="#azp_name" title="Permanent link">§</a></h4>
+<p>The <code>azp_name</code> claim will return the <a href="../concepts/#naming-format">name</a> of the consumer application that requested the token. 
+This claim applies to both the client credentials flow and the on-behalf-of flow.</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="hll"><span class="w">      </span><span class="nt">claims</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="nt">extra</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azp_name</span><span class="w"></span>
+</span></code></pre></div>
+<details class="example" open="open">
+<summary>Example decoded on-behalf-of token</summary>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;aud&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8a5...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://login.microsoftonline.com/.../v2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957183</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;nbf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957183</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624961081</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;aio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AXQ...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;azp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e37...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;azpacr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;groups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;2d7...&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Navnesen, Navn&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;oid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15c...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;preferred_username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Navn.Navnesen@nav.no&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;rh&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.AS...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;scp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;defaultaccess&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6OC...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;tid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;623...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uti&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i03...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;azp_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dev-gcp:some-team:some-consumer&quot;</span><span class="w"></span>
+</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<h2 id="access-policy">Access Policy<a class="headerlink" href="#access-policy" title="Permanent link">§</a></h2>
+<p>See <a href="../access-policy/">access policy</a>.</p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../../../.."</script>
+
+    
+
+    <script src="../../../../js/base.js"></script>
+    <script src="../../../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

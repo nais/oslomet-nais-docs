@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/security/auth/azure-ad/access-policy/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../../../assets/logo.svg">
+    
+
+    
+    <title>Access Policy - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../../../..">
+                <img alt="logo" height="36" src="../../../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../configuration/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../usage/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../
+
+
+
+' aria-current="location"><strong>Security</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../
+
+' aria-current="location"><strong>Auth</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../">Auth Overview</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Azure AD</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">Intro</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../concepts/">Concepts</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../configuration/">Configuration</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Access Policy</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../usage/">Usage</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../sidecar/">Sidecar</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../faq-troubleshooting/">FAQ / Troubleshooting</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../operations/">Operations</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../legacy/">Legacy</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../idporten/
+
+'> ID-porten</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../maskinporten/
+
+'> Maskinporten</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../tokenx/">TokenX</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../secrets/
+
+'> Secrets</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../antivirus/">Anti-virus Scanning</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#access-policy">Access Policy</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#pre-authorization">Pre-authorization</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#fine-grained-access-control">Fine-Grained Access Control</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#custom-scopes">Custom Scopes</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#custom-roles">Custom Roles</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#users">Users</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#groups">Groups</a>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/security/auth/azure-ad/access-policy.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="access-policy">Access Policy<a class="headerlink" href="#access-policy" title="Permanent link">§</a></h1>
+<h2 id="pre-authorization">Pre-authorization<a class="headerlink" href="#pre-authorization" title="Permanent link">§</a></h2>
+<p>For proper scoping of tokens when performing calls between clients, one must either:</p>
+<ol>
+<li>Request a token for a specific client ID using the client using the <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow">OAuth 2.0 client credentials flow</a> (service-to-service calls).</li>
+<li>Exchange a token containing an end-user context using the <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow">OAuth 2.0 On-Behalf-Of flow</a> (service-to-service calls on behalf of an end-user).</li>
+</ol>
+<p>Azure AD will enforce authorization for both flows. In other words, you <strong>must</strong> pre-authorize any consumer clients for your application.</p>
+<p>Clients that should receive and validate access tokens from other clients should pre-authorize said clients.</p>
+<p>This is declared by specifying <a href="../../../../nais-application/application/#accesspolicy"><code>spec.accessPolicy.inbound.rules[]</code></a>:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">accessPolicy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inbound</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-a</span><span class="w"></span>
+
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-b</span><span class="w"></span>
+<span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other-namespace</span><span class="w"></span>
+
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-c</span><span class="w"></span>
+<span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other-namespace</span><span class="w"></span>
+<span class="w">          </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other-cluster</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<ul>
+<li>These rules are <em>eventually consistent</em>, which means it might take a few minutes to propagate throughout Azure AD.</li>
+<li>Any client referred to <strong>must</strong> already exist in Azure AD in order to be assigned the access policy permissions.</li>
+<li>If you're pre-authorizing a client provisioned through <code>aad-iac</code>, ensure that you've read the <a href="../legacy/#pre-authorization">legacy</a> section.</li>
+<li><strong>Clients defined in the Spec that do <em>not</em> exist in Azure AD at deploy time will be skipped.</strong> If a non-existing client is created at a later time, we'll attempt to automatically <a href="../operations/#forcing-resynchronization">force a resynchronization</a>.</li>
+</ul>
+</div>
+<p>The above configuration will pre-authorize the Azure AD clients belonging to:</p>
+<ul>
+<li>application <code>app-a</code> running in the <strong>same namespace</strong> and <strong>same cluster</strong> as your application</li>
+<li>application <code>app-b</code> running in the namespace <code>other-namespace</code> in the <strong>same cluster</strong></li>
+<li>application <code>app-c</code> running in the namespace <code>other-namespace</code> in the cluster <code>other-cluster</code></li>
+</ul>
+<p>The default permissions will grant consumer clients the role <code>access_as_application</code>, which will only appear in tokens acquired with the client credentials flow (i.e. service-to-service requests).</p>
+<p>If you require more fine-grained access control, see <a href="#fine-grained-access-control">Fine-Grained Access Control</a>.</p>
+<h2 id="fine-grained-access-control">Fine-Grained Access Control<a class="headerlink" href="#fine-grained-access-control" title="Permanent link">§</a></h2>
+<p>You may define custom permissions for your client in Azure AD. These can be granted to consumer clients individually as an
+extension of the <a href="#access-policy">access policy</a> definitions described above.</p>
+<p>When granted to a consumer, the permissions will appear in their respective claims in tokens targeted to your application.
+Your application can then use these claims to implement custom authorization logic.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Custom permissions only apply in the context of <em>your own application</em> as an API provider.
+<strong>They are <em>not</em> global permissions.</strong></p>
+<p>These permissions only appear in tokens when all the following conditions are met:</p>
+<ol>
+<li>The token is acquired by a consumer of your application.</li>
+<li>The consumer has been granted a custom permission in your access policy definition.</li>
+<li>The target <em>audience</em> is your application.</li>
+</ol>
+</div>
+<h3 id="custom-scopes">Custom Scopes<a class="headerlink" href="#custom-scopes" title="Permanent link">§</a></h3>
+<p>A <em>scope</em> only applies to tokens acquired using the
+<a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow">OAuth 2.0 On-Behalf-Of flow</a>
+(service-to-service calls on behalf of an end-user).</p>
+<div class="admonition example">
+<p class="admonition-title">Example configuration</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">accessPolicy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inbound</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-a</span><span class="w"></span>
+<span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other-namespace</span><span class="w"></span>
+<span class="w">          </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other-cluster</span><span class="w"></span>
+<span class="hll"><span class="w">          </span><span class="nt">permissions</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="nt">scopes</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;custom-scope&quot;</span><span class="w"></span>
+</span></code></pre></div>
+</div>
+<p>The above configuration grants the application <code>app-a</code> the scope <code>custom-scope</code>.</p>
+<details class="example" open="open">
+<summary>Example decoded on-behalf-of token</summary>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;aud&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8a5...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://login.microsoftonline.com/.../v2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957183</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;nbf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957183</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624961081</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;aio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AXQ...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;azp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e37...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;azpacr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;groups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;2d7...&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Navnesen, Navn&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;oid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15c...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;preferred_username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Navn.Navnesen@nav.no&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;rh&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.AS...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;scp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;custom-scope defaultaccess&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="w">    </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6OC...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;tid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;623...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;uti&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i03...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Any custom scopes granted will appear as a <em>space separated string</em> in the <code>scp</code> claim.</p>
+</div>
+<h3 id="custom-roles">Custom Roles<a class="headerlink" href="#custom-roles" title="Permanent link">§</a></h3>
+<p>A <em>role</em> only applies to tokens acquired using the
+using the <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow">OAuth 2.0 client credentials flow</a>
+(service-to-service calls).</p>
+<div class="admonition example">
+<p class="admonition-title">Example configuration</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">accessPolicy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inbound</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-a</span><span class="w"></span>
+<span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other-namespace</span><span class="w"></span>
+<span class="w">          </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">other-cluster</span><span class="w"></span>
+<span class="hll"><span class="w">          </span><span class="nt">permissions</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;custom-role&quot;</span><span class="w"></span>
+</span></code></pre></div>
+</div>
+<p>The above configuration grants the application <code>app-a</code> the role <code>custom-role</code>.</p>
+<details class="example" open="open">
+<summary>Example decoded client credentials token</summary>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;aud&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8a5...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://login.microsoftonline.com/.../v2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957347</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;nbf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624957347</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1624961247</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;aio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E2Z...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;azp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e37...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;azpacr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;oid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;933...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;rh&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.AS...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">&quot;roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;access_as_application&quot;</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;custom-role&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">  </span><span class="p">],</span><span class="w"></span>
+</span><span class="w">  </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;933...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;tid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;623...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;uti&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kbG...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Any custom roles granted will appear in the <code>roles</code> claim, which is an <em>array of strings</em>.</p>
+</div>
+<h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link">§</a></h2>
+<p>By default, all users within the tenant are allowed to log in to your application. This behaviour is toggleable:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="hll"><span class="w">      </span><span class="nt">allowAllUsers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</span></code></pre></div>
+<h2 id="groups">Groups<a class="headerlink" href="#groups" title="Permanent link">§</a></h2>
+<p>For some use cases, it is desirable to restrict access to smaller groups of users.</p>
+<p>This can be done by disallowing all users and explicitly declaring which groups are allowed to access the application:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">azure</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="hll"><span class="w">      </span><span class="nt">allowAllUsers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</span><span class="hll"><span class="w">      </span><span class="nt">claims</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="nt">groups</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;object</span><span class="nv"> </span><span class="s">ID</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">group</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">Azure</span><span class="nv"> </span><span class="s">AD&gt;&quot;</span><span class="w"></span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Ensure that the object ID for the group is valid, and that the group actually exists in Azure AD.</strong></p>
+<p>Non-existing groups will be skipped.</p>
+</div>
+<p>Azure AD will now only allow sign-ins and token exchanges with the on-behalf-of flow if a given user is a <em>direct</em> member of at least <em>one of</em> the groups declared.</p>
+<p>This also controls the <a href="../configuration/#groups"><code>groups</code> claim</a> for a user token.</p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../../../.."</script>
+
+    
+
+    <script src="../../../../js/base.js"></script>
+    <script src="../../../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

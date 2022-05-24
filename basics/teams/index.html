@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/basics/teams/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logo.svg">
+    
+
+    
+    <title>Teams - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../..">
+                <img alt="logo" height="36" src="../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../access/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../application/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../access/
+
+' aria-current="location"><strong>Getting started</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../access/">Access from laptop</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Teams</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../application/">Your first NAIS application</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../security/auth/
+
+
+
+'> Security</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#teams">Teams</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#creating-a-new-team">Creating a new team</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#managing-your-team">Managing your team</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#access-to-api-keys">Access to API keys</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#rotate-api-key">Rotate API key</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#team-namespaces">Team namespaces</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#gcp-team-projects">GCP Team projects</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#access-management">Access management</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/basics/teams.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="teams">Teams<a class="headerlink" href="#teams" title="Permanent link">§</a></h1>
+<p>Access to a resource in NAIS is based on a label set on the resource called <code>team</code>.
+In the context of <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/AllGroups">Azure Active Directory</a> a group is the same as a team, and you may already be part of a team that has applications on NAIS.</p>
+<p>Every group in <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/AllGroups">AAD</a> has a so-called mailnick/tag, this is what NAIS generally uses to identify teams.
+When viewing a group, the mailnick is the value before the <code>@</code> in the email field.</p>
+<h2 id="creating-a-new-team">Creating a new team<a class="headerlink" href="#creating-a-new-team" title="Permanent link">§</a></h2>
+<ul>
+<li>To create a new team, make a pull request to the <a href="https://github.com/navikt/teams">teams repository</a> on Github</li>
+<li>The group's owners can manage the group using either <a href="https://outlook.office365.com/owa">outlook</a> or <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/AllGroups">AAD</a></li>
+<li>The following resources will be generated for the new team:</li>
+</ul>
+<p><img alt="nais-teams" src="../../assets/nais-teams.png" /></p>
+<ul>
+<li>An Azure AD group is created, and can be viewed in the <a href="https://account.activedirectory.windowsazure.com/r#/groups">My Groups portal</a></li>
+<li>A <a href="https://github.com/orgs/navikt/teams">GitHub team</a> is created.</li>
+<li>Deploy keys are created, and can be obtained in the <a href="https://deploy.nais.io/">NAIS deploy frontend</a>.</li>
+<li>GCP users are provisioned, and users can log in to the <a href="https://console.cloud.google.com/">Google Cloud Console</a> using their NAV e-mail address.</li>
+<li>Two GCP projects are provisioned, one for development and one for production. See <code>https://console.cloud.google.com/home/dashboard?project=&lt;(dev|prod)-yourteamname&gt;</code>.</li>
+<li>Namespaces are provisioned in all Kubernetes clusters.</li>
+</ul>
+<h2 id="managing-your-team">Managing your team<a class="headerlink" href="#managing-your-team" title="Permanent link">§</a></h2>
+<ul>
+<li>Team members are managed by managing the group in <a href="https://account.activedirectory.windowsazure.com/r#/groups">My Groups portal</a></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is the responsibility of each team to keep the group member roster up to date. This includes removing former team members in a timely fashion.</p>
+</div>
+<h2 id="access-to-api-keys">Access to API keys<a class="headerlink" href="#access-to-api-keys" title="Permanent link">§</a></h2>
+<p>In order to access <em>team API keys</em>, go to <a href="https://deploy.nais.io/">deploy.nais.io</a>. Here you will find API keys for all teams you are a member of.</p>
+<h3 id="rotate-api-key">Rotate API key<a class="headerlink" href="#rotate-api-key" title="Permanent link">§</a></h3>
+<p>Go to <a href="https://deploy.nais.io/">deploy.nais.io</a> and click on the "Rotate key" button, a pop-up will ask you to confirm the rotation.</p>
+<h2 id="team-namespaces">Team namespaces<a class="headerlink" href="#team-namespaces" title="Permanent link">§</a></h2>
+<p>Team namespaces are supported in both on-prem and in GCP. Refer to the <a href="../../clusters/team-namespaces/">team namespaces documentation</a> for details.</p>
+<h2 id="gcp-team-projects">GCP Team projects<a class="headerlink" href="#gcp-team-projects" title="Permanent link">§</a></h2>
+<p>Each team has their own <a href="https://cloud.google.com/storage/docs/projects">Google Cloud Platform project</a>, which consist of:</p>
+<ul>
+<li>a set of users,</li>
+<li>a set of APIs,</li>
+<li>in addition to authentication and monitoring settings of those APIs.</li>
+</ul>
+<p>So, for example, all of your Cloud Storage buckets and objects, along with user permissions for accessing them, reside in a project.</p>
+<p>In general every member of the team has the possibility to add the necessary permissions they need via <a href="https://console.cloud.google.com/iam-admin/iam">IAM role managment</a>.
+There is no general limitation as to which features/products that can be used in a project, but everything needs to have been <a href="https://doc.nais.io/legal/nais-ros/">ROS'd</a>.
+While we encourage the teams to base their ROS(s) and PVK(s) on the ones done by the NAIS team, each team is responsible to do their own necessary ROS and PVK aimed for their usage/feature not covered by existing ROS.</p>
+<p>Remember to clean up after yourself, so that NAV doesn't unnecessarily pay for resources.
+We have a dashboard showing what each <a href="https://datastudio.google.com/u/1/reporting/417b0a1d-b307-4a6d-a699-77a6ab239661/page/mJdmB">team</a> is using, plus a dashboard for <a href="https://datastudio.google.com/reporting/fda5f821-caef-4056-9356-9aa4f7082699/page/mJdmB">everything</a> in GCP.</p>
+<p>Nais recommends that teams use Terraform, og similar technologies, to control the lifecycle of resources created in team-projects. This is more important in production, for services that will run for a longer period of time, than ad-hoc experimentation in dev. </p>
+<h3 id="access-management">Access management<a class="headerlink" href="#access-management" title="Permanent link">§</a></h3>
+<p>To promote autonomous teams, teams control access to their own projects completely by themselves.
+This can be done either by pipeline, or manually adding access when needed.</p>
+<p>There are different scenarios for when and how to give access to users, and the official <a href="https://cloud.google.com/iam/docs/granting-changing-revoking-access">Google Cloud Docs</a> is definitively the best source for information.</p>
+<p>Google Docs has a list of possible <a href="https://cloud.google.com/iam/docs/understanding-roles#predefined_roles">predefined roles</a> that we recommend using.
+These roles can also be listed our with <code>gcloud iam roles list --filter $resource</code>.</p>
+<p>Running the command without the <code>--filter</code> argument will return a very long list.</p>
+<h4 id="temporary-access">Temporary access<a class="headerlink" href="#temporary-access" title="Permanent link">§</a></h4>
+<p>On a general basis, access should not be permanent.
+A good habit is to only grant your self or other a temporary access.</p>
+<p>Using the following <code>gcloud</code>-cli command will grant a user 1 hours of access to <code>roles/cloudsql.instanceUser</code>:
+<div class="codehilite"><pre><span></span><code>gcloud projects add-iam-policy-binding &lt;PROJECT_ID&gt; --member<span class="o">=</span>user:&lt;FIRSTNAME&gt;.&lt;LASTNAME&gt;@nav.no --role<span class="o">=</span>roles/cloudsql.instanceUser --condition<span class="o">=</span><span class="s2">&quot;expression=request.time &lt; timestamp(&#39;</span><span class="k">$(</span>date -v <span class="s1">&#39;+1H&#39;</span> -u +<span class="s1">&#39;%Y-%m-%dT%H:%M:%SZ&#39;</span><span class="k">)</span><span class="s2">&#39;),title=temp_access&quot;</span>
+</code></pre></div></p>
+<p>There is more information over at <a href="https://cloud.google.com/iam/docs/configuring-temporary-access">Google Cloud Docs</a>.</p>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">§</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Access to Postgres</p>
+<p>We have a separate guide for how to give your self temporary access to a Postgres database. Head on over to <a href="../../persistence/postgres/#granting-temporary-personal-access">persistence/postgres</a>.</p>
+</div>
+<p>Underneath we have outlined two typical use cases for when you need to give your self or someone else access.
+Do get a better understanding of how to give and revoke access with <code>gcloud</code>, you should read <a href="https://cloud.google.com/iam/docs/granting-changing-revoking-access">Granting, changing, and revoking access to resources
+</a>.</p>
+<h5 id="how-to-give-your-self-access">How to give your self access<a class="headerlink" href="#how-to-give-your-self-access" title="Permanent link">§</a></h5>
+<p>To be able to run this commando, you first need to find your <code>PROJECT_ID</code>, and the specific <code>ROLE_NAME</code> you want access to. To adhere to the principle of using temporary access, the example below will give access to <code>ROLE_NAME</code> for 1 hour.
+<div class="codehilite"><pre><span></span><code>gcloud projects add-iam-policy-binding &lt;PROJECT_ID&gt; --member<span class="o">=</span>user:&lt;FIRSTNAME&gt;.&lt;LASTNAME&gt;@nav.no --role<span class="o">=</span>&lt;ROLE_NAME&gt; --condition<span class="o">=</span><span class="s2">&quot;expression=request.time &lt; timestamp(&#39;</span><span class="k">$(</span>date -v <span class="s1">&#39;+1H&#39;</span> -u +<span class="s1">&#39;%Y-%m-%dT%H:%M:%SZ&#39;</span><span class="k">)</span><span class="s2">&#39;),title=temp_access&quot;</span>
+</code></pre></div></p>
+<p>As an example, if you'd want to view your team's Storage buckets, you'll need the <code>roles/storage.objectViewer</code> role.
+It's always smart to only give out <a href="#temporary-access">temporary access</a>.</p>
+<p>This can also be leveraged to give a user belonging to a different team access to <em>your</em> team's resources.</p>
+<h5 id="how-to-give-a-service-account-access">How to give a service account access<a class="headerlink" href="#how-to-give-a-service-account-access" title="Permanent link">§</a></h5>
+<p>A service account is also a <code>--member</code> of a project, but instead of running the command mentioned in <a href="#how-to-give-your-self-access">How to give your self access</a>, you change <code>--member=user:&lt;email&gt;</code> to <code>--member=serviceAccount:&lt;email&gt;</code>.</p>
+<h4 id="gcp-iam-recommender">GCP IAM recommender<a class="headerlink" href="#gcp-iam-recommender" title="Permanent link">§</a></h4>
+<p>Sometimes you might end up giving more (a wider) access than strictly necessary - but fear not!
+GCP has an IAM recommender which will monitor each access permission given, and compare it to accesses actually asked for (or required).
+After which the IAM recommender will recommend a more granular access, that probably fits you and your usage better!
+Read more about the IAM recommender over at <a href="https://cloud.google.com/iam/docs/recommender-overview">Google Cloud Docs</a>.</p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../.."</script>
+
+    
+
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

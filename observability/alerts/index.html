@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/observability/alerts/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logo.svg">
+    
+
+    
+    <title>Alerts Overview - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../..">
+                <img alt="logo" height="36" src="../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../../deployment/manual/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="example/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ./
+
+
+
+' aria-current="location"><strong>Observability</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ./
+
+' aria-current="location"><strong>Alerts</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Alerts Overview</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="example/">Full example</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="recommended_alerts/">Recommended</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="reference/">Reference</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../logs/
+
+'> Logs</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../metrics/">Metrics</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../tracing/">Tracing</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../security/auth/
+
+
+
+'> Security</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#alerts">Alerts</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#getting-started">Getting started</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#deployment">Deployment</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#different-receiversnotifications">Different receivers/notifications</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#slack">Slack</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#e-mail">E-mail</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#sms">SMS</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#how-to-write-a-good-alert">How to write a good alert</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#writing-the-expr">Writing the expr</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#expressive-descriptions-or-actions">Expressive descriptions or actions</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#target-several-apps-or-namespaces-in-a-query">Target several apps or namespaces in a query</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#slack_1">Slack</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#notify-here-and-team">Notify @here and @team</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#examples-of-the-different-slackseverity-colors">Examples of the different Slack/severity colors</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#flow">Flow</a>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/observability/alerts/README.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="alerts">Alerts<a class="headerlink" href="#alerts" title="Permanent link">§</a></h1>
+<p>We use <a href="https://prometheus.io/">Prometheus</a> to collect metrics, and can trigger alerts based on these metrics.
+Alerts are specified in their own Kubernetes resource called <code>alerts</code> as we have made our own operator called <a href="https://github.com/nais/alerterator">Alerterator</a>.</p>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">§</a></h2>
+<p>To get started using Alerts we need to have a yaml-file describing our rules.
+You can start of with our <a href="recommended_alerts/">recommended alerts</a> (made by contributions from our users!).</p>
+<p>Usually it's simplest to just call this file <code>alerts.yaml</code>, which we will do in this example.
+You can see the content of the file below, and you will see that we only notify Slack, but you can add more receivers.</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nais.io/v1&quot;</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Alert&quot;</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nais-testapp</span><span class="w"></span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aura</span><span class="w"></span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aura</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">receivers</span><span class="p">:</span><span class="w"> </span><span class="c1"># receivers for all alerts below</span><span class="w"></span>
+<span class="w">    </span><span class="nt">slack</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">channel</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#nais-alerts-dev&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">prependText</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;!here&gt;</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">&#39;</span><span class="w"> </span><span class="c1"># this text will be prepended to the Slack alert title</span><span class="w"></span>
+<span class="w">  </span><span class="nt">alerts</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nais-testapp unavailable</span><span class="w"></span>
+<span class="w">      </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;kube_deployment_status_replicas_unavailable{deployment=&quot;nais-testapp&quot;}</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">0&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2m</span><span class="w"></span>
+<span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Read app logs(kubectl logs appname). Read Application events (kubectl descibe deployment appname)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The app might crash sometimes due to startup errors</span><span class="w"></span>
+<span class="w">      </span><span class="nt">documentation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/navikt/aura-doc/naisvakt/alerts.md#app_unavailable</span><span class="w"></span>
+<span class="w">      </span><span class="nt">sla</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">respond within 1h, during office hours</span><span class="w"></span>
+<span class="w">      </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">danger</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CoreDNS unavailable</span><span class="w"></span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CoreDNS unavailable, there are zero replicas</span><span class="w"></span>
+<span class="w">      </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;kube_deployment_status_replicas_available{namespace=&quot;kube-system&quot;,</span><span class="nv"> </span><span class="s">deployment=&quot;coredns&quot;}</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span><span class="w"></span>
+<span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubectl describe pod -l app=nais-testapp</span><span class="w"></span>
+<span class="w">      </span><span class="nt">documentation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/navikt/aura-doc/naisvakt/alerts.md#coredns</span><span class="w"></span>
+<span class="w">      </span><span class="nt">sla</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">respond within 1h, solve within 4h, around the clock</span><span class="w"></span>
+<span class="w">      </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">danger</span><span class="w"></span>
+</code></pre></div>
+<h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">§</a></h3>
+<p>If you already use <code>nais/deploy</code>, adding a new deploy-action is rather simple. Create a file called <code>.github/workflows/alert-deploy.yaml</code></p>
+<div class="codehilite"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy alerts to NAIS</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;alerts.yaml&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.github/workflows/alerts.yaml&#39;</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">apply-alerts</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Apply alerts to cluster</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout code</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy to dev</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nais/deploy/actions/deploy@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">APIKEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.NAIS_DEPLOY_APIKEY }}</span><span class="w"></span>
+<span class="w">          </span><span class="nt">CLUSTER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev-fss</span><span class="w"></span>
+<span class="w">          </span><span class="nt">RESOURCE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/alerts.yaml</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy to prod</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nais/deploy/actions/deploy@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">APIKEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.NAIS_DEPLOY_APIKEY }}</span><span class="w"></span>
+<span class="w">          </span><span class="nt">CLUSTER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod-fss</span><span class="w"></span>
+<span class="w">          </span><span class="nt">RESOURCE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/alerts.yaml</span><span class="w"></span>
+</code></pre></div>
+<p>You can also add <code>/path/to/alerts.yaml</code> to <code>RESOURCE</code> in a previous workflow, just remember to <a href="../../deployment/#escaping-and-raw-resources">escape</a> your expressive descriptions.</p>
+<h2 id="different-receiversnotifications">Different receivers/notifications<a class="headerlink" href="#different-receiversnotifications" title="Permanent link">§</a></h2>
+<p>Alerterator supports three different types of notification, <a href="reference/#receiversslack">Slack</a>, <a href="reference/#receiversemail">E-mail</a>, and <a href="reference/#receiverssms">SMS</a>.
+In our spec we follow the naming convention of Alertmanager and call it <code>receivers</code>.</p>
+<p>Take a look below too see exactly how each receiver is configured.</p>
+<h3 id="slack">Slack<a class="headerlink" href="#slack" title="Permanent link">§</a></h3>
+<div class="codehilite"><pre><span></span><code>spec:
+  receivers:
+    slack:
+      channel: &#39;#teamname-alerts&#39;
+      prependText: &#39;&lt;!here&gt;&#39;
+</code></pre></div>
+<p>Slack will always notify you when an alert is resolved.</p>
+<h3 id="e-mail">E-mail<a class="headerlink" href="#e-mail" title="Permanent link">§</a></h3>
+<div class="codehilite"><pre><span></span><code>spec:
+  receivers:
+    email:
+      to: &#39;kari.nordmann@nav.no&#39;
+      send_resolved: &#39;true&#39;
+</code></pre></div>
+<p><code>send_resolved</code> can be set to <code>true</code> if you want to receiver notification for when an alert is resolved.</p>
+<h3 id="sms">SMS<a class="headerlink" href="#sms" title="Permanent link">§</a></h3>
+<div class="codehilite"><pre><span></span><code>spec:
+  receivers:
+    sms:
+      recipients: &#39;12345678,8764321&#39;
+      send_resolved: &#39;false&#39;
+</code></pre></div>
+<p><code>send_resolved</code> can be set to <code>true</code> if you want to receiver notification for when an alert is resolved.</p>
+<h2 id="how-to-write-a-good-alert">How to write a good alert<a class="headerlink" href="#how-to-write-a-good-alert" title="Permanent link">§</a></h2>
+<h3 id="writing-the-expr">Writing the <code>expr</code><a class="headerlink" href="#writing-the-expr" title="Permanent link">§</a></h3>
+<p>In order to minimize the feedback loop we suggest experimenting on the Prometheus server to find the right metric for your alert and the notification threshold.
+The Prometheus server can be found in each cluster, at <code>https://prometheus.{cluster.ingress}</code> (i.e. <a href="https://prometheus.dev-gcp.nais.io">https://prometheus.dev-gcp.nais.io</a>).</p>
+<p>You can also visit the Alertmanager at <code>https://alertmanager.{cluster.ingress}</code> (i.e. <a href="https://alertmanager.dev-gcp.nais.io">https://alertmanager.dev-gcp.nais.io</a>) to see which alerts are triggered now (you can also silence already triggered alerts).</p>
+<h3 id="expressive-descriptions-or-actions">Expressive descriptions or actions<a class="headerlink" href="#expressive-descriptions-or-actions" title="Permanent link">§</a></h3>
+<p>You can also use <code>labels</code> in your notification by referencing them with <code>{{ $labels.&lt;field&gt; }}</code>. </p>
+<p>For example:</p>
+<div class="codehilite"><pre><span></span><code>{{ $labels.node }} is marked as unschedulable
+</code></pre></div>
+<p>turns into the following when notifying:</p>
+<div class="codehilite"><pre><span></span><code>b27apvl00178.preprod.local is marked as unschedulable
+</code></pre></div>
+<p>Note that the query decides which labels are available, since the labels correnspond to the field names in the document that is the query result. To see which labels are available for your specific query, run your query on the Prometheus server. Here's an <a href="https://prometheus.dev-fss.nais.io/graph?g0.expr=kube_deployment_status_replicas_available%20%3D%3D%200&amp;g0.tab=1&amp;g0.stacked=0&amp;g0.show_exemplars=0&amp;g0.range_input=1h">example</a> (remember to connect your naisdeveice).</p>
+<p>You can read more about this over at the <a href="https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/#templating">Prometheus documentation</a> and at the <a href="https://github.com/kubernetes/kube-state-metrics/tree/master/docs">Kubernetes documentation of exposed metrics</a>.</p>
+<h4 id="labels-and-naisdeploy">Labels and nais/deploy<a class="headerlink" href="#labels-and-naisdeploy" title="Permanent link">§</a></h4>
+<p>If you are using labels and variables with nais/deploy, you need to remember to escape the labels used for the alerts.
+See <a href="https://doc.nais.io/deployment#escaping-and-raw-resources">deployment#escaping-and-raw-resources</a> for how.</p>
+<h4 id="value-of-expression">Value of expression<a class="headerlink" href="#value-of-expression" title="Permanent link">§</a></h4>
+<p>You can get the value of your expression with <code>$value</code></p>
+<h3 id="target-several-apps-or-namespaces-in-a-query">Target several apps or namespaces in a query<a class="headerlink" href="#target-several-apps-or-namespaces-in-a-query" title="Permanent link">§</a></h3>
+<p>Using regular expression, you can target multiple apps or namespaces with one query.
+This saves on repeating the same alert for each your apps.</p>
+<div class="codehilite"><pre><span></span><code>absent(up{app=~&quot;myapp|otherapp|thirdapp&quot;})
+</code></pre></div>
+<p>Here we use <code>=~</code> to select labels that match the provided string (or substring) using a regular expression. Use <code>!~</code> to negate the regular expression.</p>
+<p>When doing this, it can be smart to use labels (mention above), to list which namespace the alert is tied to.
+Use the <code>kubernetes_namespace</code> label in your <code>action</code> or <code>description</code> by adding <code>{{ $labels.kubernetes_namespace }}</code>, and it will write the namespace for the app that is having problems.</p>
+<h2 id="slack_1">Slack<a class="headerlink" href="#slack_1" title="Permanent link">§</a></h2>
+<h3 id="notify-here-and-team">Notify @here and @team<a class="headerlink" href="#notify-here-and-team" title="Permanent link">§</a></h3>
+<p>Slack has their own syntax for notifying <code>@channel</code> or <code>@here</code>, respectively <code>&lt;!channel&gt;</code> and <code>&lt;!here&gt;</code>.</p>
+<p>Notifying a user group on the other hand is a bit more complicated.
+The user group <code>@nais-vakt</code> is written <code>&lt;!subteam^SB8KS4WAV|nais-vakt&gt;</code> in a Slack alert message, where <code>SB8KS4WAV</code> is the id for the specific user group, and <code>nais-vakt</code> is the name of the user group.</p>
+<p>You can find the id by right clicking on the name in the user group list.
+Where last part in the URL is the id. The URL will look something like the one below:</p>
+<div class="codehilite"><pre><span></span><code>https://nav-it.slack.com/usergroups/SB8KS4WAV
+</code></pre></div>
+<h3 id="examples-of-the-different-slackseverity-colors">Examples of the different Slack/severity colors<a class="headerlink" href="#examples-of-the-different-slackseverity-colors" title="Permanent link">§</a></h3>
+<p>Slack alerts supports colors.
+The severity field defines the color (<code>good</code> is results in a green message, <code>warning</code> in a yellow and <code>danger</code> in a red).
+If you want to define another color, specify the wanted hex code as severity instead of the pre-defined words.</p>
+<p><img alt="Slack colors" src="../../assets/attachment_color.png" /></p>
+<h2 id="flow">Flow<a class="headerlink" href="#flow" title="Permanent link">§</a></h2>
+<p><img alt="Prometheus Server --&amp;gt; Prometheus Alertmanager" src="../../assets/prometheus_alertmanager_overview.png" /></p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../.."</script>
+
+    
+
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

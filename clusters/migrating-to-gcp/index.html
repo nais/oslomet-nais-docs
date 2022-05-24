@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/clusters/migrating-to-gcp/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logo.svg">
+    
+
+    
+    <title>Migrating to GCP - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../..">
+                <img alt="logo" height="36" src="../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../on-premises/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../migrating-databases-to-gcp/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../gcp/
+
+' aria-current="location"><strong>Clusters</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../gcp/">Google Cloud Platform</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../on-premises/">On-premises</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Migrating to GCP</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../migrating-databases-to-gcp/">Migrating databases to GCP</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../team-namespaces/">Team namespaces</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../service-discovery/">Service discovery</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../security/auth/
+
+
+
+'> Security</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#migrating-to-gcp">Migrating to GCP</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#why-migrate-our-applications">Why migrate our application(s)?</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#prerequisites">Prerequisites</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#basic-setup">Basic setup</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#security">Security</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#deploy">Deploy</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#ingress">Ingress</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#privacy">Privacy</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#ros">ROS</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#roles-and-responsibilites">Roles and responsibilites</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#faq">FAQ</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#what-do-we-have-to-change">What do we have to change?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#what-should-we-change">What should we change?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#what-do-we-not-need-to-change">What do we not need to change?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#what-can-we-do-now-to-ease-migration-to-gcp-later">What can we do now to ease migration to GCP later?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#what-about-pvk">What about PVK?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#how-do-we-migrate-our-database">How do we migrate our database?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#why-is-there-no-vault-in-gcp">Why is there no Vault in GCP?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#how-do-we-migrate-from-vault-to-secrets-manager">How do we migrate from Vault to Secrets Manager?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#how-do-we-migrate-from-filestorage-to-buckets">How do we migrate from filestorage to buckets?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#what-are-the-plans-for-cloud-migration-in-nav">What are the plans for cloud migration in NAV?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#what-can-we-do-in-our-gcp-project">What can we do in our GCP project?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#how-long-does-it-take-to-migrate">How long does it take to migrate?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#we-have-personally-identifiable-andor-sensitive-data-in-our-application-and-we-heard-about-the-privacy-shield-invalidation-can-we-still-use-gcp">We have personally identifiable and/or sensitive data in our application, and we heard about the Privacy Shield invalidation. Can we still use GCP?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#how-do-i-reach-an-application-found-on-premises-from-my-application-in-gcp">How do I reach an application found on-premises from my application in GCP?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#how-do-i-reach-an-application-found-on-gcp-from-my-application-on-premises">How do I reach an application found on GCP from my application on-premises?</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#gcp-compared-to-on-premises">GCP compared to on-premises</a>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/clusters/migrating-to-gcp.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="migrating-to-gcp">Migrating to GCP<a class="headerlink" href="#migrating-to-gcp" title="Permanent link">§</a></h1>
+<h3 id="why-migrate-our-applications">Why migrate our application(s)?<a class="headerlink" href="#why-migrate-our-applications" title="Permanent link">§</a></h3>
+<ul>
+<li>Access to self-service Google-managed <a href="../../persistence/buckets/">buckets</a> and <a href="../../persistence/postgres/">Postgres databases</a>.</li>
+<li>Access to Google Cloud features.</li>
+<li><a href="../../appendix/zero-trust/">Zero Trust security model</a> instead of FSS/SBS zone model.</li>
+<li><a href="https://github.com/linkerd/linkerd-viz">Built-in call tracing</a> similar to AppDynamics.</li>
+<li>Cost efficient and future proof.</li>
+</ul>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">§</a></h3>
+<ul>
+<li>The team needs to update their ROS and PVK analysis to migrate to GCP. Refer to <a href="../gcp/#ros-and-pvk">Google Cloud Platform's ROS and PVK section</a>.</li>
+<li>Read this <a href="../../legal/roles-responsibilities/">roles and responsibilites</a></li>
+</ul>
+<h4 id="basic-setup">Basic setup<a class="headerlink" href="#basic-setup" title="Permanent link">§</a></h4>
+<p>Follow the Getting started's <a href="../../basics/access/">Access from laptop</a> instructions, and make sure to pay attention to the <a href="../../basics/access/#google-cloud-platform-gcp">GCP</a> section.</p>
+<h4 id="security">Security<a class="headerlink" href="#security" title="Permanent link">§</a></h4>
+<p>Our GCP clusters use a zero trust security model, implying that the application must specify both incoming and outgoing connections in order to receive or send traffic at all. This is expressed using the <a href="../../nais-application/access-policy/">access policy spec</a>.</p>
+<p>The access policy also enables zone traversal and cross-cluster communication. This must be implemented in both applications, by using and accepting tokens from <a href="../../security/auth/tokenx/">TokenX</a> or <a href="../../security/auth/azure-ad/">AAD</a>.</p>
+<h4 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">§</a></h4>
+<p>The same deployment mechanism is leveraged for both on-premise and GCP K8s clusters. See <a href="../../deployment/">deployment</a> section of the documentation for how to leverage the <em>NAIS deploy tool</em>.</p>
+<h4 id="ingress">Ingress<a class="headerlink" href="#ingress" title="Permanent link">§</a></h4>
+<p>See <a href="../gcp/">GCP clusters</a>.</p>
+<h4 id="privacy">Privacy<a class="headerlink" href="#privacy" title="Permanent link">§</a></h4>
+<p>Google is cleared to be a data processor for personally identifiable information (PII) at NAV. However, before your team moves any applications or data to GCP the following steps should be taken:</p>
+<ol>
+<li>Verify that you have a valid and up-to-date PVK for your application. This document should be <a href="../../legal/app-pvk/">tech stack agnostic</a> and as such does not need to be changed to reflect the move to GCP.</li>
+<li>If the application stores any data in GCP, update <a href="https://behandlingskatalog.nais.adeo.no/">Behandlingskatalogen</a> to reflect that Google is a data processor.</li>
+</ol>
+<h4 id="ros">ROS<a class="headerlink" href="#ros" title="Permanent link">§</a></h4>
+<p>The ROS analysis for the team's applications need to be updated to reflect any changes in platform components used. For example, if your team has any specific measures implemented to mitigate risks related to "Kode 6 / 7 users", you should consider if these measures still apply on the new infrastructure or if you want to initiate any additional measures. When updating the ROS, please be aware that the GCP components you are most likely to use <a href="../../legal/nais-ros/">have already undergone risk assessment by the nais team</a> and that you can refer to these ROS documents in your own risk assessment process.</p>
+<h4 id="roles-and-responsibilites">Roles and responsibilites<a class="headerlink" href="#roles-and-responsibilites" title="Permanent link">§</a></h4>
+<p>As with applications in our on-premises clusters, the operation, security and integrity of any application is the responsibility of the team that owns that particular application. Conversely, it is the responsiblity of the nais platform team to handle the operation, security and integrity of the nais application platform and associated components. At GCP, Google is responsible for operating infrastructure underlying the nais platform, as well as any cloud services not consumed through the nais abstraction layer. Service exceptions reported by either Google or the nais team will be announced in the #nais slack channel.</p>
+<p>If your application stores personally identifiable information in any GCP data store, Google is effectively a data processor ("databehandler") for this data, and your documentation needs to reflect this fact.</p>
+<h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">§</a></h3>
+<h4 id="what-do-we-have-to-change">What do we have to change?<a class="headerlink" href="#what-do-we-have-to-change" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<ul>
+<li>Cluster name: All references to cluster name. (Logs, grafana, deploy, etc.)</li>
+<li>Secrets: are now stored as native secrets in the cluster, rather than externally in Vault.</li>
+<li>Namespace: If your application is in the <code>default</code> namespace, you will have to move to team namespace</li>
+<li>Storage: Use <code>GCS-buckets</code> instead of <code>s3</code> in GCP. Buckets, and access to them, are expressed in your <a href="../../nais-application/example/">application manifest</a></li>
+<li>Ingress: There are some domains that are available both on-prem and in GCP, but some differ, make sure to verify before you move.</li>
+<li>Postgres: A new database (and access to it) is automatically configured when expressing <code>sqlInstance</code> in your <a href="../../nais-application/example/">application manifest</a></li>
+</ul>
+<p>We're currently investigating the possibility of using on-prem databases during a migration window.</p>
+<ul>
+<li>PVK: Update your existing PVK to include cloud</li>
+</ul>
+<p>See <a href="./#gcp-compared-to-on-premises">this table</a> for the differences between GCP and on-premises, and which that may apply to your application.</p>
+</details>
+<h4 id="what-should-we-change">What should we change?<a class="headerlink" href="#what-should-we-change" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<ul>
+<li>Use <a href="../../security/auth/tokenx/">TokenX</a> instead of API-GW.</li>
+<li>If using automatically configured <a href="../../persistence/buckets/">buckets</a> or <a href="../../persistence/postgres/">postgres</a>, use <a href="https://cloud.google.com/storage/docs/reference/libraries">Google APIs</a></li>
+</ul>
+</details>
+<h4 id="what-do-we-not-need-to-change">What do we not need to change?<a class="headerlink" href="#what-do-we-not-need-to-change" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>You do not have to make any changes to your application code. Ingresses work the same way, although some domains overlap and others are exclusive. Logging, secure logging, metrics and alerts work the same way.</p>
+</details>
+<h4 id="what-can-we-do-now-to-ease-migration-to-gcp-later">What can we do now to ease migration to GCP later?<a class="headerlink" href="#what-can-we-do-now-to-ease-migration-to-gcp-later" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<ul>
+<li>Make sure your PVK is up to date.</li>
+<li>Deploy your application to your team's namespace instead of <code>default</code>, as this is not available in GCP.</li>
+<li>Use a token auth flow between your applications. Either <a href="../../security/auth/tokenx/">TokenX</a>, <a href="../../security/auth/azure-ad/">AAD on-behalf-of or AAD client_credentials flow</a> depending on your use case. This allows for a more seamless migration of your applications. E.g. if you have two apps in FSS, you can migrate one without the other.</li>
+</ul>
+</details>
+<h4 id="what-about-pvk">What about PVK?<a class="headerlink" href="#what-about-pvk" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>A PVK is not a unique requirement for GCP, so all applications should already have one. See <a href="../..#about-security-and-privacy-when-using-platform-services">about security and privacy when using platform services</a> for details</p>
+</details>
+<h4 id="how-do-we-migrate-our-database">How do we migrate our database?<a class="headerlink" href="#how-do-we-migrate-our-database" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>See <a href="../migrating-databases-to-gcp/">Migrating databases to GCP</a>.</p>
+</details>
+<h4 id="why-is-there-no-vault-in-gcp">Why is there no Vault in GCP?<a class="headerlink" href="#why-is-there-no-vault-in-gcp" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>There is native functionality in GCP that overlap with many of the use cases that Vault have covered on-prem. Using these mechanisms removes the need to deal with these secrets at all. Introducing team namespaces allows the teams to manage their own secrets in their own namespaces without the need for IAC and manual routines. For other secrets that are not used by the application during runtime, you can use the <a href="../../security/secrets/google-secrets-manager/">Secret Manager</a> in each team's GCP project.</p>
+</details>
+<h4 id="how-do-we-migrate-from-vault-to-secrets-manager">How do we migrate from Vault to Secrets Manager?<a class="headerlink" href="#how-do-we-migrate-from-vault-to-secrets-manager" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>See the <a href="../../security/secrets/google-secrets-manager/">Secrets Manager documentation</a>.</p>
+</details>
+<h4 id="how-do-we-migrate-from-filestorage-to-buckets">How do we migrate from filestorage to buckets?<a class="headerlink" href="#how-do-we-migrate-from-filestorage-to-buckets" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>Add a bucket to your application spec Copy the data from the filestore using <a href="https://s3tools.org/s3cmd">s3cmd</a> to the bucket using <a href="https://cloud.google.com/storage/docs/gsutil">gsutil</a></p>
+</details>
+<h4 id="what-are-the-plans-for-cloud-migration-in-nav">What are the plans for cloud migration in NAV?<a class="headerlink" href="#what-are-the-plans-for-cloud-migration-in-nav" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>We aim to shut down both sbs clusters by summer 2021 NAVs strategic goal is to shut off all on-prem datacenters by the end of 2023</p>
+</details>
+<h4 id="what-can-we-do-in-our-gcp-project">What can we do in our GCP project?<a class="headerlink" href="#what-can-we-do-in-our-gcp-project" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>The teams GCP projects are primarily used for automatically generated resources (buckets and postgres). We're working on extending the service offering. However, additional access may be granted if required by the team</p>
+</details>
+<h4 id="how-long-does-it-take-to-migrate">How long does it take to migrate?<a class="headerlink" href="#how-long-does-it-take-to-migrate" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>A minimal application without any external requirements only have to change a single configuration parameter when deploying and have migrated their application in 5 minutes. See <a href="./#gcp-compared-to-on-premises">this table</a> for the differences between GCP and on-premises, and which that may apply to your application.</p>
+</details>
+<h4 id="we-have-personally-identifiable-andor-sensitive-data-in-our-application-and-we-heard-about-the-privacy-shield-invalidation-can-we-still-use-gcp">We have personally identifiable and/or sensitive data in our application, and we heard about the Privacy Shield invalidation. Can we still use GCP?<a class="headerlink" href="#we-have-personally-identifiable-andor-sensitive-data-in-our-application-and-we-heard-about-the-privacy-shield-invalidation-can-we-still-use-gcp" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p><strong>Yes.</strong> <a href="https://navno.sharepoint.com/:w:/r/sites/Skytjenesterforvaltningsregime/_layouts/15/Doc.aspx?sourcedoc=%7BA9562232-BB00-40CB-930D-4EF254A5AD7F%7D&amp;file=2020-10-10%20GCP%20-%20behandling%20og%20avtaler.docx&amp;action=default&amp;mobileredirect=true">NAV's evaluation of our Data Processor Agreement with Google post-Schrems II</a> is that it still protects us and is valid for use <strong>given that data is stored and processed in data centers located within the EU/EEA</strong>. If your team uses resources provisioned through NAIS, this is guaranteed by the nais team. If your team uses any other GCP services the team is responsible for ensuring that only resources within EU/EES are used (as well as for evaluating the risk of using these services).</p>
+<p>See <a href="../../legal/app-pvk/">Laws and regulations/Application PVK</a> for details.</p>
+</details>
+<h4 id="how-do-i-reach-an-application-found-on-premises-from-my-application-in-gcp">How do I reach an application found on-premises from my application in GCP?<a class="headerlink" href="#how-do-i-reach-an-application-found-on-premises-from-my-application-in-gcp" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>The application <em>on-premises</em> <strong>must</strong> fulfill the following requirements:</p>
+<ol>
+<li>Be secured with <a href="../../security/auth/">OAuth 2.0</a>. That is, either:<ul>
+<li>a. <a href="../../security/auth/tokenx/">TokenX</a>, or </li>
+<li>b. <a href="../../security/auth/azure-ad/">Azure AD</a></li>
+</ul>
+</li>
+<li>Exposed to GCP using a special ingress:<ul>
+<li><code>https://&lt;app&gt;.dev-fss-pub.nais.io</code></li>
+<li><code>https://&lt;app&gt;.prod-fss-pub.nais.io</code></li>
+</ul>
+</li>
+</ol>
+<p>Create a pull request at <a href="https://github.com/navikt/bigip-iac/tree/main/pub-fss">https://github.com/navikt/bigip-iac/tree/main/pub-fss</a> add these ingresses which allows 
+them be exposed to GCP.</p>
+<p>The application <em>on-premises</em> must then:</p>
+<ol>
+<li>Add the ingress created above to the list of ingresses:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ingresses</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://&lt;app&gt;.&lt;dev|prod&gt;-fss-pub.nais.io</span><span class="w"></span>
+</code></pre></div>
+<p>The application <em>in GCP</em> must then:</p>
+<ol>
+<li>Add the above hosts to their <a href="../../nais-application/access-policy/#external-services">outbound external access policies</a>:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">accessPolicy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">outbound</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">external</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;app&gt;.&lt;dev|prod&gt;-fss-pub.nais.io</span><span class="w"></span>
+</code></pre></div>
+</details>
+<h4 id="how-do-i-reach-an-application-found-on-gcp-from-my-application-on-premises">How do I reach an application found on GCP from my application on-premises?<a class="headerlink" href="#how-do-i-reach-an-application-found-on-gcp-from-my-application-on-premises" title="Permanent link">§</a></h4>
+<details class="faq" open="open">
+<summary>Answer</summary>
+<p>The application in GCP must be exposed on a <a href="../gcp/#accessing-the-application">matching ingress</a>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">ingress</th>
+<th align="left">reachable from zone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;app&gt;.dev.intern.nav.no</code></td>
+<td align="left"><code>dev-fss</code></td>
+</tr>
+<tr>
+<td align="left"><code>&lt;app&gt;.dev.nav.no</code></td>
+<td align="left"><code>dev-sbs</code></td>
+</tr>
+<tr>
+<td align="left"><code>&lt;app&gt;.intern.nav.no</code></td>
+<td align="left"><code>prod-fss</code></td>
+</tr>
+<tr>
+<td align="left"><code>&lt;app&gt;.nav.no</code></td>
+<td align="left"><code>prod-sbs</code></td>
+</tr>
+</tbody>
+</table>
+<p>The application on-premises should <em>not</em> have to use webproxy to reach these ingresses.</p>
+</details>
+<h2 id="gcp-compared-to-on-premises">GCP compared to on-premises<a class="headerlink" href="#gcp-compared-to-on-premises" title="Permanent link">§</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Feature</th>
+<th align="left">on-prem</th>
+<th align="left">gcp</th>
+<th align="left">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Deploy</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">different clustername when deploying</td>
+</tr>
+<tr>
+<td align="left">Logging</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">different clustername in logs.adeo.no</td>
+</tr>
+<tr>
+<td align="left">Metrics</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">same mechanism, different datasource</td>
+</tr>
+<tr>
+<td align="left">Nais app dashboard</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">new and improved in GCP</td>
+</tr>
+<tr>
+<td align="left">Alerts</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">identical</td>
+</tr>
+<tr>
+<td align="left">Secure logs</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">different clustername in logs.adeo.no</td>
+</tr>
+<tr>
+<td align="left">Kafka</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">identical</td>
+</tr>
+<tr>
+<td align="left">Secrets</td>
+<td align="left">Vault</td>
+<td align="left">Secret manager</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Team namespaces</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Shared namespaces</td>
+<td align="left">✔️</td>
+<td align="left">✖️</td>
+<td align="left">Default namespace not available for teams in GCP</td>
+</tr>
+<tr>
+<td align="left">Health checks</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">identical</td>
+</tr>
+<tr>
+<td align="left">Ingress</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">see <a href="../gcp/">GCP</a> and <a href="../on-premises/">on-premises</a> for available domains</td>
+</tr>
+<tr>
+<td align="left">Storage</td>
+<td align="left">Ceph</td>
+<td align="left">Buckets</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Postgres</td>
+<td align="left">✔️ (IAC)</td>
+<td align="left">✔️ (self-service)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Laptop access</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">domain: dev.intern.nav.no (if migrating from SBS)</td>
+<td align="left">✔️ (IAC)</td>
+<td align="left">✔️ (Automatic)</td>
+<td align="left">Wildcard DNS points to GCP load balancer</td>
+</tr>
+<tr>
+<td align="left">Access to FSS services (if migrating from SBS)</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">Identical (either API-gw or <a href="../../security/auth/tokenx/">TokenX</a>. May require a proxy app, see <a href="#how-do-i-reach-an-application-found-on-premises-from-my-application-in-gcp">FAQ</a> for details.</td>
+</tr>
+<tr>
+<td align="left">OpenAM (ESSO)</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">OpenAM is available for existing application, but it is EOL. We recommend migrating to <a href="../../security/auth/tokenx/">TokenX</a></td>
+</tr>
+<tr>
+<td align="left">NAV truststore</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">PVK required</td>
+<td align="left">✔️</td>
+<td align="left">✔️</td>
+<td align="left">amend to cover storage in cloud</td>
+</tr>
+<tr>
+<td align="left">Security</td>
+<td align="left">Zone Model</td>
+<td align="left"><a href="../../appendix/zero-trust/">zero-trust</a></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../.."</script>
+
+    
+
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

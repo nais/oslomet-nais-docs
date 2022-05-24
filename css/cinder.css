@@ -1,0 +1,134 @@
+/*
+  Cinder Theme for MkDocs | Copyright 2015 Christopher Simpkins | MIT License
+  Cinder Theme for MkDocs | Copyright 2022 karol Turlej, Blerton Selami | MIT License 
+*/
+
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #FFF;
+    color: #343838;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #222;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small,
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small,
+.h1 .small,
+.h2 .small,
+.h3 .small,
+.h4 .small,
+.h5 .small,
+.h6 .small {
+    color: #B1B7B9;
+}
+
+h2 {
+    margin-top: 35px;
+}
+
+h1,
+h2 {
+    font-weight: 700;
+}
+
+h4 {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+h5 {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-variant: small-caps;
+} 
+
+
+/* default code snippet style */
+code {
+  background-color: #f6f6f6;
+  color: #9f005a;
+}
+
+pre>code {
+    font-size: 14px;
+}
+
+pre {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* this removes the default bootstrap color for link which does have bad contrast */
+a {
+    color: blue;
+}
+
+/* override for bootstrap hover style which is not sufficient  */
+a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.lead {
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.0312em;
+    color: #B1B7B9;
+}
+
+.table-striped>tbody>tr:nth-child(2n+1)>td,
+.table-striped>tbody>tr:nth-child(2n+1)>th {
+    background-color: #FCFDFF;
+}
+
+#mkdocs-search-query:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#mkdocs-search-query {
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #343838;
+    height: 45px;
+}
+
+/* style for search results */
+#mkdocs-search-results article{
+    border-bottom: 1px solid #dee2e6 !important;
+    position: relative;
+    padding: 0.5rem;
+    overflow: hidden;
+}
+

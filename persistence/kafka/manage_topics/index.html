@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/persistence/kafka/manage_topics/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../../assets/logo.svg">
+    
+
+    
+    <title>Manage topics - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../../..">
+                <img alt="logo" height="36" src="../../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../metrics/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../migrate_from_onprem/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../responsibilities/
+
+' aria-current="location"><strong>Persistence</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../responsibilities/">Responsibilities</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Kafka</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">Overview</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../application/">Application</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../metrics/">Grafana metrics</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Manage topics</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../migrate_from_onprem/">Migrate from onprem</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../avro_and_rest/">Avro and REST</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../offsets/">Working with Kafka Offsets</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../faq/">FAQ</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../buckets/">Google Cloud Storage/Buckets</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../postgres/">Google Cloud SQL (postgres)</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../bigquery/">Google BigQuery</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../elastic-search/">ElasticSearch</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../open-search/">OpenSearch</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../influxdb/">InfluxDB</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../objectstore/">S3 objectstore</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../redis/">Redis</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../volume-storage/">On-premises disk</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../mq/">MQ</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../mongodb-in-gcp/">MongoDB in GCP</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../../security/auth/
+
+
+
+'> Security</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#managing-topics-and-access">Managing topics and access</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#creating-topics-and-defining-access">Creating topics and defining access</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#data-catalog-metadata">Data catalog metadata</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#permanently-deleting-topic-and-data">Permanently deleting topic and data</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#accessing-topics-from-an-application">Accessing topics from an application</a>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/persistence/kafka/manage_topics.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="managing-topics-and-access">Managing topics and access<a class="headerlink" href="#managing-topics-and-access" title="Permanent link">§</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature applies only to <em>Aiven hosted Kafka</em>. On-premises Kafka is deprecated, and creating new topics on-premises was disabled summer 2021. For on-premises Kafka, see <a href="https://confluence.adeo.no/display/AURA/Kafka">on-premises Kafka documentation</a>.</p>
+</div>
+<h2 id="creating-topics-and-defining-access">Creating topics and defining access<a class="headerlink" href="#creating-topics-and-defining-access" title="Permanent link">§</a></h2>
+<p>Creating or modifying a <code>Topic</code> Kubernetes resource will trigger topic creation and ACL management with Aiven (hosted Kafka provider). The topic name will be prefixed with your team namespace, thus in the example below, the fully qualified topic name will be <code>myteam.mytopic</code>. This name will be set in the <code>.status.fullyQualifiedName</code> field on your Topic resource once the Topic is synchronized to Aiven.</p>
+<p>To add access to this topic for your application, see the next section: <em>Accessing topics from an application</em>.</p>
+<p>Topic resources can only be specified in GCP clusters. However, applications might access topics from any cluster, including on-premises. For details, read the next section.</p>
+<p>Currently, use the <code>nav-dev</code> pool for development, and <code>nav-prod</code> for production.
+If you need cross-environment communications, use the <code>nav-infrastructure</code> pool, but please consult the NAIS team before you do.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pool</th>
+<th align="left">Min. replication</th>
+<th align="left">Max. replication</th>
+<th align="left">Topic declared in</th>
+<th align="left">Available from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>nav-dev</code></td>
+<td align="left">2</td>
+<td align="left">3</td>
+<td align="left"><code>dev-gcp</code></td>
+<td align="left"><code>dev-gcp</code>, <code>dev-fss</code>, <code>dev-sbs</code></td>
+</tr>
+<tr>
+<td align="left"><code>nav-prod</code></td>
+<td align="left">2</td>
+<td align="left">3</td>
+<td align="left"><code>prod-gcp</code></td>
+<td align="left"><code>prod-gcp</code>, <code>prod-fss</code>, <code>prod-sbs</code></td>
+</tr>
+<tr>
+<td align="left"><code>nav-infrastructure</code></td>
+<td align="left">2</td>
+<td align="left">3</td>
+<td align="left"><code>prod-gcp</code></td>
+<td align="left"><code>dev-gcp</code>, <code>dev-fss</code>, <code>dev-sbs</code>, <code>prod-gcp</code>, <code>prod-fss</code>, <code>prod-sbs</code></td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">topic.yaml</label><div class="tabbed-content">
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kafka.nais.io/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mytopic</span><span class="w"></span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myteam</span><span class="w"></span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myteam</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nav-dev</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w">  </span><span class="c1"># optional; all fields are optional too; defaults shown</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cleanupPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delete</span><span class="w">  </span><span class="c1"># delete, compact, compact,delete</span><span class="w"></span>
+<span class="w">    </span><span class="nt">minimumInSyncReplicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">partitions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">replication</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">  </span><span class="c1"># see min/max requirements</span><span class="w"></span>
+<span class="w">    </span><span class="nt">retentionBytes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w">  </span><span class="c1"># -1 means unlimited</span><span class="w"></span>
+<span class="w">    </span><span class="nt">retentionHours</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">72</span><span class="w">  </span><span class="c1"># -1 means unlimited</span><span class="w"></span>
+<span class="w">  </span><span class="nt">acl</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myteam</span><span class="w"></span>
+<span class="w">      </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ownerapp</span><span class="w"></span>
+<span class="w">      </span><span class="nt">access</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">readwrite</span><span class="w">   </span><span class="c1"># read, write, readwrite</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bigteam</span><span class="w"></span>
+<span class="w">      </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumerapp1</span><span class="w"></span>
+<span class="w">      </span><span class="nt">access</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bigteam</span><span class="w"></span>
+<span class="w">      </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumerapp2</span><span class="w"></span>
+<span class="w">      </span><span class="nt">access</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bigteam</span><span class="w"></span>
+<span class="w">      </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">producerapp1</span><span class="w"></span>
+<span class="w">      </span><span class="nt">access</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">producerteam</span><span class="w"></span>
+<span class="w">      </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">producerapp</span><span class="w"></span>
+<span class="w">      </span><span class="nt">access</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="data-catalog-metadata">Data catalog metadata<a class="headerlink" href="#data-catalog-metadata" title="Permanent link">§</a></h3>
+<p>If your topic exposes data meant for consumption by a wider audience, you should define some metadata describing the topic and its contents. This data will be automatically scraped and added to the <a href="https://data.adeo.no">internal data catalog</a>. If the <code>catalog</code> key is set to <code>public</code>, the topic metadata is also published to the <a href="https://data.nav.no">external data catalog</a> and the <a href="https://data.norge.no/">National Data Catalog</a>.</p>
+<p>Syntax:</p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">topic.yaml</label><div class="tabbed-content">
+<div class="codehilite"><pre><span></span><code>apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  annotations:
+    dcat.data.nav.no/&lt;key&gt;: &quot;&lt;value&gt;&quot;
+</code></pre></div>
+</div>
+</div>
+<p>Use the following annotations and prefix them with <code>dcat.data.nav.no/</code>. Default values will be used where not supplied.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Key</th>
+<th align="left">Importance</th>
+<th align="left">Comment</th>
+<th align="left">Example Value</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">title</td>
+<td align="left">mandatory</td>
+<td align="left">String</td>
+<td align="left">Inntektskjema mottatt fra Altinn</td>
+<td align="left"><em>topic name</em></td>
+</tr>
+<tr>
+<td align="left">description</td>
+<td align="left">mandatory</td>
+<td align="left">String</td>
+<td align="left">Inntektsmeldingen arbeidsgiveren sender fra eget lønns- og personalsystem eller fra altinn.no</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">theme</td>
+<td align="left">recommended</td>
+<td align="left">A main category of the resource. A resource can have multiple themes entered as a comma-separated list of strings.</td>
+<td align="left">inntekt</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">keyword</td>
+<td align="left">recommended</td>
+<td align="left">A string or a list of strings</td>
+<td align="left">inntekt,arbeidsgiver,altinn</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>One or more of the following keys can also be supplied if the default values below are not sufficient:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Key</th>
+<th align="left">Importance</th>
+<th align="left">Comment</th>
+<th align="left">Example Value</th>
+<th align="left">Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">temporal</td>
+<td align="left">optional</td>
+<td align="left">An interval of time covered by the topic, start and end date. Formatted as two ISO 8601 dates (or datetimes) separated by a slash.</td>
+<td align="left">2020/2020 or 2020-06/2020-06</td>
+<td align="left"><em>current year</em>/<em>current year</em></td>
+</tr>
+<tr>
+<td align="left">language</td>
+<td align="left">optional</td>
+<td align="left">Two or three letter code.</td>
+<td align="left">NO</td>
+<td align="left">NO</td>
+</tr>
+<tr>
+<td align="left">creator</td>
+<td align="left">optional</td>
+<td align="left">The entity responsible for producing the topic. An agent (eg. person, group, software or physical artifact).</td>
+<td align="left">NAV</td>
+<td align="left"><em>team name</em></td>
+</tr>
+<tr>
+<td align="left">publisher</td>
+<td align="left">optional</td>
+<td align="left">The entity responsible for making the topic available. An agent (eg. person, group, software or physical artifact).</td>
+<td align="left">NAV</td>
+<td align="left">NAV</td>
+</tr>
+<tr>
+<td align="left">accessRights</td>
+<td align="left">optional</td>
+<td align="left">Information about who can access the topic or an indication of its security status.</td>
+<td align="left">internal</td>
+<td align="left">internal</td>
+</tr>
+<tr>
+<td align="left">license</td>
+<td align="left">optional</td>
+<td align="left">Either a license URI or a title.</td>
+<td align="left">MIT</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">rights</td>
+<td align="left">optional</td>
+<td align="left">A statement that concerns all rights not addressed with <code>license</code> or <code>accessRights</code>, such as copyright statements.</td>
+<td align="left">Copyright 2020, NAV</td>
+<td align="left">Copyright <em>year</em>, NAV</td>
+</tr>
+<tr>
+<td align="left">catalog</td>
+<td align="left">optional</td>
+<td align="left">The catalog(s) where the metadata will be published. The value can be either <code>internal</code> (only visibible within the organization) or <code>public</code>.</td>
+<td align="left">public</td>
+<td align="left">internal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="permanently-deleting-topic-and-data">Permanently deleting topic and data<a class="headerlink" href="#permanently-deleting-topic-and-data" title="Permanent link">§</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Permanent deletes are irreversible. Enable this feature only as a step to completely remove your data.</p>
+</div>
+<p>When a <code>Topic</code> resource is deleted from a Kubernetes cluster, the Kafka topic is still retained, and the data kept intact. If you need to remove data and start from scratch, you must add the following annotation to your <code>Topic</code> resource:</p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">topic.yaml</label><div class="tabbed-content">
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kafka.nais.io/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Topic</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">kafka.nais.io/removeDataWhenResourceIsDeleted</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+<p>When this annotation is in place, deleting the topic resource from Kubernetes will also delete the Kafka topic and all of its data.</p>
+<h2 id="accessing-topics-from-an-application">Accessing topics from an application<a class="headerlink" href="#accessing-topics-from-an-application" title="Permanent link">§</a></h2>
+<p>Adding <code>.kafka.pool</code> to your <code>Application</code> spec will inject Kafka credentials into your pod. Your application needs to follow some design guidelines; see the next section on <a href="../application/#application-design-guidelines">application design guidelines</a>. Make sure that the topic name matches the <code>fullyQualifiedName</code> found in the Topic resource, e.g. <code>myteam.mytopic</code>.</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">nais.yaml</label><div class="tabbed-content">
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nais.io/v1alpha1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Application</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumerapp</span><span class="w"></span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myteam</span><span class="w"></span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myteam</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">kafka</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nav-dev</span><span class="w">    </span><span class="c1"># enum of nav-dev, nav-prod</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../../.."</script>
+
+    
+
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

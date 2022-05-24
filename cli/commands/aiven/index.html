@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/cli/commands/aiven/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../../assets/logo.svg">
+    
+
+    
+    <title>Aiven - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../../..">
+                <img alt="logo" height="36" src="../../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../../install/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../device/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../..
+
+'> NAIS</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../
+
+' aria-current="location"><strong>nais-cli</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../">Overview</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../install/">Installation</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ./
+
+' aria-current="location"><strong>Commands</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Aiven</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../device/">Device</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#aiven-command">aiven command</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#create">create</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#get">get</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#tidy">tidy</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#available-output">Available output</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#configuration">Configuration</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/cli/commands/aiven.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="aiven-command">aiven command<a class="headerlink" href="#aiven-command" title="Permanent link">§</a></h1>
+<p>The aiven command can be used to create a AivenApplication and extract credentials.
+The <code>aiven create</code> command will create a Protected &amp; time-limited AivenApplication in your specified namespace.
+This uses your currently configured kubectl context, so in order for it to work you need to select a suitable context first.
+For instance, credentials for nav-prod can only be generated in the prod clusters.</p>
+<p>This command will give access to personal but time limited credentials. These credentials can be used to debug an Aiven
+hosted kafka topic. The <code>aiven get</code> command extracts the credentials and puts them in <code>/tmp</code> folder. The created
+AivenApplication has sane default (days-to-live) set to 1 day.</p>
+<p>To gain access to a specific topic be sure to update your topic resource and topic ACLs. Add <code>username</code>
+to <code>acl.application</code> field in your topic.yaml and apply to your namespace. The <code>username</code> is the one spescified in the <a href="#create">next step</a>.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># topic.yml</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nav-integration-test</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">retentionHours</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">900</span><span class="w"></span>
+<span class="w">  </span><span class="nt">acl</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">access</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"></span>
+<span class="w">      </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
+<span class="w">      </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span><span class="w"></span>
+</code></pre></div>
+<h2 id="create">create<a class="headerlink" href="#create" title="Permanent link">§</a></h2>
+<div class="codehilite"><pre><span></span><code>nais aiven create username namespace
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>Yes</td>
+<td>Preferred username.</td>
+</tr>
+<tr>
+<td>namespace</td>
+<td>Yes</td>
+<td>Kubernetes namespace where AivenApplication will be created.</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><code>nais aiven create username namespace -p nav-prod -s some-unique-secretname -e <span class="m">10</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Required</th>
+<th>Short</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pool</td>
+<td>No</td>
+<td>-p</td>
+<td>nav-dev</td>
+<td><a href="../../../persistence/kafka/">Kafka pool</a>.</td>
+</tr>
+<tr>
+<td>secret-name</td>
+<td>No</td>
+<td>-s</td>
+<td>namespace-username-randomstring</td>
+<td>Preferred secret-name.</td>
+</tr>
+<tr>
+<td>expire</td>
+<td>No</td>
+<td>-e</td>
+<td>1</td>
+<td>Time in days the secret should be valid.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="get">get<a class="headerlink" href="#get" title="Permanent link">§</a></h2>
+<div class="codehilite"><pre><span></span><code>nais aiven get secret-name namespace
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>secret-name</td>
+<td>Yes</td>
+<td>Default secret-name or flag <code>-s</code> in <code>create</code> command.</td>
+</tr>
+<tr>
+<td>namespace</td>
+<td>Yes</td>
+<td>Kubernetes namespace for the created AivenApplication.</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><code>nais aiven get secret-name namespace -c kcat
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Required</th>
+<th>Short</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td>No</td>
+<td>-c</td>
+<td>all</td>
+<td>Type of config to generated, supported values: java, .env, kcat, all.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tidy">tidy<a class="headerlink" href="#tidy" title="Permanent link">§</a></h2>
+<p>Removes folders in <code>/tmp</code> ($TMPDIR) directory that starts with <code>aiven-secret-</code>.</p>
+<div class="codehilite"><pre><span></span><code>nais aiven tidy
+</code></pre></div>
+<h2 id="available-output">Available output<a class="headerlink" href="#available-output" title="Permanent link">§</a></h2>
+<p>After Successful <code>nais aiven create</code> and <code>nais aiven get</code> commands, a set of files wil be available.</p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">§</a></h3>
+<p>You can specify a configuration <code>flag</code> to generate <code>all | kcat | .env | java</code>. Default is <code>all</code></p>
+<h4 id="all">all<a class="headerlink" href="#all" title="Permanent link">§</a></h4>
+<ul>
+<li>client.keystore.p12</li>
+<li>client.truststore.jks</li>
+<li>kafka-ca.pem</li>
+<li>kafka-certificate.crt</li>
+<li>kafka-private-key.pem</li>
+<li>kafka-secret.env</li>
+<li>kcat.conf</li>
+<li>kafka.properties</li>
+</ul>
+<h4 id="env">.env<a class="headerlink" href="#env" title="Permanent link">§</a></h4>
+<ul>
+<li>client.keystore.p12</li>
+<li>client.truststore.jks</li>
+<li>kafka-ca.pem</li>
+<li>kafka-certificate.crt</li>
+<li>kafka-private-key.pem</li>
+<li>kafka-secret.env</li>
+</ul>
+<h5 id="kafka-secretenv-file">kafka-secret.env file<a class="headerlink" href="#kafka-secretenv-file" title="Permanent link">§</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="na">KAFKA_BROKERS</span><span class="o">=</span><span class="s">&quot;&lt;broker uri&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_CA</span><span class="o">=</span><span class="s">&quot;&lt;ca certificate&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_CA_PATH</span><span class="o">=</span><span class="s">&quot;&lt;path to ca certificate&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_CERTIFICATE</span><span class="o">=</span><span class="s">&quot;&lt;client certificate&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_CERTIFICATE_PATH</span><span class="o">=</span><span class="s">&quot;&lt;path to client certificate&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_CREDSTORE_PASSWORD</span><span class="o">=</span><span class="s">&quot;&lt;password for keystore/truststore&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_KEYSTORE_PATH</span><span class="o">=</span><span class="s">&quot;&lt;path to keystore&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_PRIVATE_KEY</span><span class="o">=</span><span class="s">&quot;&lt;private key&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_PRIVATE_KEY_PATH</span><span class="o">=</span><span class="s">&quot;&lt;path to private key&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_SCHEMA_REGISTRY</span><span class="o">=</span><span class="s">&quot;&lt;schema registry uri&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_SCHEMA_REGISTRY_PASSWORD</span><span class="o">=</span><span class="s">&quot;&lt;schema registry password&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_SCHEMA_REGISTRY_USER</span><span class="o">=</span><span class="s">&quot;&lt;schema registry username&gt;&quot;</span><span class="w"></span>
+<span class="na">KAFKA_TRUSTSTORE_PATH</span><span class="o">=</span><span class="s">&quot;&lt;path to truststore&gt;&quot;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="kcat">kcat<a class="headerlink" href="#kcat" title="Permanent link">§</a></h4>
+<ul>
+<li>kafka-ca.pem</li>
+<li>kafka-client-certificate.crt</li>
+<li>kafka-client-private-key.pem</li>
+<li>kcat.conf</li>
+</ul>
+<h5 id="kcatconf-file">kcat.conf file<a class="headerlink" href="#kcatconf-file" title="Permanent link">§</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="na">bootstrap.servers</span><span class="o">=</span><span class="s">&lt;broker uri&gt;</span><span class="w"></span>
+<span class="na">ssl.certificate.location</span><span class="o">=</span><span class="s">&lt;path to client certificate&gt;</span><span class="w"></span>
+<span class="na">ssl.key.location</span><span class="o">=</span><span class="s">&lt;path to private key&gt;</span><span class="w"></span>
+<span class="na">ssl.ca.location</span><span class="o">=</span><span class="s">&lt;path to ca certificate&gt;</span><span class="w"></span>
+<span class="na">security.protocol</span><span class="o">=</span><span class="s">ssl</span><span class="w"></span>
+</code></pre></div>
+<p>The generated <code>kcat.conf</code> can be used with <a href="https://github.com/edenhill/kcat">kcat</a> to authenticate against the Aiven
+hosted topics in GCP.</p>
+<p>Read more about kcat.conf <a href="https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md">configurable properties</a>
+.</p>
+<p>You can refer to generated config with -F flag:</p>
+<div class="codehilite"><pre><span></span><code>kcat -F path/to/kcat.conf -t namespace.your.topic
+</code></pre></div>
+<p>Alternatively, you can specify the same settings directly on the command line:</p>
+<div class="codehilite"><pre><span></span><code>kcat <span class="se">\</span>
+    -b boostrap-server.aivencloud.com:26484 <span class="se">\</span>
+    -X security.protocol<span class="o">=</span>ssl <span class="se">\</span>
+    -X ssl.key.location<span class="o">=</span>service.key <span class="se">\</span>
+    -X ssl.certificate.location<span class="o">=</span>service.cert <span class="se">\</span>
+    -X ssl.ca.location<span class="o">=</span>ca.pem
+</code></pre></div>
+<p>For more details <a href="https://help.aiven.io/en/articles/2607674-using-kafkacat">aiven-kcat</a></p>
+<h4 id="java">java<a class="headerlink" href="#java" title="Permanent link">§</a></h4>
+<ul>
+<li>client.keystore.p12</li>
+<li>client.truststore.jks</li>
+<li>kafka.properties</li>
+</ul>
+<h5 id="kafkaproperties-file">kafka.properties file<a class="headerlink" href="#kafkaproperties-file" title="Permanent link">§</a></h5>
+<div class="codehilite"><pre><span></span><code># nais-cli 2021-11-16 20:26:00 +0100 CET
+# Usage example: kafka-console-consumer.sh --topic aura.your.topic --bootstrap-server &lt;broker uri&gt; --consumer.config &lt;file path&gt;/kafka.properties
+security.protocol=SSL
+ssl.protocol=TLS
+ssl.keystore.type=PKCS12
+ssl.truststore.type=JKS
+ssl.keystore.location=&lt;path to keystore&gt;
+ssl.key.password=&lt;password for keystore/truststore&gt;
+ssl.keystore.password=&lt;password for keystore/truststore&gt;
+ssl.truststore.password=&lt;password for keystore/truststore&gt;
+ssl.truststore.location=&lt;path to truststore&gt;
+</code></pre></div>
+<p>The <code>kafka.properties</code> file can be used with the official Kafka command-line tools included in the Kafka distribution, and with many other Java based tools/applications.</p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../../.."</script>
+
+    
+
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

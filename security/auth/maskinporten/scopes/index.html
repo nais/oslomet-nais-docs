@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/security/auth/maskinporten/scopes/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../../../assets/logo.svg">
+    
+
+    
+    <title>Scopes - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../../../..">
+                <img alt="logo" height="36" src="../../../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../client/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../../tokenx/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../
+
+
+
+' aria-current="location"><strong>Security</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../
+
+' aria-current="location"><strong>Auth</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../">Auth Overview</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../azure-ad/
+
+'> Azure AD</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../idporten/
+
+'> ID-porten</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Maskinporten</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">Intro</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../client/">Client</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Scopes</strong></a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../tokenx/">TokenX</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../secrets/
+
+'> Secrets</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../antivirus/">Anti-virus Scanning</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#scopes">Scopes</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#spec">Spec</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#configuration">Configuration</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#scope-naming-format">Scope Naming Format</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#prefix">Prefix</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#subscope">Subscope</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#audience-restrictions">Audience Restrictions</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#legacy">Legacy</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#application-do-not-use-the-iac-repo-and-is-migrating-from-on-prem-to-gcp">Application do not use the IaC repo and is migrating from on-prem to gcp</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#migration-guide-to-keep-existing-maskinporten-scope-iac-naisyml-nais-application-only">Migration guide to keep existing Maskinporten scope (IaC -&gt; nais.yml) (NAIS application only)</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/security/auth/maskinporten/scopes.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="scopes">Scopes<a class="headerlink" href="#scopes" title="Permanent link">§</a></h1>
+<p>A <em>scope</em> in Maskinporten terminology is equivalent to a distinct API. As an API provider, you will:</p>
+<ul>
+<li>define scopes to be registered in Maskinporten</li>
+<li>grant access to other organizations for your defined scopes</li>
+</ul>
+<p>The notion of scope is loosely defined to allow semantic freedom in terms of API providers' own definition and granularity of access and authorization.</p>
+<p>An external consumer that has been granted access to your scopes may then acquire an <code>access_token</code> with their own Maskinporten client, which they will need to acquire from DigDir on their own. 
+<a href="../client/">Our NAIS clients</a> are registered as part of the NAV organization and may only be used by NAV.</p>
+<h2 id="spec">Spec<a class="headerlink" href="#spec" title="Permanent link">§</a></h2>
+<p>See the <a href="../../../../nais-application/application/#maskinporten">NAIS manifest</a>.</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">§</a></h2>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">nais.yaml</label><div class="tabbed-content"></div>
+</div>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">maskinporten</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">scopes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exposes</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;some.scope.read&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">          </span><span class="nt">product</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;arbeid&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="nt">allowedIntegrations</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">maskinporten</span><span class="w"></span>
+<span class="w">          </span><span class="nt">atMaxAge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">120</span><span class="w"></span>
+<span class="w">          </span><span class="nt">consumers</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">orgno</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123456789&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># required for on-premises only</span><span class="w"></span>
+<span class="w">  </span><span class="nt">webproxy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+<h2 id="scope-naming-format">Scope Naming Format<a class="headerlink" href="#scope-naming-format" title="Permanent link">§</a></h2>
+<p>All scopes within Maskinporten are defined using the following syntax:</p>
+<div class="codehilite"><pre><span></span><code>scope := &lt;prefix&gt;:&lt;subscope&gt;
+</code></pre></div>
+<details class="example" open="open">
+<summary>Example scope</summary>
+<div class="codehilite"><pre><span></span><code>scope := nav:trygdeopplysninger
+</code></pre></div>
+</details>
+<h3 id="prefix">Prefix<a class="headerlink" href="#prefix" title="Permanent link">§</a></h3>
+<p>The <em>prefix</em> for all scopes provisioned through NAIS will <strong>always</strong> be <code>nav</code>.</p>
+<h3 id="subscope">Subscope<a class="headerlink" href="#subscope" title="Permanent link">§</a></h3>
+<p>A <em>subscope</em> should describe the resource to be exposed as accurately as possible (e.g. <code>trygdeopplysninger</code> or <code>helseopplysninger</code>).</p>
+<p>The subscope may also be <em>postfixed</em> to separate between access levels, for instance <code>read</code> and/or <code>write</code> access (e.g. <code>nav:trygdeopplysninger.write</code>). </p>
+<p>Absence of a postfix should generally be treated as strictly <code>read</code> access.</p>
+<p>All <em>subscopes</em> for NAIS clients will have the following form:</p>
+<div class="codehilite"><pre><span></span><code>subscope := &lt;product&gt;&lt;separator&gt;&lt;name&gt;
+</code></pre></div>
+<p>where <code>separator</code> is:</p>
+<ul>
+<li><code>/</code> if and only if <code>name</code> contains <code>/</code>.</li>
+<li><code>:</code> otherwise.</li>
+</ul>
+<details class="example" open="open">
+<summary>Subscope example</summary>
+<p>For the <a href="#configuration">example configuration</a> above where</p>
+<ul>
+<li><code>product := arbeid</code></li>
+<li><code>name := some.scope.read</code></li>
+</ul>
+<p>the subscope will be the following:</p>
+<div class="codehilite"><pre><span></span><code>subscope := arbeid:some.scope.read
+</code></pre></div>
+<p>which results in the scope:</p>
+<div class="codehilite"><pre><span></span><code>scope := nav:arbeid:some.scope.read
+</code></pre></div>
+</details>
+<details class="example" open="open">
+<summary>Subscope example with different separator</summary>
+<p>If the <code>name</code> instead contains the <code>/</code> character, e.g:</p>
+<ul>
+<li><code>name := some/scope.read</code></li>
+</ul>
+<p>and the product is the same as before:</p>
+<ul>
+<li><code>product := arbeid</code></li>
+</ul>
+<p>the resulting subscope will be:</p>
+<div class="codehilite"><pre><span></span><code>subscope := arbeid/some/scope.read
+</code></pre></div>
+<p>which results in the scope:</p>
+<div class="codehilite"><pre><span></span><code>scope := nav:arbeid/some/scope.read
+</code></pre></div>
+</details>
+<h2 id="audience-restrictions">Audience Restrictions<a class="headerlink" href="#audience-restrictions" title="Permanent link">§</a></h2>
+<p>If there are multiple APIs that are protected by the same <em>scope</em>, one might be susceptible to replay attacks.</p>
+<p>One way to mitigate this is to require that tokens contain an <code>aud</code> claim with a unique value for each unique API. 
+The API should reject requests with tokens that do not have this claim and expected value. 
+This ensures that an <code>access_token</code> may only be used for a specific API.</p>
+<p>The value of this must be defined by the API provider out-of-band from Maskinporten. 
+It is thus the API provider's responsibility to inform any consumers of this expected value so that they can modify their requests accordingly.</p>
+<p>See DigDir's documentation on <a href="https://docs.digdir.no/maskinporten_func_audience_restricted_tokens.html">audience-restricted tokens</a> for more information.</p>
+<h2 id="legacy">Legacy<a class="headerlink" href="#legacy" title="Permanent link">§</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This section only applies if you have an existing scope registered at the <a href="https://github.com/navikt/nav-maskinporten">IaC repository</a> 
+or use the scope in on-prem clusters today.</p>
+</div>
+<h3 id="application-do-not-use-the-iac-repo-and-is-migrating-from-on-prem-to-gcp">Application do not use the IaC repo and is migrating from on-prem to gcp<a class="headerlink" href="#application-do-not-use-the-iac-repo-and-is-migrating-from-on-prem-to-gcp" title="Permanent link">§</a></h3>
+<p>The scope is assigned your application in your current cluster;</p>
+<div class="codehilite"><pre><span></span><code>&lt;cluster&gt;:&lt;metadata.namespace&gt;:&lt;metadata.name&gt;.&lt;subscope&gt;
+</code></pre></div>
+<p>so when migrating from on-prem nais to gcp, the scope belongs to that cluster. If you already migrated your app, there
+is no reason to panic, scope still exists and works as before, but you are not able to make changes eg. add/remove
+consumers until cluster is updated. Right now the cluster need to be changed manually so please take contact in channel
+#nais.</p>
+<h3 id="migration-guide-to-keep-existing-maskinporten-scope-iac-naisyml-nais-application-only">Migration guide to keep existing Maskinporten scope (IaC -&gt; nais.yml) (NAIS application only)<a class="headerlink" href="#migration-guide-to-keep-existing-maskinporten-scope-iac-naisyml-nais-application-only" title="Permanent link">§</a></h3>
+<p>The following describes the steps needed to migrate a scope registered in <a href="https://github.com/navikt/nav-maskinporten/scopes">IaC repository</a>.</p>
+<h4 id="step-1-update-your-scope-description-in-the-iac-repository">Step 1 - Update your scope description in the IaC repository<a class="headerlink" href="#step-1-update-your-scope-description-in-the-iac-repository" title="Permanent link">§</a></h4>
+<ul>
+<li>Ensure the <strong><code>description</code></strong> of the scope registered in the <code>IaC</code> repository follows the naming scheme:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>&lt;cluster&gt;:&lt;metadata.namespace&gt;:&lt;metadata.name&gt;.&lt;subscope&gt;
+</code></pre></div>
+<h4 id="step-3-deploy-your-nais-application-with-maskinporten-provisioning-enabled">Step 3 - Deploy your NAIS application with Maskinporten provisioning enabled.<a class="headerlink" href="#step-3-deploy-your-nais-application-with-maskinporten-provisioning-enabled" title="Permanent link">§</a></h4>
+<ul>
+<li>
+<p>Ensure exposed scopes enabled and name matches the already exposed <code>subscope</code></p>
+</li>
+<li>
+<p>See <a href="#configuration">configuration</a>.</p>
+</li>
+</ul>
+<h4 id="step-4-delete-your-scope-from-the-iac-repository">Step 4 - Delete your scope from the IaC repository<a class="headerlink" href="#step-4-delete-your-scope-from-the-iac-repository" title="Permanent link">§</a></h4>
+<ul>
+<li>Verify that everything works after the migration</li>
+<li>Delete the scope from the <a href="https://github.com/navikt/nav-maskinporten/scopes">IaC repository</a> in order to maintain a single source of truth.</li>
+</ul></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../../../.."</script>
+
+    
+
+    <script src="../../../../js/base.js"></script>
+    <script src="../../../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

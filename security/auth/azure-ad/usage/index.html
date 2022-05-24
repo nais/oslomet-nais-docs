@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/security/auth/azure-ad/usage/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../../../assets/logo.svg">
+    
+
+    
+    <title>Usage - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../../../..">
+                <img alt="logo" height="36" src="../../../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../access-policy/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../sidecar/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../
+
+
+
+' aria-current="location"><strong>Security</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../
+
+' aria-current="location"><strong>Auth</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../">Auth Overview</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Azure AD</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">Intro</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../concepts/">Concepts</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../configuration/">Configuration</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../access-policy/">Access Policy</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Usage</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../sidecar/">Sidecar</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../faq-troubleshooting/">FAQ / Troubleshooting</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../operations/">Operations</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../legacy/">Legacy</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../idporten/
+
+'> ID-porten</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../maskinporten/
+
+'> Maskinporten</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../tokenx/">TokenX</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../secrets/
+
+'> Secrets</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../antivirus/">Anti-virus Scanning</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#usage">Usage</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#runtime-variables-credentials">Runtime Variables &amp; Credentials</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_app_client_id">AZURE_APP_CLIENT_ID</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_app_client_secret">AZURE_APP_CLIENT_SECRET</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_app_jwks">AZURE_APP_JWKS</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_app_jwk">AZURE_APP_JWK</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_app_pre_authorized_apps">AZURE_APP_PRE_AUTHORIZED_APPS</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_app_tenant_id">AZURE_APP_TENANT_ID</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_app_well_known_url">AZURE_APP_WELL_KNOWN_URL</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_openid_config_issuer">AZURE_OPENID_CONFIG_ISSUER</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_openid_config_jwks_uri">AZURE_OPENID_CONFIG_JWKS_URI</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#azure_openid_config_token_endpoint">AZURE_OPENID_CONFIG_TOKEN_ENDPOINT</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/security/auth/azure-ad/usage.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">§</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>See the</strong> <a href="https://security.labs.nais.io/"><strong>NAV Security Guide</strong></a> <strong>for NAV-specific usage.</strong></p>
+</div>
+<h2 id="runtime-variables-credentials">Runtime Variables &amp; Credentials<a class="headerlink" href="#runtime-variables-credentials" title="Permanent link">§</a></h2>
+<p>The following environment variables and files (under the directory <code>/var/run/secrets/nais.io/azure</code>) are available at runtime:</p>
+<hr />
+<h3 id="azure_app_client_id"><code>AZURE_APP_CLIENT_ID</code><a class="headerlink" href="#azure_app_client_id" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Azure AD client ID. Unique ID for the application in Azure AD</p>
+<p>Example value: <code>e89006c5-7193-4ca3-8e26-d0990d9d981f</code></p>
+</details>
+<hr />
+<h3 id="azure_app_client_secret"><code>AZURE_APP_CLIENT_SECRET</code><a class="headerlink" href="#azure_app_client_secret" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Azure AD client secret, i.e. password for <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow#first-case-access-token-request-with-a-shared-secret">authenticating the application to Azure AD</a> </p>
+<p>Example value: <code>b5S0Bgg1OF17Ptpy4_uvUg-m.I~KU_.5RR</code></p>
+</details>
+<hr />
+<h3 id="azure_app_jwks"><code>AZURE_APP_JWKS</code><a class="headerlink" href="#azure_app_jwks" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>A JWK Set as defined in <a href="https://tools.ietf.org/html/rfc7517#section-5">RFC7517 section 5</a>. This will always contain a single key, i.e. <code>AZURE_APP_JWK</code> - the newest key registered.</p>
+<p>Example value: </p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;use&quot;</span><span class="o">:</span> <span class="s2">&quot;sig&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;kty&quot;</span><span class="o">:</span> <span class="s2">&quot;RSA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;kid&quot;</span><span class="o">:</span> <span class="s2">&quot;jXDxKRE6a4jogcc4HgkDq3uVgQ0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;n&quot;</span><span class="o">:</span> <span class="s2">&quot;xQ3chFsz...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;e&quot;</span><span class="o">:</span> <span class="s2">&quot;AQAB&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;d&quot;</span><span class="o">:</span> <span class="s2">&quot;C0BVXQFQ...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;p&quot;</span><span class="o">:</span> <span class="s2">&quot;9TGEF_Vk...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;q&quot;</span><span class="o">:</span> <span class="s2">&quot;zb0yTkgqO...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dp&quot;</span><span class="o">:</span> <span class="s2">&quot;7YcKcCtJ...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dq&quot;</span><span class="o">:</span> <span class="s2">&quot;sXxLHp9A...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;qi&quot;</span><span class="o">:</span> <span class="s2">&quot;QCW5VQjO...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;x5c&quot;</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">&quot;MIID8jCC...&quot;</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;x5t&quot;</span><span class="o">:</span> <span class="s2">&quot;jXDxKRE6a4jogcc4HgkDq3uVgQ0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;x5t#S256&quot;</span><span class="o">:</span> <span class="s2">&quot;AH2gbUvjZYmSQXZ6-YIRxM2YYrLiZYW8NywowyGcxp0&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<hr />
+<h3 id="azure_app_jwk"><code>AZURE_APP_JWK</code><a class="headerlink" href="#azure_app_jwk" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Private JWK as defined in <a href="https://tools.ietf.org/html/rfc7517">RFC7517</a>, i.e. a JWK with the private RSA key for creating signed JWTs when <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow#second-case-access-token-request-with-a-certificate">authenticating to Azure AD with a certificate</a>.</p>
+<p>Example value: </p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="s2">&quot;use&quot;</span><span class="o">:</span> <span class="s2">&quot;sig&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;kty&quot;</span><span class="o">:</span> <span class="s2">&quot;RSA&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;kid&quot;</span><span class="o">:</span> <span class="s2">&quot;jXDxKRE6a4jogcc4HgkDq3uVgQ0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;n&quot;</span><span class="o">:</span> <span class="s2">&quot;xQ3chFsz...&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;e&quot;</span><span class="o">:</span> <span class="s2">&quot;AQAB&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;d&quot;</span><span class="o">:</span> <span class="s2">&quot;C0BVXQFQ...&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;p&quot;</span><span class="o">:</span> <span class="s2">&quot;9TGEF_Vk...&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;q&quot;</span><span class="o">:</span> <span class="s2">&quot;zb0yTkgqO...&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dp&quot;</span><span class="o">:</span> <span class="s2">&quot;7YcKcCtJ...&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;dq&quot;</span><span class="o">:</span> <span class="s2">&quot;sXxLHp9A...&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;qi&quot;</span><span class="o">:</span> <span class="s2">&quot;QCW5VQjO...&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;x5c&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">&quot;MIID8jCC...&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;x5t&quot;</span><span class="o">:</span> <span class="s2">&quot;jXDxKRE6a4jogcc4HgkDq3uVgQ0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;x5t#S256&quot;</span><span class="o">:</span> <span class="s2">&quot;AH2gbUvjZYmSQXZ6-YIRxM2YYrLiZYW8NywowyGcxp0&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<hr />
+<h3 id="azure_app_pre_authorized_apps"><code>AZURE_APP_PRE_AUTHORIZED_APPS</code><a class="headerlink" href="#azure_app_pre_authorized_apps" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>A JSON string. List of names and client IDs for the valid (i.e. those that exist in Azure AD) applications defined in <a href="../access-policy/"><code>spec.accessPolicy.inbound.rules[]</code></a></p>
+<p>Example value: </p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;dev-gcp:othernamespace:app-a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientId&quot;</span><span class="o">:</span> <span class="s2">&quot;381ce452-1d49-49df-9e7e-990ef0328d6c&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;dev-gcp:aura:app-b&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;clientId&quot;</span><span class="o">:</span> <span class="s2">&quot;048eb0e8-e18a-473a-a87d-dfede7c65d84&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+</details>
+<hr />
+<h3 id="azure_app_tenant_id"><code>AZURE_APP_TENANT_ID</code><a class="headerlink" href="#azure_app_tenant_id" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>The Azure AD tenant ID for which the Azure AD client resides in. </p>
+<p>Example value: <code>77678b69-1daf-47b6-9072-771d270ac800</code> </p>
+</details>
+<hr />
+<h3 id="azure_app_well_known_url"><code>AZURE_APP_WELL_KNOWN_URL</code><a class="headerlink" href="#azure_app_well_known_url" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>The well-known URL to the <a href="https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig">metadata discovery document</a> for the specific tenant in which the Azure AD client resides in.</p>
+<p>Example value: <code>https://login.microsoftonline.com/77678b69-1daf-47b6-9072-771d270ac800/v2.0/.well-known/openid-configuration</code></p>
+</details>
+<hr />
+<h3 id="azure_openid_config_issuer"><code>AZURE_OPENID_CONFIG_ISSUER</code><a class="headerlink" href="#azure_openid_config_issuer" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p><code>issuer</code> from the metadata discovery document.</p>
+<p>Example value: <code>https://login.microsoftonline.com/77678b69-1daf-47b6-9072-771d270ac800/v2.0</code></p>
+</details>
+<hr />
+<h3 id="azure_openid_config_jwks_uri"><code>AZURE_OPENID_CONFIG_JWKS_URI</code><a class="headerlink" href="#azure_openid_config_jwks_uri" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p><code>jwks_uri</code> from the metadata discovery document.</p>
+<p>Example value: <code>https://login.microsoftonline.com/77678b69-1daf-47b6-9072-771d270ac800/discovery/v2.0/keys</code></p>
+</details>
+<hr />
+<h3 id="azure_openid_config_token_endpoint"><code>AZURE_OPENID_CONFIG_TOKEN_ENDPOINT</code><a class="headerlink" href="#azure_openid_config_token_endpoint" title="Permanent link">§</a></h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p><code>token_endpoint</code> from the metadata discovery document.</p>
+<p>Example value: <code>https://login.microsoftonline.com/77678b69-1daf-47b6-9072-771d270ac800/oauth2/v2.0/token</code></p>
+</details></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../../../.."</script>
+
+    
+
+    <script src="../../../../js/base.js"></script>
+    <script src="../../../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

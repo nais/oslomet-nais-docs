@@ -1,0 +1,208 @@
+:root {
+    /* "scroll to" offset for direct links, compensating for fixed topbar */
+    scroll-padding-top: 6em;
+}
+
+body {
+    /* visible offsett for content as topbar is fixed*/
+    padding-top: 6rem;
+}
+
+p>img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Start Bootstrap Add-ons (extra style rules) */
+
+/* adds "padding" to sticky object, as whole content is offset because of topbar */
+.sidebar-sticky {
+    top: 6rem;
+    z-index: 1;
+}
+
+/* add scrollable overflow to content of sticky object */
+.sidebar-sticky-overflow {
+    max-height: 75vh;
+    overflow: auto;
+}
+
+.link-hover-underline {
+    text-decoration: none;
+}
+
+.link-hover-underline:hover {
+    text-decoration: underline;
+}
+
+/* extra color as the default from bootstrap are not sufficient */
+.bg-grey {
+    background-color: #d5d5d5
+}
+
+/* End Bootstrap Add-ons  */
+
+
+/*
+    Start Bootstrap Callouts CSS Source by Chris Pratt (https://codepen.io/chrisdpratt/pen/IAymB) MIT License
+    Edit by Karol Turlej 2022-04-29 MIT License
+*/
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    background-color: #FCFDFF;
+}
+
+.bs-callout h4 {
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+
+.bs-callout code {
+    border-radius: 3px;
+}
+
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+
+.bs-callout-default {
+    border-left-color: #FA023C;
+    /*modified from upstream default by Christopher Simpkins*/
+}
+
+.bs-callout-default h4 {
+    color: #A02121;
+    /*modified from upstream default by Christopher Simpkins*/
+}
+
+.bs-callout-primary {
+    border-left-color: #428bca;
+}
+
+.bs-callout-primary h4 {
+    color: #015490;
+}
+
+.bs-callout-success {
+    border-left-color: #5cb85c;
+}
+
+.bs-callout-success h4 {
+    color: #245E37;
+}
+
+.bs-callout-danger {
+    border-left-color: #d9534f;
+}
+
+.bs-callout-danger h4 {
+    color: #A02121;
+}
+
+.bs-callout-warning {
+    border-left-color: #f0ad4e;
+}
+
+.bs-callout-warning h4 {
+    color: #913600;
+}
+
+.bs-callout-info {
+    border-left-color: #5bc0de;
+}
+
+.bs-callout-info h4 {
+    color: #015490;
+}
+/* End Bootstrap Callouts CSS Source by Chris Pratt */
+
+
+
+/* Headerlinks */
+.headerlink {
+    color: #6c757d;
+    text-decoration: none;
+    padding-left: .5em;
+}
+
+h1:hover .headerlink,
+h2:hover .headerlink,
+h3:hover .headerlink,
+h4:hover .headerlink,
+h5:hover .headerlink,
+h6:hover .headerlink
+{
+    color: #565e64;
+    text-decoration: underline;
+}
+
+
+
+/* Admonitions */
+.admonition {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    background-color: #FCFDFF;
+}
+
+.admonition p:last-child {
+    margin-bottom: 0;
+}
+
+.admonition code {
+    border-radius: 3px;
+}
+
+.admonition+.admonition {
+    margin-top: -5px;
+}
+
+.admonition.note {
+    /* csslint allow: adjoining-classes */
+    border-left-color: #5bc0de;
+}
+
+.admonition.warning {
+    /* csslint allow: adjoining-classes */
+    border-left-color: #f0ad4e;
+}
+
+.admonition.danger {
+    /* csslint allow: adjoining-classes */
+    border-left-color: #d9534f;
+}
+
+.admonition-title {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.admonition.note>.admonition-title {
+    color: #015490;
+}
+
+.admonition.warning>.admonition-title {
+    color: #913600;
+}
+
+.admonition.danger>.admonition-title {
+    color: #A02121;
+}

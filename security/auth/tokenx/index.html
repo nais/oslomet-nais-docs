@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/security/auth/tokenx/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../../assets/logo.svg">
+    
+
+    
+    <title>TokenX - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../../..">
+                <img alt="logo" height="36" src="../../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../maskinporten/scopes/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../../secrets/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../
+
+
+
+' aria-current="location"><strong>Security</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Auth</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">Auth Overview</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../azure-ad/
+
+'> Azure AD</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../idporten/
+
+'> ID-porten</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../maskinporten/
+
+'> Maskinporten</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>TokenX</strong></a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../secrets/
+
+'> Secrets</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../antivirus/">Anti-virus Scanning</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#tokenx">TokenX</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#abstract">Abstract</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#what-is-tokenx">What is TokenX?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#why-do-i-need-tokenx">Why do I need TokenX?</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#when-do-i-need-tokenx">When do I need TokenX?</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#configuration">Configuration</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#spec">Spec</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#getting-started">Getting Started</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#access-policies">Access Policies</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#usage">Usage</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#runtime-variables-credentials">Runtime Variables &amp; Credentials</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#client-authentication">Client Authentication</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#exchanging-a-token">Exchanging a token</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#token-validation">Token Validation</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/security/auth/tokenx.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="tokenx">TokenX<a class="headerlink" href="#tokenx" title="Permanent link">§</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Status: Opt-In Open Beta</p>
+<p>This feature is only available in <a href="../../../clusters/team-namespaces/">team namespaces</a>.</p>
+<p>It currently only supports <em>self-service/citizen facing applications</em> - however other use-cases have been identified.</p>
+</div>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">§</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<h3 id="what-is-tokenx">What is TokenX?<a class="headerlink" href="#what-is-tokenx" title="Permanent link">§</a></h3>
+<p><strong>TokenX</strong> is the short term for <a href="https://github.com/nais/tokendings">OAuth 2.0 Token Exchange</a> implemented in the context of Kubernetes.</p>
+<p>It consists of mainly 3 components:</p>
+<ul>
+<li><a href="https://github.com/nais/tokendings">Tokendings</a> - an OAuth 2.0 Authorization Server implementing the OAuth 2.0 Token Exchange specification</li>
+<li><a href="https://github.com/nais/jwker/">Jwker</a> - a Kubernetes operator responsible for registering applications as OAuth 2.0 clients in Tokendings</li>
+<li><a href="https://github.com/nais/naiserator/">Naiserator</a> - a Kubernetes operator that handles the lifecycle of applications on the <a href="https://nais.io/">NAIS platform</a></li>
+</ul>
+<p>In short, TokenX is a OAuth 2.0 compliant add-on that enables and allows your application to maintain the <a href="../../../appendix/zero-trust/">zero trust</a> <em>networking</em> principles (together with components such as <a href="https://linkerd.io/"><strong>LinkerD</strong></a>). It does this by allowing applications to exchange and acquire properly scoped security tokens in order to securely communicate with each other.</p>
+<p>Interested readers may find more technical details in the <a href="https://github.com/nais/tokendings">Tokendings documentation</a>.</p>
+<h3 id="why-do-i-need-tokenx">Why do I need TokenX?<a class="headerlink" href="#why-do-i-need-tokenx" title="Permanent link">§</a></h3>
+<p>In a <a href="../../../appendix/zero-trust/">zero trust</a> architecture, one cannot rely on traditional boundaries such as <strong>security zones</strong> and <strong>security gateways</strong>. Such security measures are no longer required for applications that leverage TokenX correctly as each application is self-contained within its own zone; requiring specific tokens in order to communicate with other applications.</p>
+<p>Using TokenX correctly throughout a call-chain also ensures that the identity of the original caller or subject (e.g. an end-user) is propagated while still maintaining proper scoping and security between each application.</p>
+<h3 id="when-do-i-need-tokenx">When do I need TokenX?<a class="headerlink" href="#when-do-i-need-tokenx" title="Permanent link">§</a></h3>
+<p>There are primarily two distinct cases where one must use TokenX:</p>
+<ol>
+<li>You have a user facing app using <a href="../idporten/">ID-porten</a> that should perform calls to another app on behalf of a user.</li>
+<li>You have an app receiving tokens issued from Tokendings and need to call another app while still propagating the original user context.</li>
+</ol>
+</div>
+<details class="info" open="open">
+<summary>Overview of flow</summary>
+<p><img alt="Overview of token exchange flow" src="https://raw.githubusercontent.com/nais/tokendings/master/doc/downstream_example.svg" /></p>
+</details>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">§</a></h2>
+<h3 id="spec">Spec<a class="headerlink" href="#spec" title="Permanent link">§</a></h3>
+<p>See the <a href="../../../nais-application/application/#tokenxenabled">NAIS manifest</a>.</p>
+<h3 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">§</a></h3>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">nais.yaml</label><div class="tabbed-content">
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tokenx</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">accessPolicy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inbound</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-2</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-3</span><span class="w"></span>
+<span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-4</span><span class="w"></span>
+<span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-b</span><span class="w"></span>
+<span class="w">          </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod-gcp</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="access-policies">Access Policies<a class="headerlink" href="#access-policies" title="Permanent link">§</a></h3>
+<p>In order for other applications to acquire a token targeting your application, you <strong>must explicitly</strong> specify inbound access policies that authorizes these other applications.</p>
+<p>Thus, the access policies defines <em>authorization</em> on the application layer, and is enforced by <a href="https://github.com/nais/tokendings">Tokendings</a> on token exchange operations.</p>
+<p>For example:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tokenx</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">accessPolicy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inbound</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-1</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-2</span><span class="w"></span>
+<span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-3</span><span class="w"></span>
+<span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-b</span><span class="w"></span>
+<span class="w">          </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod-gcp</span><span class="w"></span>
+</code></pre></div>
+<p>The above configuration authorizes the following applications:</p>
+<ul>
+<li>application <code>app-1</code> running in the <strong>same namespace</strong> and <strong>same cluster</strong> as your application</li>
+<li>application <code>app-2</code> running in the namespace <code>team-a</code> in the <strong>same cluster</strong></li>
+<li>application <code>app-3</code> running in the namespace <code>team-b</code> in the cluster <code>prod-gcp</code></li>
+</ul>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">§</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>See the</strong> <a href="https://security.labs.nais.io/"><strong>NAV Security Guide</strong></a> <strong>for NAV-specific usage.</strong></p>
+</div>
+<h3 id="runtime-variables-credentials">Runtime Variables &amp; Credentials<a class="headerlink" href="#runtime-variables-credentials" title="Permanent link">§</a></h3>
+<p>Enabling TokenX will expose the following runtime environment variables and files (under the directory <code>/var/run/secrets/nais.io/jwker</code>) for your application:</p>
+<hr />
+<h4 id="token_x_well_known_url"><code>TOKEN_X_WELL_KNOWN_URL</code><a class="headerlink" href="#token_x_well_known_url" title="Permanent link">§</a></h4>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>The well-known URL of the OAuth 2.0 Token Exchange authorization server, in this case Tokendings. This URL contains the server metadata as defined in <a href="https://tools.ietf.org/html/rfc8414">RFC8414</a> that your application may use. For example:</p>
+<ul>
+<li><code>issuer</code></li>
+<li><code>token_endpoint</code></li>
+<li><code>jwks_uri</code></li>
+</ul>
+<p>See <a href="https://tools.ietf.org/html/rfc8414">OAuth 2.0 Authorization Server Metadata</a> for more information about the contents of the response from the well-known url.</p>
+</details>
+<hr />
+<h4 id="token_x_client_id"><code>TOKEN_X_CLIENT_ID</code><a class="headerlink" href="#token_x_client_id" title="Permanent link">§</a></h4>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Unique <code>client_id</code> that identifies your application. using the following naming scheme:</p>
+<div class="codehilite"><pre><span></span><code>&lt;cluster&gt;:&lt;metadata.namespace&gt;:&lt;metadata.name&gt;
+</code></pre></div>
+<p>This value should be used in the <a href="./#client-authentication">client assertion</a> when exchanging a token with <a href="https://github.com/nais/tokendings">Tokendings</a>.</p>
+</details>
+<hr />
+<h4 id="token_x_private_jwk"><code>TOKEN_X_PRIVATE_JWK</code><a class="headerlink" href="#token_x_private_jwk" title="Permanent link">§</a></h4>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Contains a JWK with the private RSA key for creating signed JWTs when <a href="./#client-authentication">authenticating to Tokendings with a signed <code>client_assertion</code></a>.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;use&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sig&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;kty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RSA&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;kid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jXDxKRE6a4jogcc4HgkDq3uVgQ0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xQ3chFsz...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;e&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AQAB&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;d&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C0BVXQFQ...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;p&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9TGEF_Vk...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;q&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zb0yTkgqO...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;dp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7YcKcCtJ...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;dq&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sXxLHp9A...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;qi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;QCW5VQjO...&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<h3 id="client-authentication">Client Authentication<a class="headerlink" href="#client-authentication" title="Permanent link">§</a></h3>
+<p>Your applications <strong>must</strong> authenticate itself with <a href="https://github.com/nais/tokendings">Tokendings</a> when attempting to perform token exchanges. To do so, you must create a <em>client assertion</em> as per <a href="https://tools.ietf.org/html/rfc7523">RFC7523</a>.</p>
+<p>In other words, you must create a <a href="https://tools.ietf.org/html/rfc7519">JSON Web Token (JWT)</a> that is signed by your application using the private key contained within <a href="./#token_x_private_jwk"><code>TOKEN_X_PRIVATE_JWK</code></a>.</p>
+<p>The assertion <strong>must</strong> contain the following claims:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Claim</th>
+<th align="left">Example Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong><code>sub</code></strong></td>
+<td align="left"><code>dev-gcp:aura:app-a</code></td>
+<td align="left">The <em>subject</em> of the token. Must be set to your application's own <a href="./#token_x_client_id"><code>client_id</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><strong><code>iss</code></strong></td>
+<td align="left"><code>dev-gcp:aura:app-a</code></td>
+<td align="left">The <em>issuer</em> of the token. Must be set to your application's own <a href="./#token_x_client_id"><code>client_id</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><strong><code>aud</code></strong></td>
+<td align="left"><code>https://tokendings.dev-gcp.nais.io/token</code></td>
+<td align="left">The <em>audience</em> of the token. Must be set to the <code>token_endpoint</code> of <a href="https://github.com/nais/tokendings">Tokendings</a>. The value of this exists in the metadata found at the <a href="./#token_x_well_known_url">well-known endpoint</a>.</td>
+</tr>
+<tr>
+<td align="left"><strong><code>jti</code></strong></td>
+<td align="left"><code>83c580a6-b479-426d-876b-267aa9848e2f</code></td>
+<td align="left">The <em>JWT ID</em> of the token. Used to uniquely identify a token. Set this to a UUID or similar.</td>
+</tr>
+<tr>
+<td align="left"><strong><code>nbf</code></strong></td>
+<td align="left"><code>1597783152</code></td>
+<td align="left"><code>nbf</code> stands for <em>not before</em>. It identifies the time (seconds after Epoch) before which the JWT MUST NOT be accepted for processing.</td>
+</tr>
+<tr>
+<td align="left"><strong><code>iat</code></strong></td>
+<td align="left"><code>1597783152</code></td>
+<td align="left"><code>iat</code> stands for <em>issued at</em>. It identifies the time (seconds after Epoch) in which the JWT was issued (or created).</td>
+</tr>
+<tr>
+<td align="left"><strong><code>exp</code></strong></td>
+<td align="left"><code>1597783272</code></td>
+<td align="left"><code>exp</code> is the <em>expiration time</em> (seconds after Epoch) of the token. This <strong>must</strong> not be more than <strong>120</strong> seconds after <code>nbf</code> and <code>iat</code>. That is, the maximum lifetime of the token must be no greater than <strong>120 seconds</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, the headers of the assertion must contain the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong><code>kid</code></strong></td>
+<td align="left"><code>93ad09a5-70bc-4858-bd26-5ff4a0c5f73f</code></td>
+<td align="left">The key identifier of the key used to sign the assertion. This identifier is available in the JWK found in <a href="./#token_x_private_jwk"><code>TOKEN_X_PRIVATE_JWK</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><strong><code>typ</code></strong></td>
+<td align="left"><code>JWT</code></td>
+<td align="left">Represents the type of this JWT. Set this to <code>JWT</code>.</td>
+</tr>
+<tr>
+<td align="left"><strong><code>alg</code></strong></td>
+<td align="left"><code>RS256</code></td>
+<td align="left">Represents the cryptographic algorithm used to secure the JWT. Set this to <code>RS256</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>An assertion should be unique and not be reused when authenticating with <em>Tokendings</em> in accordance with the 
+<a href="https://datatracker.ietf.org/doc/html/rfc7521#section-8.2">security considerations in RFC7521</a>.</p>
+<p>That is, every request to Tokendings should contain a unique client assertion:</p>
+<ul>
+<li>Set the JWT ID (<code>jti</code>) claim to a unique value, such as an UUID.</li>
+<li>Set the JWT expiry (<code>exp</code>) claim so that the lifetime of the token is reasonably low.<ul>
+<li>Tokendings allows a <em>maximum</em> lifetime of 120 seconds.</li>
+<li>A lifetime between 10-30 seconds should be fine for most situations.</li>
+</ul>
+</li>
+</ul>
+<h4 id="example-client-assertion-values">Example Client Assertion Values<a class="headerlink" href="#example-client-assertion-values" title="Permanent link">§</a></h4>
+<p><strong>Header</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;kid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93ad09a5-70bc-4858-bd26-5ff4a0c5f73f&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;typ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;alg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RS256&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Payload</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prod-gcp:namespace-gcp:gcp-app&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;aud&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://tokendings.prod-gcp.nais.io/token&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;nbf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1592508050</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prod-gcp:namespace-gcp:gcp-app&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1592508171</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1592508050</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;jti&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fd9717d3-6889-4b22-89b8-2626332abf14&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="exchanging-a-token">Exchanging a token<a class="headerlink" href="#exchanging-a-token" title="Permanent link">§</a></h3>
+<p>In order to acquire a token from <a href="https://github.com/nais/tokendings">Tokendings</a> that is properly scoped to a given target application, you must exchange an existing <em>subject token</em> (i.e. a token that contains a subject, in this case a citizen end-user).</p>
+<p>Tokendings will then issue an <code>access_token</code> in JWT format, based on the parameters set in the token request. The token can then be used as a <strong>Bearer token</strong> in the Authorization header when calling your target API on behalf of the aforementioned subject.</p>
+<h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">§</a></h4>
+<ul>
+<li>You have a <em>subject token</em> in the form of an <code>access_token</code> issued by one of the following providers:<ul>
+<li><a href="../idporten/">ID-porten</a></li>
+<li>Tokendings</li>
+<li><a href="../../../legacy/sunset/#loginservice">Loginservice</a> (Remember that loginservice is a legacy system. TokenX accept their tokens to ease migration away from on-prem.)</li>
+</ul>
+</li>
+<li>You have a <a href="./#client-authentication">client assertion</a> that <em>authenticates</em> your application.</li>
+</ul>
+<h4 id="exchange-request">Exchange Request<a class="headerlink" href="#exchange-request" title="Permanent link">§</a></h4>
+<p>The following denotes the required parameters needed to perform an exchange request.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Value</th>
+<th align="left">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>grant_type</code></td>
+<td align="left"><code>urn:ietf:params:oauth:grant-type:token-exchange</code></td>
+<td align="left">The identifier of the OAuth 2.0 grant to use, in this case the OAuth 2.0 Token Exchange grant. This grants allows applications to exchange one token for a new one containing much of the same information while still being correctly "scoped" in terms of OAuth.</td>
+</tr>
+<tr>
+<td align="left"><code>client_assertion_type</code></td>
+<td align="left"><code>urn:ietf:params:oauth:client-assertion-type:jwt-bearer</code></td>
+<td align="left">Identifies the type of <em>assertion</em> the client/application will use to authenticate itself to Tokendings, in this case a JWT.</td>
+</tr>
+<tr>
+<td align="left"><code>client_assertion</code></td>
+<td align="left">A serialized JWT identifying the calling app</td>
+<td align="left">The <a href="./#client-authentication">client assertion</a>; a JWT signed by the calling client/application used to identify said client/application.</td>
+</tr>
+<tr>
+<td align="left"><code>subject_token_type</code></td>
+<td align="left"><code>urn:ietf:params:oauth:token-type:jwt</code></td>
+<td align="left">Identifies the type of token that will be exchanged with a new one, in this case a JWT</td>
+</tr>
+<tr>
+<td align="left"><code>subject_token</code></td>
+<td align="left">A serialized JWT, the token that should be exchanged</td>
+<td align="left">The actual token (JWT) containing the signed-in user. Should be an <code>access_token</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>audience</code></td>
+<td align="left">The identifier of the app you wish to use the token for</td>
+<td align="left">Identifies the intended audience for the resulting token, i.e. the target app you request a token for. This value shall be the <code>client_id</code> of the target app using the naming scheme <code>&lt;cluster&gt;:&lt;namespace&gt;:&lt;appname&gt;</code> e.g. <code>prod-fss:namespace1:app1</code></td>
+</tr>
+</tbody>
+</table>
+<p>The request should then sent to the <code>token_endpoint</code> of Tokendings, the value of which exists in the metadata found at the <a href="./#token_x_well_known_url">well-known endpoint</a>.</p>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="codehilite"><pre><span></span><code><span class="nf">POST</span> <span class="nn">/token</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">tokendings.prod-gcp.nais.io</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+
+grant_type=urn:ietf:params:oauth:grant-type:token-exchange&amp;
+client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer&amp;
+client_assertion=eY...............&amp;
+subject_token_type=urn:ietf:params:oauth:token-type:jwt&amp;
+subject_token=eY...............&amp;
+audience=prod-fss:namespace1:app1
+</code></pre></div>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>See <a href="https://github.com/nais/frontend-dings">frontend-dings</a> for a complete example that illustrates:</p>
+<ul>
+<li>end-user authentication through <a href="../idporten/">ID-porten</a></li>
+<li>token exchange with the user's <code>access_token</code></li>
+<li>calling a protected API using the exchanged token</li>
+</ul>
+</div>
+<h4 id="exchange-response">Exchange Response<a class="headerlink" href="#exchange-response" title="Permanent link">§</a></h4>
+<p>Tokendings will respond with a JSON object</p>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;access_token&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJraWQiOi..............&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;issued_token_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urn:ietf:params:oauth:token-type:access_token&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;token_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;expires_in&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">299</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<p>If performance is a concern, the token can be cached for reuse within the validity period indicated by the <code>expires_in</code> field.</p>
+<h3 id="token-validation">Token Validation<a class="headerlink" href="#token-validation" title="Permanent link">§</a></h3>
+<p>If your app receives a token from another application, it is <strong>your responsibility</strong> to ensure this token is valid and intended for your application.</p>
+<p>Configure your app with the <a href="https://www.rfc-editor.org/rfc/rfc8414.html">OAuth 2.0 Authorization Server Metadata</a> from the <a href="./#token_x_well_known_url">well-known endpoint</a> in order to retrieve issuer name and <code>jwks_uri</code> for public keys retrieval.</p>
+<h4 id="signature-verification">Signature Verification<a class="headerlink" href="#signature-verification" title="Permanent link">§</a></h4>
+<ul>
+<li>The token should be signed with the <code>RS256</code> algorithm (defined in JWT header). Tokens not matching this algorithm should be rejected.</li>
+<li>Verify that the signature is correct.</li>
+<li>The issuer's signing keys can be retrieved from the JWK Set (JWKS) at the <code>jwks_uri</code>.</li>
+<li>The <code>kid</code> attribute in the token header is thus a reference to a key contained within the JWK Set.</li>
+<li>The token signature should be verified against the public key in the matching JWK.</li>
+</ul>
+<h4 id="claims">Claims<a class="headerlink" href="#claims" title="Permanent link">§</a></h4>
+<p>The following claims are by default provided in the issued token and should explicitly be validated:</p>
+<ul>
+<li><code>iss</code> (<strong>issuer</strong>): The issuer of the token, the Tokendings issuer URI <strong>must match exactly</strong>.</li>
+<li><code>aud</code> (<strong>audience</strong>): The intended audience for the token, <strong>must match</strong> your application's <a href="./#token_x_client_id">client_id</a>.</li>
+<li><code>exp</code> (<strong>expiration time</strong>): Expiration time, i.e. tokens received after this date <strong>must be rejected</strong>.</li>
+<li><code>nbf</code> (<strong>not before time</strong>): The token cannot be used before this time, i.e. if the token is issued in the "future" (outside "reasonable" clock skew) it <strong>must be rejected</strong>.</li>
+<li><code>iat</code> (<strong>issued at time</strong>): The time at which the token has been issued. <strong>Must be before <code>exp</code></strong>.</li>
+<li><code>sub</code> (<strong>subject</strong>): If applicable, used in user centric access control. This represents a unique identifier for the user.</li>
+</ul>
+<p>Other claims in the token are passed on verbatim from the original token issued by <code>idp</code>.</p>
+<p>The claim used for the national identity number (<em>fødselsnummer</em>) varies from issuer to issuer. For instance: ID-porten use <code>pid</code>, loginservice use <code>sub</code>. The situation may be similar for other kinds of information with no standard claim name. TokenX does not try to unify this kind of information — claims are copied verbatim as described above.</p>
+<p>To extract such non-standard information from tokens, first use the <code>idp</code> claim to find the original token issuer. You can then map the original issuer's preferred claims to the claims in tokens issued by TokenX.</p>
+<h4 id="example-token-exchanged-from-id-porten">Example Token (exchanged from ID-porten)<a class="headerlink" href="#example-token-exchanged-from-id-porten" title="Permanent link">§</a></h4>
+<p>The following example shows the claims of a token issued by Tokendings, where the exchanged subject token is issued by <a href="../idporten/">ID-porten</a>:</p>
+<details class="example" open="open">
+<summary>Example</summary>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;at_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x6lQGCdbMX62p1VHeDsFBA&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HmjqfL7....&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;amr&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;BankID&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://tokendings.prod-gcp.nais.io&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12345678910&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;locale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nb&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;client_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prod-gcp:team-a:app-a&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DASgLATSjYTp__ylaVbskHy66zWiplQrGDAYahvwk1k&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;aud&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prod-fss:team-b:app-b&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;acr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Level4&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;nbf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1597783152</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;idp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://oidc.difi.no/idporten-oidc-provider/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;auth_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1611926877</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1597783452</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1597783152</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;jti&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;97f580a6-b479-426d-876b-267aa9848e2e&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../../.."</script>
+
+    
+
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

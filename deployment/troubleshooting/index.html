@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/deployment/troubleshooting/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logo.svg">
+    
+
+    
+    <title>Troubleshooting - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../..">
+                <img alt="logo" height="36" src="../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../delete-app/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../allowed-registries/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Deploy</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">NAIS deploy</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../change-team/">Changing teams</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../delete-app/">Delete app</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Troubleshooting</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../allowed-registries/">Allowed registries</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../manual/">Manual deploy</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../security/auth/
+
+
+
+'> Security</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#troubleshooting">Troubleshooting</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#dont-panic">Don't panic!</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#first-debugging-steps">First debugging steps</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#logs">Logs</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#error-messages">Error messages</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#secret-not-found">Secret not found</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#step-1-verify-pod-events">Step 1. Verify Pod events</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#step-2-verify-that-the-secret-exists">Step 2. Verify that the Secret exists</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#asking-on-slack">Asking on Slack</a>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/deployment/troubleshooting.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">§</a></h1>
+<h2 id="dont-panic">Don't panic!<a class="headerlink" href="#dont-panic" title="Permanent link">§</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Deployment status</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">success</td>
+<td align="left">Everything is fine, your application has been deployed, and is up and running.</td>
+</tr>
+<tr>
+<td align="left">queued</td>
+<td align="left">Deployment request accepted, waiting to be deployed.</td>
+</tr>
+<tr>
+<td align="left">in_progress</td>
+<td align="left">Application deployed to Kubernetes, waiting for new version to start.</td>
+</tr>
+<tr>
+<td align="left">failure</td>
+<td align="left">Your application failed to start. Check state with <code>kubectl describe app &lt;APP&gt;</code>.</td>
+</tr>
+<tr>
+<td align="left">error</td>
+<td align="left">Either an error in your request, or the deployment system has issues. Check the logs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="first-debugging-steps">First debugging steps<a class="headerlink" href="#first-debugging-steps" title="Permanent link">§</a></h2>
+<p>When something is wrong with your application, these kubectl tools should be the first things you check out:</p>
+<p>Describe the pod to find statuses and messages:</p>
+<div class="codehilite"><pre><span></span><code>kubectl describe pod &lt;podname&gt;
+</code></pre></div>
+<p>And view the logs for your pods with this command:</p>
+<div class="codehilite"><pre><span></span><code>kubectl logs &lt;podname&gt;
+</code></pre></div>
+<h2 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">§</a></h2>
+<p>All deployments are logged to Kibana. You can get a direct link to your deployment logs from https://deploy.nais.io or the <code>https://github.com/navikt/&lt;YOUR_REPOSITORY&gt;/deployments</code> page. Click on the link that says <em>deployed</em>.</p>
+<p>This link is also printed in the console output. It looks like <code>https://deployment.prod-sbs.nais.io/logs?delivery_id=&lt;UUID&gt;&amp;ts=&lt;TIMESTAMP&gt;</code>.</p>
+<h2 id="error-messages">Error messages<a class="headerlink" href="#error-messages" title="Permanent link">§</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Message</th>
+<th align="left">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">You don't have access to apikey/.</td>
+<td align="left">See <em>Access to Vault</em> in the <a href="../../basics/teams/">Teams documentation</a></td>
+</tr>
+<tr>
+<td align="left">403 authentication failed</td>
+<td align="left">Either you're using the wrong <em>team API key</em>, or if using the old version of NAIS deploy, your team is not <a href="../../basics/teams/">registered in the team portal</a>.</td>
+</tr>
+<tr>
+<td align="left">502 bad gateway</td>
+<td align="left">There is some transient error with GitHub or Vault. Please try again later. If the problem persists, ask <em>@nais-team</em> for help.</td>
+</tr>
+<tr>
+<td align="left">deployment failed: failed authentication</td>
+<td align="left">Wrong <em>team API key</em>, please check <a href="https://deploy.nais.io/">https://deploy.nais.io/</a> for the correct key.</td>
+</tr>
+<tr>
+<td align="left">applications.nais.io is forbidden: User "..." cannot create resource "applications" in API group "nais.io" at the cluster scope</td>
+<td align="left">You forgot to specify the <code>.namespace</code> attribute in <code>nais.yaml</code>.</td>
+</tr>
+<tr>
+<td align="left">failed authentication: HMAC signature error</td>
+<td align="left">See above.</td>
+</tr>
+<tr>
+<td align="left">"tobac.nais.io" denied the request: user 'system:serviceaccount:default:serviceuser-FOO' has no access to team 'BAR'</td>
+<td align="left">The application is already deployed, and team names differ. See <a href="../change-team/">changing teams</a>.</td>
+</tr>
+<tr>
+<td align="left">“tobac.nais.io” denied the request: team 'FOO' on existing resource does not exist</td>
+<td align="left">The team owning the resource may have been deleted or renamed. Ask <em>@nais-team</em> for help.</td>
+</tr>
+<tr>
+<td align="left">the server could not find the requested resource (total of 1 errors)</td>
+<td align="left">The resource is not specifying its namespace.</td>
+</tr>
+<tr>
+<td align="left">MountVolume.SetUp failed for volume "<some-secret>" : secret "<some-secret>" not found</td>
+<td align="left">See <a href="#secret-not-found">secret not found</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="secret-not-found">Secret not found<a class="headerlink" href="#secret-not-found" title="Permanent link">§</a></h2>
+<p>When describing a pod or inspecting the deployment logs, you might find the following message:</p>
+<div class="codehilite"><pre><span></span><code>Events:
+  Type     Reason       Age                From               Message
+  ----     ------       ----               ----               -------
+  ...
+  Warning  FailedMount  22m <span class="o">(</span>x5 over 22m<span class="o">)</span>  kubelet            MountVolume.SetUp failed <span class="k">for</span> volume <span class="s2">&quot;&lt;secret-name&gt;&quot;</span> : secret <span class="s2">&quot;&lt;secret-name&gt;&quot;</span> not found
+</code></pre></div>
+<p>Some secrets (such as those from <a href="../../security/auth/azure-ad/">Azure AD</a> or <a href="../../persistence/kafka/">Kafka</a>) are <em>eventually consistent</em>.</p>
+<p>Typically, the message appears on either:</p>
+<ol>
+<li>First-time deployments where the secret has to be provisioned, or</li>
+<li>As part of a <em>secret rotation</em> process</li>
+</ol>
+<p>Generally, the warning message should not persist or be stuck for more than a minute.</p>
+<p>Follow the steps below to verify that the secret exists:</p>
+<h3 id="step-1-verify-pod-events">Step 1. Verify Pod events<a class="headerlink" href="#step-1-verify-pod-events" title="Permanent link">§</a></h3>
+<details class="success" open="open">
+<summary>Success</summary>
+<p>If the event log looks like this:</p>
+<div class="codehilite"><pre><span></span><code>Events:
+Type     Reason       Age                    From               Message
+----     ------       ----                   ----               -------
+Normal   Scheduled    2m22s                  default-scheduler  Successfully assigned &lt;namespace&gt;/&lt;pod&gt; to &lt;node&gt;
+<span class="hll">Warning  FailedMount  2m20s <span class="o">(</span>x3 over 2m22s<span class="o">)</span>  kubelet            MountVolume.SetUp failed <span class="k">for</span> volume <span class="s2">&quot;&lt;secret-name&gt;&quot;</span> : secret <span class="s2">&quot;&lt;secret-name&gt;&quot;</span> not found
+</span>Normal   Pulling      2m18s                  kubelet            Pulling image <span class="s2">&quot;&lt;docker-image&gt;&quot;</span>
+Normal   Pulled       117s                   kubelet            Successfully pulled image <span class="s2">&quot;&lt;docker-image&gt;&quot;</span>
+<span class="hll">Normal   Created      61s <span class="o">(</span>x4 over 115s<span class="o">)</span>     kubelet            Created container &lt;app&gt;
+</span><span class="hll">Normal   Started      61s <span class="o">(</span>x4 over 115s<span class="o">)</span>     kubelet            Started container &lt;app&gt;
+</span></code></pre></div>
+<p>Then the secret was successfully found and your application's container has been started.</p>
+</details>
+<details class="failure" open="open">
+<summary>Failure</summary>
+<p>If the event log looks like this:</p>
+<div class="codehilite"><pre><span></span><code>Events:
+Type     Reason       Age                   From               Message
+----     ------       ----                  ----               -------
+Normal   Scheduled    4m53s                 default-scheduler  Successfully assigned &lt;namespace&gt;/&lt;pod&gt; to &lt;node&gt;
+<span class="hll">Warning  FailedMount  2m50s                 kubelet            Unable to attach or mount volumes: unmounted <span class="nv">volumes</span><span class="o">=[</span>&lt;secret-name&gt;<span class="o">]</span>, unattached <span class="nv">volumes</span><span class="o">=[</span>&lt;secret-name&gt;<span class="o">]</span>: timed out waiting <span class="k">for</span> the condition
+</span><span class="hll">Warning  FailedMount  43s <span class="o">(</span>x10 over 4m53s<span class="o">)</span>  kubelet            MountVolume.SetUp failed <span class="k">for</span> volume <span class="s2">&quot;&lt;secret-name&gt;&quot;</span> : secret <span class="s2">&quot;&lt;secret-name&gt;&quot;</span> not found
+</span><span class="hll">Warning  FailedMount  35s                   kubelet            Unable to attach or mount volumes: unmounted <span class="nv">volumes</span><span class="o">=[</span>&lt;secret-name&gt;<span class="o">]</span>, unattached <span class="nv">volumes</span><span class="o">=[</span>&lt;secret-name&gt;<span class="o">]</span>: timed out waiting <span class="k">for</span> the condition
+</span></code></pre></div>
+<p>Then you should report this to the <a href="#asking-on-slack">#nais</a> channel on Slack.</p>
+</details>
+<h3 id="step-2-verify-that-the-secret-exists">Step 2. Verify that the Secret exists<a class="headerlink" href="#step-2-verify-that-the-secret-exists" title="Permanent link">§</a></h3>
+<p>With <a href="../../basics/access/#install-kubectlhttpskubernetesiodocstaskstoolsinstall-kubectl">kubectl</a>, 
+run the following command to verify that the secret exists:</p>
+<div class="codehilite"><pre><span></span><code>kubectl get secret &lt;secret-name&gt;
+</code></pre></div>
+<details class="success" open="open">
+<summary>Success</summary>
+<div class="codehilite"><pre><span></span><code>➜ kubectl get secret my-secret
+
+NAME        TYPE     DATA  AGE
+my-secret   Opaque   <span class="m">3</span>     15h
+</code></pre></div>
+</details>
+<details class="failure" open="open">
+<summary>Failure</summary>
+<div class="codehilite"><pre><span></span><code>➜ kubectl get secret my-secret
+
+Error from server <span class="o">(</span>NotFound<span class="o">)</span>: secrets <span class="s2">&quot;my-secret&quot;</span> not found
+</code></pre></div>
+</details>
+<p>If you have followed the above checklist and verified that the secret does not exist, please contact <a href="#asking-on-slack">#nais</a> for further assistance.</p>
+<h2 id="asking-on-slack">Asking on Slack<a class="headerlink" href="#asking-on-slack" title="Permanent link">§</a></h2>
+<p>If you read this entire page, and checked your logs, and checked application status with <code>kubectl</code>, you can ask Slack for help. Use the <a href="https://nav-it.slack.com/archives/C5KUST8N6">#nais</a> channel and include the following information:</p>
+<ul>
+<li>Application</li>
+<li>Team tag</li>
+<li>Namespace</li>
+<li>Cluster name</li>
+<li>Link to logs</li>
+<li>What steps you already took to debug the error</li>
+</ul></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../.."</script>
+
+    
+
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

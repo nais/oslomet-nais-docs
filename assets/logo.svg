@@ -1,0 +1,15 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_201_4" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="47" y="8" width="173" height="241">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M218.775 168.415C211.556 168.237 199.109 167.689 191 166C179 163.5 169.5 160 169.5 160L156.75 137.694H114.25L93 174.5L114.25 211.306H156.75L172.647 183.772C172.647 183.772 179.5 180.929 191 179C198.951 177.666 212.161 177.938 219.557 178.232L179 248.479H93L50 174L148.5 8L169 42L135 99.5221L179 99.5219L218.775 168.415Z" fill="#C0C0C0"/>
+<path d="M90.2026 16L112.703 39.5L66.2026 125.5L90.2026 16Z" fill="#C4C4C4"/>
+<path d="M47.0433 46.5L68.2027 63.5L48.2027 151L47.0433 46.5Z" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0_201_4)">
+<rect y="215" width="256" height="43" fill="#750787"/>
+<rect y="172" width="256" height="43" fill="#004DFF"/>
+<rect y="129" width="256" height="43" fill="#008026"/>
+<rect y="86" width="256" height="43" fill="#FFED00"/>
+<rect y="43" width="256" height="43" fill="#FF8C00"/>
+<rect width="256" height="43" fill="#E40303"/>
+</g>
+</svg>

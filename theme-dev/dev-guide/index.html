@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/theme-dev/dev-guide/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logo.svg">
+    
+
+    
+    <title>Developer guide - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../..">
+                <img alt="logo" height="36" src="../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../user-guide/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../sandbox/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../..
+
+'> NAIS</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Theme Dev</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">About</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../user-guide/">User guide</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Developer guide</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../sandbox/">Testing sandbox</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#developer-guide">Developer guide</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#source-code">Source code</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#css-structure">Css structure</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#img-directory">img directory</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#local-version-notifier">Local version notifier</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#known-bugs">Known bugs</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#recomendations">Recomendations</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#use-of-position-sticky">Use of position sticky</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#bootstrap">Bootstrap</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/theme-dev/dev-guide.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="developer-guide">Developer guide<a class="headerlink" href="#developer-guide" title="Permanent link">§</a></h1>
+<p>This page is everyone that happens to continue our work. It does contain information that we would like you to know. Read it carefully as it may save you some trouble.</p>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">§</a></h2>
+<p>Information about soucre code and source files.</p>
+<h3 id="css-structure">Css structure<a class="headerlink" href="#css-structure" title="Permanent link">§</a></h3>
+<p>Css for this theme is divided into 3 "levels", basicly there are 3 different stylesheet where one can provide changes. 
+Those are: </p>
+<ul>
+<li>cinder</li>
+<li>base/highlight</li>
+<li>bootstrap </li>
+</ul>
+<p><strong>cinder.css</strong> - "local" changes that controlls cinder looks. So this is where i.e color of headers is set.</p>
+<p><strong>base.css</strong> - this is where extension to bootstrap are made, or definisions of sets i.e alerts styles</p>
+<p><strong>highlight.css</strong> - this is file that contains styles for hljs (code snippets syntax highlighter). In terms of level, this one is equal with base.</p>
+<p><strong>bootstrap.css</strong> - bootstrap file that provides backbone. </p>
+<p>It has been this way since orginal cinder theme. You can alter it as you like, but we did not see the reason to do it.</p>
+<h3 id="img-directory"><em>img</em> directory<a class="headerlink" href="#img-directory" title="Permanent link">§</a></h3>
+<p>There are some images of grid, they looks useless, but removing them causes MkDocs to fail. One could investigate on what is the deal with them. They are not acutally used by the theme itself.</p>
+<h3 id="local-version-notifier">Local version notifier<a class="headerlink" href="#local-version-notifier" title="Permanent link">§</a></h3>
+<p>During our development sprint, we found need for indication of local version. This is because we used back to back local version (served by <code>mkdocs serve</code> command) and version hosted through github repo. To avoid confusion between these two (which were identical) we decided to mark one of them which in this case was the local version.</p>
+<p>What it does is basicly printing a message (in this case on navbar) only when the address of the page is a local address. It does print a message that consist of information "This is local version" and a number which is nothing else than UNIX epoch. The reason behind the number is to be able to distinguish between reloads and because it looks cooler 😎. Another functionality is the ability for the message to be removed when clicked. This becomes helpful when the message is in the way and have to be deleted.</p>
+<p>This notifier however has been excluded from the final version source code to avoid unessecary code that could lead to problems. If this is something you thing is cool and want it back, here it is:</p>
+<p>It consist of two parts, one jinja if-statement and one javascript code. </p>
+<ul>
+<li>
+<p>jinja if-statement:
+<div class="codehilite"><pre><span></span><code><span class="cm">&lt;!--</span>
+<span class="cm">    technically you can put this if-statement wherever you want.</span>
+<span class="cm">    We recomend though to put this on navbar, </span>
+<span class="cm">    if using bootstrap place it inside &lt;header&gt;&lt;nav&gt;...&lt;/nav&gt;&lt;/header&gt; in &#39;header.html&#39;</span>
+<span class="cm">--&gt;</span>
+
+{% if &#39;127.0.0.1&#39; in page.canonical_url %}
+    <span class="cm">&lt;!-- </span>
+<span class="cm">        &#39;127.0.0.1&#39; defines the local address on which mkdocs is serving the local version,</span>
+<span class="cm">         if it is different for you, then change it</span>
+<span class="cm">    --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;local-version-notice&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-warning&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;alert&quot;</span><span class="p">&gt;</span>
+        message
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{% endif %}
+</code></pre></div></p>
+</li>
+<li>
+<p>javascript:
+<div class="codehilite"><pre><span></span><code><span class="c1">//put this in javascript where it will be executed automaticly, i.e jquery $(document).ready(function() {}</span>
+
+<span class="kd">const</span> <span class="nx">$local_version_notice</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#local-version-notice&#39;</span><span class="p">);</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#local-version-notice&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;This is local version nr. &quot;</span><span class="o">+</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">());</span>
+
+<span class="nx">$local_version_notice</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h2 id="known-bugs">Known bugs<a class="headerlink" href="#known-bugs" title="Permanent link">§</a></h2>
+<p>Things that we found not working, but you can maybe fix</p>
+<ul>
+<li>
+<p>headers defined as <code>&lt;summary&gt;</code> inside <code>&lt;details&gt;</code> when hidden will show up on table of content, but they are inaccessible meaning that page will not scroll to them when directed to by table of content or permalink</p>
+</li>
+<li>
+<p>tabbed sections are not supported by cinder theme, but are used by this documentation. However this is more incompatibility issure rather than bug and therefore it should not be considered as one. </p>
+</li>
+</ul>
+<h2 id="recomendations">Recomendations<a class="headerlink" href="#recomendations" title="Permanent link">§</a></h2>
+<p>Insight into currently problematic areas and what we recomend to do about them.</p>
+<h3 id="use-of-position-sticky">Use of position sticky<a class="headerlink" href="#use-of-position-sticky" title="Permanent link">§</a></h3>
+<p>Generally, position sticky rule is tricky. It make it easier to make content stay while scrolling, but it also creates tricky behaviour. Basicly if content A is nested in content B and content A and B is longer than viewport, then in order to scroll through whole content A, you have to scroll through whole content B. This result in situation where the end of content A will be shown at the bottom of content B. We wouldn't say this behaviour is very accessibility friendly, but in this case this is the best solution we have. We cannot use postion fixed as this goes against bootstrap (you have to redo breakpoints). At the same time, we assume that having aside content scroll with the page will be more frustating than position sticky.</p>
+<p>Use of position sticky is dictated by use of bootstrap (or maybe you find a way). Therefore this is also reason why switching off of bootstrap should be considered.</p>
+<h3 id="bootstrap">Bootstrap<a class="headerlink" href="#bootstrap" title="Permanent link">§</a></h3>
+<p>Bootstrap is usefull as styling of a webpage is faster, but it is also problematic. The main problem with bootstrap is that it is constraining. Creating new elements/layouts that are not native for bootstrap becomes nightmare as you effectively go against bootstrap and have to overrite its rules. At the same time, bootstrap does not have implementation of everything that one can imagine. Therefore you are forced to create them yourself, but you have limited controll on what you can do and can not. </p>
+<p>In this project, most problematic elements are side menu and layout breakpoints. Bootstrap does not have implementation of endless nested side menu that would be WCAG compilant. Grid system is also problematic as the column breakpoints are not optimal. They occur in positions that makes some elements too narrow or too wide.</p>
+<p>Limitations of bootstrap also impacts implemetation choices for some functions. This is mainly search functionality, it had to become a modal that is opened by a button instead of a search input with a dropdown where results are printed. Not optimal position sticky rule also had to be used instead of position fixed rule. </p>
+<p>We believe that in order for this project to become better, a migration from bootstrap to custom css is needed. This way one could create layout and style that is more suitable for WCAG. This however will be more time consuming compared to use of bootstrap.</p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../.."</script>
+
+    
+
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

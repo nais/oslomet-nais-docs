@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/theme-dev/user-guide/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logo.svg">
+    
+
+    
+    <title>User guide - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../..">
+                <img alt="logo" height="36" src="../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../dev-guide/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../..
+
+'> NAIS</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Theme Dev</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">About</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>User guide</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../dev-guide/">Developer guide</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../sandbox/">Testing sandbox</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#user-guide">User guide</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#about-plugin-support">About plugin support</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#favicon">Favicon</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#nav-title-section">Nav title section</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#logo">Logo</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#site-title">Site title</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#repo-links">Repo links</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#repo-link">Repo link</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#edit-link">Edit link</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#html-lang-attribute">HTML lang attribute</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#position-sticky">Position Sticky</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#hljs-syntax-highlighter">hljs (syntax highlighter)</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#color-scheme">Color scheme</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#language-detection">Language detection</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#removed-functions">Removed functions</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#page-meta-data">Page meta-data</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#scroll-spy-table-of-content">Scroll-spy &amp; table of content</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#keyboard-shortcuts">Keyboard Shortcuts</a>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/theme-dev/user-guide.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link">§</a></h1>
+<p>The theme you are currently seeing is modified version of <a href="https://sourcefoundry.org/cinder/">Cinder theme</a> for MkDocs. Because it is modified, the orginal documentation is not fully relevant. Therefore any changes that needs to be documented, will be published here.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Changes to this theme was not tested extensively, therefore there is possiblity that functionalites described here will not behave as expected.</p>
+</div>
+<h2 id="about-plugin-support">About plugin support<a class="headerlink" href="#about-plugin-support" title="Permanent link">§</a></h2>
+<p>Cinder theme does not support all plugins and so does this modified theme. Adding support for plugins is not scope of this project. Therefore one must be satisified with limited list of supported plugins.</p>
+<h2 id="favicon">Favicon<a class="headerlink" href="#favicon" title="Permanent link">§</a></h2>
+<p>In order to use custom favicon use following <code>mkdocs.yml</code> file entry:
+<div class="codehilite"><pre><span></span><code>theme: 
+    favicon: path/to/icon
+</code></pre></div>
+If no favicon is specified in config file, default icon located under <code>cinder/img/favicon.ico</code> will be used instead. It is also possible to substitute this file to achieve the same goal. </p>
+<h2 id="nav-title-section">Nav title section<a class="headerlink" href="#nav-title-section" title="Permanent link">§</a></h2>
+<p>Nav title section is the section that shows logo and title of the page on header. There are few customization options regarding this seciton we have implemented.</p>
+<h3 id="logo">Logo<a class="headerlink" href="#logo" title="Permanent link">§</a></h3>
+<p>In order to use custom logo on navigation bar use following <code>mkdocs.yml</code> file entry:</p>
+<p><div class="codehilite"><pre><span></span><code>theme: 
+    logo: path/to/logo
+</code></pre></div>
+If no logo is specified in config file, only <a href="#site-title">site title</a> will be shown.</p>
+<h3 id="site-title">Site title<a class="headerlink" href="#site-title" title="Permanent link">§</a></h3>
+<p>This is text that will show up next to the logo. It is possible (and advised) to use custom title for this element. This is because this element should be descriptive and tell the user what the pages are about. Therefore it is possible to customize this text by <code>site_title</code> attribute in mkdocs config file.</p>
+<p>Specifing custom title:
+<div class="codehilite"><pre><span></span><code>theme:
+    site_title: Documentation for my precious project.
+</code></pre></div></p>
+<p>If no <code>site_title</code> is specified in config file, <code>site_name</code> attribute will be used instead.</p>
+<h2 id="repo-links">Repo links<a class="headerlink" href="#repo-links" title="Permanent link">§</a></h2>
+<p>Repo links has been changed, now link to repo is separate from edit links. Before, edit links has been overwritten by link to repo if they were specified. Now it is possible to have both, link to repo and edit link</p>
+<h3 id="repo-link">Repo link<a class="headerlink" href="#repo-link" title="Permanent link">§</a></h3>
+<p>Links to repo will show up on navigation bar. Appropriate icon is choosen based on keyword in repo url. This means that if <code>repo_url</code> in <code>mkdocs.yml</code> file contains <code>'github'</code>, then github icon will be shown beside. Currently only <code>'github'</code>, <code>'bitbucket'</code> and <code>'gitlab'</code> keywords are supported. If <code>repo_url</code> does not contain any of these keywords, then no icon will be shown.</p>
+<p>Link text is determined by <code>repo_name</code> attribute in <code>mkdocs.yml</code>. If this attribute is not specified, then default keyword will be shown i.e 'GitHub'.</p>
+<h3 id="edit-link">Edit link<a class="headerlink" href="#edit-link" title="Permanent link">§</a></h3>
+<p>Edit link will be shown on top of content and it is controlled by <code>edit_uri</code> in <code>mkdocs.yml</code> (<a href="https://www.mkdocs.org/user-guide/configuration/#edit_uri">about edit_uri in MkDocs</a>). This link text is agnostic to repo provider, which means that it will stay the same regardless if edit link is refering to Github, Gitlab etc.  </p>
+<h2 id="html-lang-attribute">HTML lang attribute<a class="headerlink" href="#html-lang-attribute" title="Permanent link">§</a></h2>
+<p>It is possbile to specify the html lang attribute (that defnies the content language) in <code>mkdocs.yml</code> file. This is done by following entry:</p>
+<div class="codehilite"><pre><span></span><code>theme: 
+    locale: fr //set the language to french
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This functionality is implemented according to mkdocs guide. More info about mkdocs locales refer to its documentation. <a href="https://www.mkdocs.org/dev-guide/themes/#supporting-theme-localizationtranslation">localization in MkDocs themes</a></p>
+</div>
+<h2 id="position-sticky">Position Sticky<a class="headerlink" href="#position-sticky" title="Permanent link">§</a></h2>
+<p>Aside sections uses <code>position: sticky;</code> css rule to keep them attached in place. This rule however is not fully supported on all browser, therefore they will most likely scroll with the page content (this has not been tested). Such solution is best compromise between functionality and clean code.</p>
+<h2 id="hljs-syntax-highlighter">hljs (syntax highlighter)<a class="headerlink" href="#hljs-syntax-highlighter" title="Permanent link">§</a></h2>
+<p>"hljs" is syntax highlighter for code snippets and it is used by this theme.</p>
+<h3 id="color-scheme">Color scheme<a class="headerlink" href="#color-scheme" title="Permanent link">§</a></h3>
+<p>There are dozen of different color schemes created for hljs that one can choose. On how to change color, refer to cinder's official documentation (<a href="https://sourcefoundry.org/cinder/#syntax-highlighting-color-scheme">Cinder theme - Syntax Highlighting Color Scheme</a>). </p>
+<p>However, the default color scheme for this theme is a modified "StackOverflow Light" theme for hljs. The colors has been adjusted so the contrast ratio is above 7.1.
+This is in order to meet WCAG requirements related to contrast. Therefore one should note that choosing different color scheme may not compile with WCAG regulations.</p>
+<h3 id="language-detection">Language detection<a class="headerlink" href="#language-detection" title="Permanent link">§</a></h3>
+<p>MkDocs allow to define language for code blocks using the standart makrdown syntax. This is done by writing given language after first 3 backticks, like so:
+<div class="codehilite"><pre><span></span><code>```java
+
+public static void...
+
+```
+</code></pre></div>
+<a href="https://www.mkdocs.org/user-guide/writing-your-docs/#fenced-code-blocks">Language definition for code snippets in MkDocs</a></p>
+<p>However this won't work for hljs as language definition is done via class name in <code>&lt;code&gt;</code> tags.</p>
+<p><a href="https://highlightjs.readthedocs.io/en/latest/readme.html#in-the-browser">Language definition in hljs</a></p>
+<p>In result hljs will still use auto detection even if language is defined in markdown. Therefore it is advised not to specify language in markdown as there is no use for it.</p>
+<h2 id="removed-functions">Removed functions<a class="headerlink" href="#removed-functions" title="Permanent link">§</a></h2>
+<p>There are functions that exist in cinder, but has been removed in this theme.</p>
+<h3 id="page-meta-data">Page meta-data<a class="headerlink" href="#page-meta-data" title="Permanent link">§</a></h3>
+<p>MkDocs supports meta-data for markdown files. You can read more about it on their official documentation. <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data">page-metadata in MkDocs</a>. Cinder theme uses this feature to add support for printing out page sources. This feature however has been removed in this theme due to its unpopularity. There is lack of information regardles on how this feature should be and therefore it has been removed.</p>
+<h3 id="scroll-spy-table-of-content">Scroll-spy &amp; table of content<a class="headerlink" href="#scroll-spy-table-of-content" title="Permanent link">§</a></h3>
+<p>Cinder does inherent MkDocs functionality of scroll spy and table of content. This allows to indicate current element in viewport on table of content. 
+However, this functionality has been removed as the nature of this functionality makes it difficult to render correct. (if there is more table of content items in viewport, then it is difficut to determite which one is the "active" one). Therefore to avoid confusion, it has been removed. </p>
+<h2 id="keyboard-shortcuts">Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permanent link">§</a></h2>
+<p>As the default MkDocs, cinder theme have support for user defined keyboard shortcuts. Information about these shortcuts can be found on cinder theme documentation <a href="https://sourcefoundry.org/cinder/#keyboard-shortcuts">keyboard shortcuts in cinder</a>. This functionality has not been adapted to comply with WCAG. Therefore it is advised <strong>not to use this functionality</strong> if WCAG compliance is a priority.</p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../.."</script>
+
+    
+
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/legacy/sunset/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logo.svg">
+    
+
+    
+    <title>Sunset - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../..">
+                <img alt="logo" height="36" src="../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../../addons/velero-backup-and-restore/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../am/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../persistence/responsibilities/
+
+'> Persistence</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../security/auth/
+
+
+
+'> Security</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ./
+
+' aria-current="location"><strong>Legacy</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Sunset</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../am/">AM/OpenAM</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#sunset-tjenester-som-nais-teamet-gradvis-bygger-ned">Sunset - tjenester som nais-teamet gradvis bygger ned</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#nais-sbs">nais-sbs</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#sentralisert-abac-axiomatics">Sentralisert ABAC (Axiomatics)</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#naisadeono-devadeono-preprodlocal-oera-qlocal-ingresser">nais.adeo.no, dev.adeo.no, preprod.local, oera-q.local (ingresser)</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#mq">MQ</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#rookceph">Rook/Ceph</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#kafka-onprem">Kafka onprem</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#loginservice">loginservice</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#openam-esso">OpenAM (ESSO)</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#openam-isso">OpenAM (ISSO)</a>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/legacy/sunset.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h2 id="sunset-tjenester-som-nais-teamet-gradvis-bygger-ned">Sunset - tjenester som nais-teamet gradvis bygger ned<a class="headerlink" href="#sunset-tjenester-som-nais-teamet-gradvis-bygger-ned" title="Permanent link">§</a></h2>
+<p>Dette er tjenester som ikke videreutvikles av naisteamet, og i noen tilfeller som vil bli avviklet.</p>
+<h3 id="nais-sbs">nais-sbs<a class="headerlink" href="#nais-sbs" title="Permanent link">§</a></h3>
+<p>nais-clustrene <code>dev-sbs</code> og <code>prod-sbs</code>, også kjent som "selvbetjeningssonen" ønsker nais-teamet å avvikle til fordel for  GCP. Grunnen til dette er at tilsvarende clustre i GCP (<code>dev-gcp</code> og <code>prod-gcp</code>) har funksjonslikhet med SBS, og vil i tillegg gi tilgang til:</p>
+<ul>
+<li>automatisk provisjonering av databaser og bøtter</li>
+<li>bedre sikkerhet og mer robuste mønster for app-til-app kommunikasjon</li>
+<li>bedre applikasjonsmetrikker, for eksempel på kall inn og ut av appen</li>
+<li>helautomatisert konfigurasjon når en app skal eksponeres</li>
+</ul>
+<p>For brukere av nais betyr det at nye applikasjoner skal legges til GCP fremfor SBS, og at eksisterende applikasjoner i SBS må migreres til GCP. Følgende frister gjelder for migrering:</p>
+<ul>
+<li>Fredag 8. oktober 2021 stenges muligheten for å lage nye apper i SBS-clustrene</li>
+<li>Fredag 1. april 2022 skal alle apper i SBS være migrert til GCP</li>
+</ul>
+<p>Begge datoene gjelder for både prod-sbs og dev-sbs. Dersom deres team har en applikasjon som ikke er mulig å migrere til sky vil det være mulig å få unntak fra kravet om migrering. Slike unntak skal godkjennes av IT-direktøren, og det vil komme mer info senere om prosessen for å søke om unntak. Vi vil komme tilbake til hvilke løsninger som blir tilgjengelig onprem for disse appene som er unntatt migrering.</p>
+<h3 id="sentralisert-abac-axiomatics">Sentralisert ABAC (Axiomatics)<a class="headerlink" href="#sentralisert-abac-axiomatics" title="Permanent link">§</a></h3>
+<p>I kjølvannet av at Team Integrasjon ble oppløst har drift av både den tekniske tjenesten, verktøystøtten, samt forvaltningen av policies i ABAC blitt utført av én person. ABAC er kritisk for tilgangsstyringen i mange tjenester, og inneholder i mange tilfeller domenelogikk. Dette lar seg dårlig forene med de effektene vi ønsker av distribuerte autonome team. Samtidig er policiene som ligger i ABAC implementert i et proprietært språk (Alfa) som gjør terskelen for å ta over denne logikken høyere enn man skulle ønske.</p>
+<p>nais-teamet har tatt over ABAC-tjenesten fra Team Integrasjon, og ønsker å desentralisere denne. Det betyr i praksis at teamene som bruker ABAC må ta eierskap til både egne policies og egne instanser av ABAC (alternativt flytte logikken de har i ABAC inn i egne applikasjoner). Se forøvrig <a href="https://github.com/navikt/pig/blob/master/sikkerhet/adr/003-no-abac.md">ADR</a> her.</p>
+<p>Tilnærmingen til avvikling av sentralisert ABAC er først å flytte eksisterende implementasjon ut av stash/nexus og flytte til GitHub. Vi flytter samtidig instansen fra WebSphere til nais. Så tenker vi å splitte ABAC opp i domener, og flytte eierskapet for hver instans til domenet. Om teamene som bruker ABAC det aktuelle domenet ønsker å fortsette å bruke Axiomatics-ABAC eller ønsker å implementere logikken direkte i appene sine eller i en egen app er opp til teamene. Uansett hvilket valg de tar vil nais-teamet være tilgjengelig som støtte i overgangen.</p>
+<h3 id="naisadeono-devadeono-preprodlocal-oera-qlocal-ingresser">nais.adeo.no, dev.adeo.no, preprod.local, oera-q.local (ingresser)<a class="headerlink" href="#naisadeono-devadeono-preprodlocal-oera-qlocal-ingresser" title="Permanent link">§</a></h3>
+<ul>
+<li><code>nais.adeo.no</code> erstattes av <code>intern.nav.no</code></li>
+<li><code>dev.adeo.no</code> erstattes av <code>dev.intern.nav.no</code></li>
+<li><code>preprod.local</code> erstattes av <code>dev.intern.nav.no</code></li>
+<li><code>oera-q.local</code> erstattes av <code>dev.nav.no</code></li>
+</ul>
+<p>For applikasjoner på GCP er kun de nye ingressene mulig å benytte, mens for applikasjoner i FSS er begge mulig å bruke. </p>
+<p>Det er ingen plan om å avvikle de gamle ingressene i FSS, men vi anbefaler en gradvis migrering til de nye, og at nye applikasjoner benytter nye ingresser.</p>
+<h3 id="mq">MQ<a class="headerlink" href="#mq" title="Permanent link">§</a></h3>
+<p>MQ benyttes i dag kun via on-premises servere som driftes og vedlikeholdes av ATOM og Linux. </p>
+<p>Det er ønskelig at de applikasjonene som har mulighet heller benytter Aiven Kafka. Vi ønsker at man går vekk fra MQ fordi dette vil forenkle overgang til offentlig sky og et eventuelt bytte av leverandør der. Dette vil også forenkle oppsettet for applikasjonene og plattform.</p>
+<p>Det er dog støtte for MQ fra nais-klusterne on-premises og i GCP, men da kun med nye MQ-servere som er satt opp med autentisering. </p>
+<p><em>Bruk av ikke-autentisert MQ er definert som et alvorlig sikkerhetshull</em>. 
+Vi ønsker at alle migrerer sine applikasjoner til enten autentisert MQ, eller aller helst Kafka, så fort som mulig. 
+Bruk av ikke-autentisert MQ vil ikke være mulig fra nais-klusterne fra og med 01.12.2021. </p>
+<h3 id="rookceph">Rook/Ceph<a class="headerlink" href="#rookceph" title="Permanent link">§</a></h3>
+<p>Rook/Ceph er i dag satt opp on-premises og tilgjengelig fra alle nais-klustere der. Disse er ikke tilgjengelig fra GCP og det er heller ikke ønskelig. Løsningen driftes og vedlikeholdes av nais, men det er en stor rigg med en del vedlikeholdsarbeid. Løsningen har ingen fullverdig backup, selv om det gjøres backup av fysiske volum og noder der Rook/Ceph kjører.</p>
+<p>Rook/Ceph ønskes sanert, vi ønsker derfor at ingen nye apper tar dette i bruk og heller benytter seg av buckets i GCP og ElasticSearch i GCP eller Aiven. Rook/ceph anses som en risiko pga utilstrekkelig backup ettersom et kluster ikke kan relokeres eller flyttes. </p>
+<p>Det er en uttalt plan for sanering av Rook/Ceph, men løsningen vil leve videre med vedlikehold til tilstrekkelig mange applikasjoner har flyttet sine data ut i offentlig sky.</p>
+<h3 id="kafka-onprem">Kafka onprem<a class="headerlink" href="#kafka-onprem" title="Permanent link">§</a></h3>
+<p>Kafka er i dag tilgjengelig både som en tjeneste fra Aiven som kjører i GCP og som en tjeneste vi kjører i egne datasentre.
+Begge variantene av kafka kan nås fra alle nais-clustre. </p>
+<p>Kafka onprem driftes og vedlikeholdes av en håndfull personer, hvor ingen har Kafka som sin hovedoppgave.
+Det er også identifisert flere potensielle problemer som ikke lar seg løse:</p>
+<ul>
+<li>Av lisensmessige årsaker kan vi ikke oppgradere clusteret in-place, så vi er bundet til nåværende versjon.</li>
+<li>Clusteret er satt opp med felles diskløsning (SAN), noe som gjør at alle nodene har et delt point-of-failure.
+  Dette kan i visse feilsituasjoner øke sjansene for tap av data.</li>
+<li>Av historiske årsaker er clusteret "feilkonfigurert" på en måte som gjør at consumer offset topicet er veldig stort.
+  Dette fører til lange recovery tider og potensiale for å miste offsets i feilsituasjoner.</li>
+</ul>
+<p>Løsningen på disse problemene er å migrere til et nytt cluster, og da har vi valgt å migrere til Aiven Kafka.</p>
+<p>Aiven er en leverandør som har Kafka som hovedprodukt, det er et av de første produktene de tilbød, og de har opparbeidet seg høy kompetanse på drift og oppsett av Kafka i sky.
+Aiven Kafka er derfor å regne som langt mer robust enn Kafka onprem, og blir kontinuerlig vedlikeholdt og forbedret av Aiven.
+Det er enkelt for oss å oppgradere til nyere versjoner av Kafka, og vi drar nytte av alle driftsfordelene med sky.</p>
+<p>Som følge av Aivens gode APIer er det også mulig for NAIS å integrere Kafka tettere i plattformen, og vi har flere muligheter for videreutvikling.
+Kombinasjonen av Aiven Kafka og Kafkarator gjør det betydelig enklere for team å ta i bruk Aiven Kafka sammenlignet med Kafka onprem.</p>
+<p>Vi hadde tidligere en ambisjon om at Kafka onprem skulle skrus av før sommeren 2021, men siden vi så at enkelte team ville ha problemer med å migrere før det har vi gått vekk fra en hard deadline for dette. Vi vil likevel oppfordre alle som har mulighet til å migrere til Aiven Kafka så snart som mulig.</p>
+<p>Vi har allikevel besluttet at vi stenger for å opprette nye topics i Kafka onprem fra 1. juni 2021. 
+Hypotesen er at siden det allikevel er et nytt topic, så er det både enklere og mer fremtidsrettet om det opprettes på Aiven Kafka, og vi ønsker å redusere mengden data som går gjennom Kafka onprem.</p>
+<h3 id="loginservice">loginservice<a class="headerlink" href="#loginservice" title="Permanent link">§</a></h3>
+<p>Loginservice (ved bruk av Azure AD B2C) tilbyr en fellestjeneste for "delegated authentication" for alle borgerrettede apper, dvs mot ID-porten. Token fått ved innlogging via Loginservice gir tilgang til en rekke bakenforliggende tjenester, ved at dette tokenet propageres as-is.</p>
+<p>En sentral fellestjeneste kan utgjøre en risiko, både operasjonelt og sikkerhetsmessig. Dersom Loginservice er utilgjengelig er i praksis alle innloggede tjenester på nav.no nede. Ved bruk av loginservice og propagering av <code>id_token</code> as-is så har vi i praksis  "one token to rule them all" mtp tilgang til APIer. Denne arkitekturen gjør at kompromitterte tokens har et stort skadepotensiale, og er heller ikke i tråd med "zero trust"-prinsippene vi designer systemene våre etter. </p>
+<p>Som med alle andre fellestjenester skapes det sterke koblinger. Endringer i tjenesten medfører et stort behov for koordinering, og dermed bremses farta til teamene. Det å holde tjenesten oppdatert er også en vedlikeholdsbyrde som stjeler tid fra andre og mere framtidsrettede aktiviteter i plattformteamet. </p>
+<p>Vi har et ønske om en sikkerhetsarkitektur hvor hvert enkelt token er spesifikt beregnet til det APIet som man skal kalle. Dette kan vi ikke oppnå med en fellestjeneste som Loginservice.</p>
+<p>I GCP har teamene nå fått mulighet til å integrere direkte mot ID-porten selv, og NAV ITs strategi sier at teamene skal ta ansvar for alle aspekter ved produktene sine (også autentisering). Vi tilbyr også "TokenX" og andre mekanismer som er i tråd med "zero trust". Vi vil derfor ikke utvikle mer på Loginservice, men kun sørge for "lyset holdes på" fram til den kan skrus av.</p>
+<p>En gulrot for teamene som integrerer seg direkte med IDPorten er at de da kan benytte seg av <code>refresh_tokens</code> for en mer sømløs og brukervennlig opplevelse for brukere på nav.no mtp utløpt token.</p>
+<h3 id="openam-esso">OpenAM (ESSO)<a class="headerlink" href="#openam-esso" title="Permanent link">§</a></h3>
+<p>OpenAM ESSO (ESSO - ekstern single-sign-on) er en legacy løsning for single-sign-on (SSO) på tvers av nav.no applikasjoner basert på en reverse-proxy arkitektur. Dette innebærer at applikasjoner som benytter denne løsningen ligger bak en revers-proxy som håndhever autentisering, og applikasjoner henter ut brukerinformasjon ved å gjøre oppslag i OpenAM basert på et sesjonstoken. OpenAM integrerer med IDPorten vha SAML (som er deprekert hos IDPorten til fordel for OpenID Connect).</p>
+<p>Det er et ønske om at applikasjoner migrerer seg helt bort fra OpenAM ESSO da dette er en løsning som stammer fra en helt annen tid og som har vært ansett som deprekert i NAV i lang tid. Den holdes i live on-prem til de siste applikasjonene er flyttet over til enten direktebasert integrasjon med IDPorten eller til loginservice (som et midlertidig steg). Ambisjonen er å skru av OpenAM ESSO til sommeren 2021 for å unngå å utløse enda et år med support fra Forgerock.</p>
+<h3 id="openam-isso">OpenAM (ISSO)<a class="headerlink" href="#openam-isso" title="Permanent link">§</a></h3>
+<p>OpenAM ISSO (intern single-sign-on) en on-prem løsning som tilbyr innlogging for NAV ansatte (f.eks saksbehandlere) ved bruk av OpenID Connect (OIDC) og on-prem AD. Applikasjoner som integrerer med OpenAM får tilbake et <code>id_token</code> som benyttes ved kall mot andre APIer. Arkitekturen ved API til API kall for denne løsningen ligner den vi har med loginservice, dvs. "one token to rule them all" - et token gir tilgang til et stort sett APIer. </p>
+<p>OpenAM ISSO driftes on-prem ved ATOM og har en sterk avhengighet til AD. Det ønskelig at flest mulig applikasjoner migrerer seg over til Azure AD som også tilbyr innlogging for NAV ansatte vha OIDC.  I tillegg til fordelen ved at Azure AD er managed skybasert løsning, støtter den også store deler av OAuth 2.0 spesfikasjonene som gjør at vi kan benytte oss av tokens som er spesifikt beregnet på APIet man skal kalle. </p>
+<p>Vi er klar over at en del APIer baserer seg på å motta tokens fra OpenAM ISSO og enda ikke støtter Azure AD som tilbyder. Det er derfor viktig at flest mulig APIer også implementerer støtte for Azure AD tokens, da applikasjoner som benytter OpenAM for innlogging ikke kan switche til Azure AD før avhengighetene deres støtter det. </p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../.."</script>
+
+    
+
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

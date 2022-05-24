@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/persistence/objectstore/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../assets/logo.svg">
+    
+
+    
+    <title>S3 objectstore - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../..">
+                <img alt="logo" height="36" src="../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../influxdb/" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../redis/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../responsibilities/
+
+' aria-current="location"><strong>Persistence</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../responsibilities/">Responsibilities</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../kafka/
+
+'> Kafka</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../buckets/">Google Cloud Storage/Buckets</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../postgres/">Google Cloud SQL (postgres)</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../bigquery/">Google BigQuery</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../elastic-search/">ElasticSearch</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../open-search/">OpenSearch</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../influxdb/">InfluxDB</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>S3 objectstore</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../redis/">Redis</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../volume-storage/">On-premises disk</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../mq/">MQ</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../mongodb-in-gcp/">MongoDB in GCP</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../security/auth/
+
+
+
+'> Security</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#s3-object-store">S3 object store</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#how-to">How to</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#ceph-object-storage-user">Ceph object storage user</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#metrics">Metrics</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#code-examples">Code examples</a>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/persistence/objectstore.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="s3-object-store">S3 object store<a class="headerlink" href="#s3-object-store" title="Permanent link">§</a></h1>
+<p>objectstore on NAIS stores files in buckets. On-prem uses rook ceph storage nodes as the storage solution. This is persistent storage and available in all clusters. The preferred solution is to use GCP for both applications and buckets, but it is supported on-prem as well.</p>
+<p>The objectstore / S3 bucket access is secured with access keys and secret keys stored in kubernetes.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This feature is only available in on-premises clusters.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This feature does not have backups of the data in the buckets, please move to GCP if this is needed.</p>
+</div>
+<h2 id="how-to">How to<a class="headerlink" href="#how-to" title="Permanent link">§</a></h2>
+<h3 id="ceph-object-storage-user">Ceph object storage user<a class="headerlink" href="#ceph-object-storage-user" title="Permanent link">§</a></h3>
+<p>On NAIS on-prem you're required to add a ceph object storage user. This is done through nais-yaml. After applying changes to the ceph-users.yaml and applying this to the cluster the rook operator will create the necessary secrets used to access the S3 bucket. To get access create a pull-request in <a href="https://github.com/navikt/nais-yaml.git">navikt/nais-yaml</a>.</p>
+<p>Example yaml for ceph user:</p>
+<p>ceph-user.yaml</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ceph.rook.io/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CephObjectStoreUser</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-application</span><span class="w"></span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rook-ceph</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">store</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">objectstore</span><span class="w"></span>
+<span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;example-application&quot;</span><span class="w"></span>
+</code></pre></div>
+<p>After a few minutes the rook operator in the cluster will create the secret. The keys necessary can then be fetched and stored in vault for mounting and usage runtime for the application. Contact <a href="https://nav-it.slack.com/archives/D5KP2068Z">@Sten.Ivar.Røkke</a> or other nais team members for keys.</p>
+<p>The objectstore service endpoint is <a href="http://objectstore.rook-ceph.svc.nais.local">http://objectstore.rook-ceph.svc.nais.local</a>. The objectstore can also be reached from other clusters using <a href="https://objectstore.nais.{domain">https://objectstore.nais.{domain</a> name}.</p>
+<h2 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">§</a></h2>
+<p>General ceph metrics are available from several dashboards in grafana:</p>
+<p><a href="https://grafana.adeo.no/d/vwcB0Bzml/ceph-cluster?orgId=1&amp;refresh=10s">Grafana Ceph Cluster</a></p>
+<p><a href="https://grafana.adeo.no/d/Fj5fAfzik/ceph-osd?orgId=1&amp;refresh=15m">Grafana Ceph OSD</a></p>
+<h2 id="code-examples">Code examples<a class="headerlink" href="#code-examples" title="Permanent link">§</a></h2>
+<p>Kotlin objectstore / S3 bucket access:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">package</span> <span class="nn">no.nav.example</span>
+
+<span class="k">import</span> <span class="nn">com.amazonaws.auth.AWSStaticCredentialsProvider</span>
+<span class="k">import</span> <span class="nn">com.amazonaws.auth.BasicAWSCredentials</span>
+<span class="k">import</span> <span class="nn">com.amazonaws.client.builder.AwsClientBuilder</span>
+<span class="k">import</span> <span class="nn">com.amazonaws.services.s3.AmazonS3</span>
+<span class="k">import</span> <span class="nn">com.amazonaws.services.s3.AmazonS3ClientBuilder</span>
+<span class="k">import</span> <span class="nn">com.amazonaws.services.s3.model.CannedAccessControlList</span>
+<span class="k">import</span> <span class="nn">com.amazonaws.services.s3.model.CreateBucketRequest</span>
+<span class="k">import</span> <span class="nn">com.amazonaws.services.s3.model.PutObjectResult</span>
+<span class="k">import</span> <span class="nn">com.amazonaws.services.s3.transfer.TransferManager</span>
+<span class="k">import</span> <span class="nn">com.amazonaws.services.s3.transfer.TransferManagerBuilder</span>
+<span class="k">import</span> <span class="nn">java.io.File</span>
+<span class="k">import</span> <span class="nn">org.slf4j.LoggerFactory</span>
+
+<span class="kd">object</span> <span class="nc">S3Client</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">val</span> <span class="nv">s3</span><span class="p">:</span> <span class="n">AmazonS3</span>
+    <span class="kd">private</span> <span class="kd">val</span> <span class="nv">log</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">javaClass</span><span class="p">)</span>
+
+    <span class="k">init</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="nv">ev</span> <span class="o">=</span> <span class="n">EnvVarFactory</span><span class="p">.</span><span class="na">envVar</span>
+        <span class="kd">val</span> <span class="nv">credentials</span> <span class="o">=</span> <span class="n">BasicAWSCredentials</span><span class="p">(</span><span class="n">ev</span><span class="p">.</span><span class="na">s3AccessKey</span><span class="p">,</span> <span class="n">ev</span><span class="p">.</span><span class="na">s3SecretKey</span><span class="p">)</span>
+        <span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;New Client: (host: &quot;</span> <span class="o">+</span> <span class="n">ev</span><span class="p">.</span><span class="na">s3Url</span> <span class="o">+</span> <span class="s">&quot; - &quot;</span> <span class="o">+</span> <span class="n">ev</span><span class="p">.</span><span class="na">s3Region</span> <span class="o">+</span> <span class="s">&quot;, accesskey-length: &quot;</span> <span class="o">+</span> <span class="n">ev</span><span class="p">.</span><span class="na">s3AccessKey</span><span class="p">.</span><span class="na">length</span> <span class="o">+</span> <span class="s">&quot;S3 secret key Length: &quot;</span> <span class="o">+</span> <span class="n">ev</span><span class="p">.</span><span class="na">s3SecretKey</span><span class="p">.</span><span class="na">length</span><span class="p">)</span>
+        <span class="n">s3</span> <span class="o">=</span> <span class="n">AmazonS3ClientBuilder</span><span class="p">.</span><span class="na">standard</span><span class="p">()</span>
+            <span class="p">.</span><span class="na">withEndpointConfiguration</span><span class="p">(</span><span class="n">AwsClientBuilder</span><span class="p">.</span><span class="na">EndpointConfiguration</span><span class="p">(</span><span class="n">ev</span><span class="p">.</span><span class="na">s3Url</span><span class="p">,</span> <span class="n">ev</span><span class="p">.</span><span class="na">s3Region</span><span class="p">))</span>
+            <span class="p">.</span><span class="na">enablePathStyleAccess</span><span class="p">()</span>
+            <span class="p">.</span><span class="na">withCredentials</span><span class="p">(</span><span class="n">AWSStaticCredentialsProvider</span><span class="p">(</span><span class="n">credentials</span><span class="p">))</span>
+            <span class="p">.</span><span class="na">build</span><span class="p">()</span>
+        <span class="n">createBucketIfMissing</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">fun</span> <span class="nf">persistToS3</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="n">File</span><span class="p">):</span> <span class="n">PutObjectResult</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">s3</span><span class="p">.</span><span class="na">putObject</span><span class="p">(</span><span class="n">Const</span><span class="p">.</span><span class="na">BUCKET</span><span class="p">,</span> <span class="n">Const</span><span class="p">.</span><span class="na">FILE</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">fun</span> <span class="nf">loadFromS3</span><span class="p">():</span> <span class="n">File</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="nv">tempFile</span> <span class="o">=</span> <span class="n">createTempFile</span><span class="p">()</span>
+        <span class="n">transferManager</span><span class="p">()</span>
+            <span class="p">.</span><span class="na">download</span><span class="p">(</span><span class="n">Const</span><span class="p">.</span><span class="na">BUCKET</span><span class="p">,</span> <span class="n">Const</span><span class="p">.</span><span class="na">FILE</span><span class="p">,</span> <span class="n">tempFile</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">waitForCompletion</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">tempFile</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">fun</span> <span class="nf">createBucketIfMissing</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="nv">bucketList</span> <span class="o">=</span> <span class="n">s3</span><span class="p">.</span><span class="na">listBuckets</span><span class="p">().</span><span class="na">filter</span> <span class="p">{</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">.</span><span class="na">name</span> <span class="o">==</span> <span class="n">Const</span><span class="p">.</span><span class="na">BUCKET</span> <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bucketList</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Creating new bucket as its missing: &quot;</span> <span class="o">+</span> <span class="n">Const</span><span class="p">.</span><span class="na">BUCKET</span><span class="p">)</span>
+            <span class="n">s3</span><span class="p">.</span><span class="na">createBucket</span><span class="p">(</span><span class="n">CreateBucketRequest</span><span class="p">(</span><span class="n">Const</span><span class="p">.</span><span class="na">BUCKET</span><span class="p">).</span><span class="na">withCannedAcl</span><span class="p">(</span><span class="n">CannedAccessControlList</span><span class="p">.</span><span class="na">Private</span><span class="p">))</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">s3</span><span class="p">.</span><span class="na">doesObjectExist</span><span class="p">(</span><span class="n">Const</span><span class="p">.</span><span class="na">BUCKET</span><span class="p">,</span> <span class="n">Const</span><span class="p">.</span><span class="na">FILE</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Creating empty file for persisting what have been pushed: &quot;</span> <span class="o">+</span> <span class="n">Const</span><span class="p">.</span><span class="na">FILE</span><span class="p">)</span>
+            <span class="n">s3</span><span class="p">.</span><span class="na">putObject</span><span class="p">(</span><span class="n">Const</span><span class="p">.</span><span class="na">BUCKET</span><span class="p">,</span> <span class="n">Const</span><span class="p">.</span><span class="na">FILE</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">fun</span> <span class="nf">transferManager</span><span class="p">():</span> <span class="n">TransferManager</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">TransferManagerBuilder</span><span class="p">.</span><span class="na">standard</span><span class="p">().</span><span class="na">withS3Client</span><span class="p">(</span><span class="n">s3</span><span class="p">).</span><span class="na">build</span><span class="p">()</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>Feel free to help us out by adding more examples!</p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../.."</script>
+
+    
+
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+

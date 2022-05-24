@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+     <link rel="canonical" href="https://nais.io/oslomet-nais-docs/persistence/kafka/application/"> 
+    
+    
+    <link rel="icon" type="image/x-icon" href="../../../assets/logo.svg">
+    
+
+    
+    <title>Application - NAIS</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <header class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="container-fluid" aria-label="toolbar">
+        
+        
+
+            
+            <a class="navbar-brand" href="../../..">
+                <img alt="logo" height="36" src="../../../assets/logo.svg" class="align-items-center"/>
+                 NAIS platform documentation 
+            </a>
+            
+
+        
+
+        
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle toolbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-grow-1 justify-content-end">
+                
+                    
+                    <li class="nav-item d-grid m-1">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal" type="button">
+                            <span class="fas fa-search"></span> Search
+                        </button>
+                    </li> 
+                    
+                
+
+                
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../" rel="prev" role="button" class="btn btn-secondary">
+                            <span class="fas fa-arrow-left"></span> Previous page
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    <li class="nav-item d-grid m-1">
+                        <a href="../metrics/" rel="next" role="button" class="btn btn-secondary">
+                            Next page <span class="fas fa-arrow-right"></span>
+                        </a>
+                    </li>
+                    
+
+                    
+                
+
+                
+                
+                    
+                        <li class="nav-item my-auto">
+                            <a href="https://github.com/nais/oslomet-nais-docs/" class="btn nav-link">
+                                
+                                    <span class="fab fa-github"></span> NAIS on Github                                    
+                                
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            
+                <aside class="col-md-6 col-lg-3 col-xl-2 order-lg-1" aria-label="primary">
+
+
+<nav class="mb-5 sticky-top sidebar-sticky" aria-labelledby="nav-label">
+    <span id="nav-label" class="fs-4">Navigation:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../..
+
+' aria-current="location"><strong>NAIS</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../..">Introduction to NAIS</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../basics/access/
+
+'> Getting started</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../clusters/gcp/
+
+'> Clusters</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../nais-application/example/
+
+'> NAIS Application</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../naisjob/
+
+'> Naisjob</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../deployment/
+
+'> Deploy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../../observability/alerts/
+
+
+
+'> Observability</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../../responsibilities/
+
+' aria-current="location"><strong>Persistence</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../responsibilities/">Responsibilities</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-grey rounded-top" href='
+
+
+
+    
+
+    ../
+
+' aria-current="location"><strong>Kafka</strong></a>
+            <ul class="list-unstyled ps-2 border-start border-bottom py-1">
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../">Overview</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 bg-warning rounded" href="./" aria-current="page"><strong>Application</strong></a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../metrics/">Grafana metrics</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../manage_topics/">Manage topics</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../migrate_from_onprem/">Migrate from onprem</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../avro_and_rest/">Avro and REST</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../offsets/">Working with Kafka Offsets</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../faq/">FAQ</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../buckets/">Google Cloud Storage/Buckets</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../postgres/">Google Cloud SQL (postgres)</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../bigquery/">Google BigQuery</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../elastic-search/">ElasticSearch</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../open-search/">OpenSearch</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../influxdb/">InfluxDB</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../objectstore/">S3 objectstore</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../redis/">Redis</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../volume-storage/">On-premises disk</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../mq/">MQ</a>
+        
+    </li>
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../mongodb-in-gcp/">MongoDB in GCP</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+
+    ../../../security/auth/
+
+
+
+'> Security</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../addons/leader-election/
+
+'> Addons</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../legacy/sunset/
+
+'> Legacy</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../appendix/zero-trust/
+
+'> Appendix</a>
+        
+    </li>
+
+
+                 
+                
+            
+                    
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href="../../../support/">Support</a>
+        
+    </li>
+
+                 
+                
+            </ul>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../device/
+
+'> naisdevice</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../cli/
+
+'> nais-cli</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../legal/roles-responsibilities/
+
+'> Laws and regulations</a>
+        
+    </li>
+
+
+
+        
+
+            
+
+    
+
+    <li class="mx-1">
+        
+            <a class="link-dark link-hover-underline d-block p-1 rounded" href='
+
+
+
+    
+
+    ../../../theme-dev/
+
+'> Theme Dev</a>
+        
+    </li>
+
+
+
+        
+    </ul>
+</nav>
+
+
+</aside>
+                <aside class="col-md-6 col-lg-3 col-xl-3 order-lg-3" aria-label="secondary"><nav class="mb-5 sticky-top sidebar-sticky " aria-labelledby="toc-label">
+    <span id="toc-label" class="fs-4">On this page:</span>
+    <ul class="list-unstyled py-2 mt-3 sidebar-sticky-overflow border-top border-bottom">
+        
+        <li class="m-1">
+            <strong><a class="link-dark link-hover-underline d-block" href="#application">Application</a></strong>
+            
+            <ul class="ps-3">
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#application-config">Application config</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#what-happens-on-deploy">What happens on deploy?</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#testing-your-application">Testing your application</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#using-kafka-streams-with-internal-topics">Using Kafka Streams with internal topics</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#accessing-topics-from-an-application-on-legacy-infrastructure">Accessing topics from an application on legacy infrastructure</a>
+                    
+                </li>
+                
+                <li class="m-1">
+                    <a class="link-dark link-hover-underline d-block" href="#application-design-guidelines">Application design guidelines</a>
+                    
+                    <ul class="ps-3">
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#authentication-and-authorization">Authentication and authorization</a>
+                        </li>
+                        
+                        <li class="m-1">
+                            <a class="link-dark link-hover-underline d-block" href="#readiness-and-liveness">Readiness and liveness</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+            
+        </li>    
+        
+    </ul>
+</nav></aside>
+                <main class="col-md-12 col-lg-6 col-xl-7 order-lg-2" aria-label="main content">
+<div class="mb-2">
+    <a href="https://github.com/nais/oslomet-nais-docs/edit/main/docs/persistence/kafka/application.md">
+        <span class="fas fa-edit"></span> Edit this page
+    </a>
+</div>
+
+
+<h1 id="application">Application<a class="headerlink" href="#application" title="Permanent link">§</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature applies only to <em>Aiven hosted Kafka</em>. On-premises Kafka is deprecated, and creating new topics on-premises was disabled summer 2021. For on-premises Kafka, see <a href="https://confluence.adeo.no/display/AURA/Kafka">on-premises Kafka documentation</a>.</p>
+</div>
+<h2 id="application-config">Application config<a class="headerlink" href="#application-config" title="Permanent link">§</a></h2>
+<p>These variables are made available inside the pod.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>KAFKA_BROKERS</code></td>
+<td align="left">Comma-separated list of HOST:PORT pairs to Kafka brokers</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_SCHEMA_REGISTRY</code></td>
+<td align="left">URL to schema registry</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_SCHEMA_REGISTRY_USER</code></td>
+<td align="left">Username to use with schema registry</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_SCHEMA_REGISTRY_PASSWORD</code></td>
+<td align="left">Password to use with schema registry</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_CERTIFICATE</code></td>
+<td align="left">Client certificate for connecting to the Kafka brokers, as string data</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_CERTIFICATE_PATH</code></td>
+<td align="left">Client certificate for connecting to the Kafka brokers, as file</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_PRIVATE_KEY</code></td>
+<td align="left">Client certificate key for connecting to the Kafka brokers, as string data</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_PRIVATE_KEY_PATH</code></td>
+<td align="left">Client certificate key for connecting to the Kafka brokers, as file</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_CA</code></td>
+<td align="left">Certificate authority used to validate the Kafka brokers, as string data</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_CA_PATH</code></td>
+<td align="left">Certificate authority used to validate the Kafka brokers, as file</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_CREDSTORE_PASSWORD</code></td>
+<td align="left">Password needed to use the keystore and truststore</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_KEYSTORE_PATH</code></td>
+<td align="left">PKCS#12 keystore for use with Java clients, as file</td>
+</tr>
+<tr>
+<td align="left"><code>KAFKA_TRUSTSTORE_PATH</code></td>
+<td align="left">JKS truststore for use with Java clients, as file</td>
+</tr>
+<tr>
+<td align="left"><code>AIVEN_SECRET_UPDATED</code></td>
+<td align="left">A timestamp of when the secret was created</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-happens-on-deploy">What happens on deploy?<a class="headerlink" href="#what-happens-on-deploy" title="Permanent link">§</a></h2>
+<p>When you deploy an application that requests access to Kafka, Naiserator will create an <code>AivenApplication</code> resource in the cluster.
+The <code>AivenApplication</code> has a name that matches the deployed application, and the name of the secret to generate. 
+Naiserator will request that a secret with this name used in the deployment.</p>
+<p>When an <code>AivenApplication</code> resource is created or updated, Aivenator will create a new service user and generate credentials. 
+These credentials are then inserted into the requested secret and used in the deployment.</p>
+<p>If there is a problem generating the secret, this might fail your deployment. 
+In this case, Aivenator will update the <code>status</code> part of the resource, with further information about the problem.</p>
+<h2 id="testing-your-application">Testing your application<a class="headerlink" href="#testing-your-application" title="Permanent link">§</a></h2>
+<p>If you need to test that you have configured your consumer application correctly, you can use one of the kafkarator-canary topics.
+All applications (from all teams) have read access to the canary topics.
+All the canary topics receives a message on a fixed interval, containing a RFC3339 formatted timestamp.
+The only difference between each, is where the producer is located.
+The available canary topics are:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pool</th>
+<th align="left">Topic name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">nav-dev</td>
+<td align="left">aura.kafkarator-canary-dev-gcp</td>
+</tr>
+<tr>
+<td align="left">nav-dev</td>
+<td align="left">aura.kafkarator-canary-dev-sbs</td>
+</tr>
+<tr>
+<td align="left">nav-dev</td>
+<td align="left">aura.kafkarator-canary-dev-fss</td>
+</tr>
+<tr>
+<td align="left">nav-prod</td>
+<td align="left">aura.kafkarator-canary-prod-gcp</td>
+</tr>
+<tr>
+<td align="left">nav-prod</td>
+<td align="left">aura.kafkarator-canary-prod-sbs</td>
+</tr>
+<tr>
+<td align="left">nav-prod</td>
+<td align="left">aura.kafkarator-canary-prod-fss</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-kafka-streams-with-internal-topics">Using Kafka Streams with internal topics<a class="headerlink" href="#using-kafka-streams-with-internal-topics" title="Permanent link">§</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This feature is only available in GCP clusters.</p>
+</div>
+<p>In some configurations of kafka streams your application needs to create internal topics. To allow
+your app to make internal topics, you need to set
+<a href="/nais-application/application/#kafkastreams">.spec.kafka.streams</a> to <code>true</code> in your application
+spec (nais.yaml)</p>
+<p>When you do this you <strong>must</strong> configure Kafka Streams by setting the property <code>application.id</code> to the
+value of the env var <code>KAFKA_STREAMS_APPLICATION_ID</code>, which will be injected into your pod
+automatically.</p>
+<h2 id="accessing-topics-from-an-application-on-legacy-infrastructure">Accessing topics from an application on legacy infrastructure<a class="headerlink" href="#accessing-topics-from-an-application-on-legacy-infrastructure" title="Permanent link">§</a></h2>
+<p>If you have an application on legacy infrastructure (outside NAIS clusters), you can still access topics with a few more manual steps.</p>
+<p>The first step is to add your application to the topic ACLs, the same way as for applications in NAIS clusters (see <a href="#accessing-topics-from-an-application">the previous section</a>).
+Use your team name, and a suitable name for the application, following NAIS naming conventions.</p>
+<p>To create a credentials for your application, you need to manually create the <code>AivenApplication</code> resource that would normally be created by Naiserator.</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">aivenapp.yaml</label><div class="tabbed-content">
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aiven.nais.io/v1</span><span class="w"></span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AivenApplication</span><span class="w"></span>
+<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">legacyapplication</span><span class="w"></span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myteam</span><span class="w"></span>
+<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">kafka</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nav-dev</span><span class="w"></span>
+<span class="w">  </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unique-name</span><span class="w"></span>
+<span class="w">  </span><span class="nt">protected</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+<p>Since Aivenator automatically deletes secrets that are not in use by any pod, you need to set the <code>protected</code> flag to <code>true</code>.
+This ensures that the secret will not be deleted by any automated process.</p>
+<p>After the <code>AivenApplication</code> resources has been created, Aivenator will create the secret, using the name specified.
+Using <code>kubectl</code>, extract the secret and make the values available to your legacy application.</p>
+<p>When you no longer have a need for the credentials created in this way, delete the <code>AivenApplication</code> resource, and make sure the secret is also deleted.</p>
+<p>If you migrate the application to NAIS, the first deploy to NAIS will overwrite the <code>AivenApplication</code> resource.
+When this happens, it is no longer <code>protected</code>.
+In this case, it is recommended that you manually delete the protected secret when it is no longer needed.</p>
+<h2 id="application-design-guidelines">Application design guidelines<a class="headerlink" href="#application-design-guidelines" title="Permanent link">§</a></h2>
+<h3 id="authentication-and-authorization">Authentication and authorization<a class="headerlink" href="#authentication-and-authorization" title="Permanent link">§</a></h3>
+<p>The NAIS platform will generate new credentials when your applications is deployed. Kafka requires TLS client certificates for authentication. Make sure your Kafka and/or TLS library can do client certificate authentication, and that you can specify a custom CA certificate for server validation.</p>
+<h3 id="readiness-and-liveness">Readiness and liveness<a class="headerlink" href="#readiness-and-liveness" title="Permanent link">§</a></h3>
+<p>Making proper use of liveness and readiness probes can help with many situations. 
+If producing or consuming Kafka messages are a vital part of your application, you should consider failing one or both probes if you have trouble with Kafka connectivity.
+Depending on your application, failing liveness might be the proper course of action.
+This will make sure your application is restarted when it is experiencing problems, which might help.</p>
+<p>In other cases, failing just the readiness probe will allow your application to continue running, attempting to move forward without being killed.
+Failing readiness will be most helpful during deployment, where the old instances will keep running until the new are ready.
+If the new instances are not able to connect to Kafka, keeping the old ones until the problem is resolved will allow your application to continue working.</p></main>
+            
+            
+        </div>
+    </div>
+
+    
+
+        <footer class="py-3 mt-3 border-top">
+    
+
+        
+        <p class="text-center">
+            
+        </p>
+        <p class="text-center">
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and modified <a href="https://sourcefoundry.org/cinder/">Cinder theme</a></small>
+        </p>
+        
+
+        
+
+    
+</footer>
+
+
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/highlight.min.js"></script>
+        
+
+    <script>hljs.highlightAll();</script>
+    
+
+    <script>var base_url = "../../.."</script>
+
+    
+
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal fade" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="searchModalLabel">Search documentation modal</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close search documentation modal"></button>
+            </div>
+            <div class="modal-header">
+                <form autocomplete="off" class="flex-fill">
+                    <div class="form-group">
+                        <label class="form-label" id="search-input-label" for="mkdocs-search-query">Search for:</label>
+                        <input type="search" class="form-control" placeholder="Type to start searching ..." id="mkdocs-search-query"
+                            title="Type search term here" aria-labelledby="search-input-label">
+
+                        <span class="form-text" role="status" id="mkdocs-search-results-info">
+                            
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div aria-label="Search results" id="mkdocs-search-results">
+                    
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+
